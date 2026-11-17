@@ -119,6 +119,24 @@ class Router:
     pool_ids: set = set()
     count_cached: bool = False      # replay mode: a cache hit on a pool entry spends budget like a live request
 
+    outage: bool = False
+
+    def try_outage(self) -> bool:
+        """D-51: called when no classification entry is usable and the job budget is NOT merely spent (all Gemini
+        entries 5xx/dead/quota 0/no key). Switches to the configured local chain if one is usable."""
+        oc = self.cfg.get("outage") or {}
+        if self.outage:
+            return True
+        if not oc.get("enabled", True) or self.budget_exhausted():
+            return False
+        self.outage = True
+        ok = bool(self.chain("bulk"))
+        self.outage = ok
+        if ok:
+            log.warning("LLM OUTAGE SWITCH: Gemini unavailable; classifying with local chain %s", oc.get("chain", ["ollama_local"]))
+            self.stats["outage_switch"] = True
+        return ok
+
     def budget_exhausted(self) -> bool:
         return self.budget is not None and self.spent >= self.budget
 
@@ -151,6 +169,9 @@ class Router:
             return []
         if role not in self.exempt_roles and self.budget_exhausted():
             return []
+        if self.outage:       # D-51: Gemini unavailable -> local model only (budget does not apply)
+            oc = (self.cfg.get("outage") or {}).get("chain", ["ollama_local"])
+            return [self.entries[i] for i in oc if i in self.entries and self._usable(self.entries[i])]
         ids = list(self.roles.get(role) or list(self.entries))
         if self.cfg.get("allow_outage_models", False):
             ids += [i for i in self.cfg.get("outage_chain", []) if i not in ids]

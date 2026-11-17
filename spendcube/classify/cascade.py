@@ -168,7 +168,7 @@ def run_cascade(ctx, df: pd.DataFrame) -> pd.DataFrame:
     clf_obj = None
     try:
         router = _make_router(ctx)
-        if router is not None and router.has_llm("bulk"):
+        if router is not None and (router.has_llm("bulk") or router.try_outage()):
             definitions, clf_obj = _run_llm(ctx, units, leaf, conf, meth, spcls, selfc, llm_labelled, described, router, lcfg, stats)
         else:
             ctx.warn("no LLM provider available: using supervised/propagation/offline fallback only")
@@ -375,10 +375,21 @@ def _run_llm(ctx, units, leaf, conf, meth, spcls, selfc, llm_labelled, described
     stats["llm_candidate_units"] = int(len(cand))
     entry_cap = lcfg.get("entry_conf_cap", {}) or {}
     done = 0
+    outage_t0 = None
     for s in range(0, len(cand), tranche):
         if ctx.elapsed_min > deadline:
             ctx.warn(f"LLM deadline ({deadline} min) reached after {done} units; remaining units use lower tiers")
             break
+        if not router.has_llm("bulk") and router.try_outage():
+            stats["outage_switch_at_unit"] = stats.get("outage_switch_at_unit", done)
+            outage_t0 = outage_t0 if outage_t0 is not None else ctx.elapsed_min
+            ctx.warn("LLM OUTAGE: Gemini unavailable; switched to the local model for the remaining top-spend units "
+                     "(offline fallback for the rest)")
+        if router.outage:
+            outage_t0 = outage_t0 if outage_t0 is not None else ctx.elapsed_min
+            if ctx.elapsed_min - outage_t0 > float((lcfg.get("outage") or {}).get("max_minutes", 20)):
+                ctx.warn(f"local-model outage time budget spent after {done} units; remaining units use offline fallback")
+                break
         if not router.has_llm("bulk"):
             ctx.warn("LLM request budget spent (%s) or all entries exhausted; remaining units use lower tiers"
                      % (router.budget_info or "n/a"))
@@ -388,7 +399,7 @@ def _run_llm(ctx, units, leaf, conf, meth, spcls, selfc, llm_labelled, described
         items = [{"uid": int(i), "supplier": units["supplier"].iat[i], "gl": units["gl"].iat[i],
                   "ctx": units["ctx"].iat[i], "text": units["text"].iat[i]} for i in chunk]
         r1 = clf.classify(items, role, workers=4)
-        sc_items = [it for it in items if it["uid"] in r1 and (s + items.index(it)) < sc_n]
+        sc_items = [] if router.outage else [it for it in items if it["uid"] in r1 and (s + items.index(it)) < sc_n]
         r2, r3 = {}, {}
         if sc_items:
             used = tuple({r1[it["uid"]].entry for it in sc_items})

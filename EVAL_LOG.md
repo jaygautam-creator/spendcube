@@ -109,3 +109,6 @@ By level: wrong L1 18, right L1 wrong L2 13, right L2 wrong L3 19. By cause (man
 
 ## 2026-11-17 LLM confidence tiebreak and A2 budget
 Map now output = band value + 0.05 x (raw - band mid), clipped [0.05, 0.95], monotone in raw within each band. Worst-company ECE 0.117 (A 0.109, B 0.117) <= 0.12. A2 LLM budget set to 0 (curve above); B2 max 60 reserve 10; C reserve 60 (640 on an empty ledger).
+
+## 2026-11-17 outage path measurement (A zero-label top-300 sample, spend-weighted)
+Offline fallback alone (n=300): L1 75.9, L2 31.0, L3 25.4. Local qwen3:4b (first 60 units): L1 94.1, L2 45.3, L3 41.7 vs offline on the same 60: 81.4 / 34.4 / 28.1. Ollama 1.24 s/unit (74.5 s for 60), so about 970 units fit in the 20-minute cap. Policy shipped (D-51): Ollama for top-spend units within the cap, offline for the rest.
