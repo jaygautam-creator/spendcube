@@ -4,6 +4,10 @@
 # Skips the data scan (with a warning) when the task kit is absent, e.g. on a fresh clone.
 ROOT="$(git rev-parse --show-toplevel)"
 cd "$ROOT" || exit 1
+# Public history must descend only from the fresh snapshot root (old local history contains data strings).
+PUBLIC_ROOT=5a917959d248da44418fee36e9b86246e3392952
+roots=$(git rev-list --max-parents=0 HEAD)
+[ "$roots" = "$PUBLIC_ROOT" ] || { echo "pre-push: history has a root other than the public snapshot (merged old history?). Refusing."; exit 1; }
 PY="$ROOT/.venv/bin/python"; [ -x "$PY" ] || PY=python3
 bad=$(git ls-files | grep -Ei '\.(csv|xlsx|xls|parquet|jsonl|zip|pkl|joblib|sqlite|db|pdf)$' | grep -Ev '^(outputs|submission|tests/fixtures)/')
 [ -n "$bad" ] && { echo "pre-push: data file tracked outside allowed folders:"; echo "$bad"; exit 1; }
