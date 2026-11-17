@@ -7,7 +7,7 @@ fail=0
 check() { name="$1"; shift; if "$@"; then echo "PASS: $name"; else echo "FAIL: $name"; fail=1; fi; }
 clean() { [ -z "$(git status --porcelain)" ]; }
 head_remote() { [ "$(git rev-parse HEAD)" = "$(git rev-parse origin/main)" ]; }
-root_ok() { [ "$(git rev-list --max-parents=0 HEAD)" = 5a917959d248da44418fee36e9b8 ]; }
+root_ok() { [ "$(git rev-list --max-parents=0 HEAD)" = 5a917959d248da44418fee36e9b86246e3392952 ]; }
 tracked_data_ok() {
   bad=$(git ls-files | grep -Ei '\.(csv|xlsx|xls|parquet|jsonl|zip|pkl|joblib|sqlite|db|pdf)$' | grep -Ev '^(outputs|submission|tests/fixtures)/' || true)
   [ -z "$bad" ] && ! git ls-files | grep -Eiq '(^|/)(Cantill_DataML_Task_Kit|\.env$)'
