@@ -6,6 +6,7 @@ import logging
 import traceback
 from pathlib import Path
 from typing import Callable, Optional
+from datetime import datetime
 
 import pandas as pd
 
@@ -40,7 +41,8 @@ def _stages() -> list[tuple[str, Callable]]:
 def run_pipeline(cfg: Config, out_dir: Path = Path("outputs"), no_llm: bool = False,
                  limit: Optional[int] = None, llm_mode: str = "dev",
                  verbose: bool = False, cfg_path: Optional[str] = None,
-                 mock_active: Optional[bool] = None) -> tuple[Path, list[str]]:
+                 mock_active: Optional[bool] = None,
+                 deadline_at: Optional[datetime] = None) -> tuple[Path, list[str]]:
     global LAST_RUN_DIR
     run_dir = make_run_dir(cfg.company)
     LAST_RUN_DIR = run_dir
@@ -50,6 +52,7 @@ def run_pipeline(cfg: Config, out_dir: Path = Path("outputs"), no_llm: bool = Fa
         mock_active = is_mock_active(cfg.classification.get("llm", {}))
     ctx = RunContext(cfg=cfg, run_dir=run_dir, no_llm=no_llm, limit=limit, out_dir=Path(out_dir), llm_mode=llm_mode, cfg_path=cfg_path)
     ctx.note("run", "mock_active", bool(mock_active))
+    ctx.deadline_at = deadline_at
     log.info("run %s -> %s", cfg.company, ctx.run_dir)
 
     with ctx.timer("taxonomy"):

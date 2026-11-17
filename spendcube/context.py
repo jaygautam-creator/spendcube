@@ -22,6 +22,7 @@ class RunContext:
     limit: Optional[int] = None
     out_dir: Path = Path("outputs")
     llm_mode: str = "dev"           # dev | blind (selects Gemini key profile)
+    deadline_at: Optional[datetime] = None
     cfg_path: Optional[str] = None
     timings: dict[str, float] = field(default_factory=dict)
     notes: dict[str, Any] = field(default_factory=dict)      # for report.md

@@ -9,6 +9,8 @@ from __future__ import annotations
 import logging
 import math
 import time
+from datetime import datetime
+from zoneinfo import ZoneInfo
 from collections import Counter
 from typing import Optional
 
@@ -166,8 +168,15 @@ def run_cascade(ctx, df: pd.DataFrame) -> pd.DataFrame:
     definitions: dict = {}
     router = None
     clf_obj = None
+    stats.setdefault("deadline_hit", None)
+    stats.setdefault("llm_units_done", 0)
     try:
-        router = _make_router(ctx)
+        if ctx.deadline_at is not None and datetime.now(ZoneInfo("Asia/Kolkata")) >= ctx.deadline_at:
+            stats["deadline_hit"] = "absolute"
+            ctx.warn(f"LLM absolute deadline {ctx.deadline_at.isoformat()} already passed; using lower tiers")
+            router = None
+        else:
+            router = _make_router(ctx)
         if router is not None and (router.has_llm("bulk") or router.try_outage()):
             definitions, clf_obj = _run_llm(ctx, units, leaf, conf, meth, spcls, selfc, llm_labelled, described, router, lcfg, stats)
         else:
@@ -358,6 +367,11 @@ def _run_llm(ctx, units, leaf, conf, meth, spcls, selfc, llm_labelled, described
         return {}, None
     cand = cand[: int(lcfg.get("max_units", 20000))]
     definitions: dict = {}
+    if ctx.deadline_at is not None and datetime.now(ZoneInfo("Asia/Kolkata")) >= ctx.deadline_at:
+        stats["deadline_hit"] = "absolute"
+        stats["llm_units_done"] = 0
+        ctx.warn(f"LLM absolute deadline {ctx.deadline_at.isoformat()} already passed; using lower tiers")
+        return definitions, None
     if lcfg.get("compile", True):
         spend_order = units.iloc[cand]
         texts = list(dict.fromkeys(spend_order["text"].head(150).tolist() +
@@ -375,10 +389,15 @@ def _run_llm(ctx, units, leaf, conf, meth, spcls, selfc, llm_labelled, described
     stats["llm_candidate_units"] = int(len(cand))
     entry_cap = lcfg.get("entry_conf_cap", {}) or {}
     done = 0
+    deadline_hit = None
     outage_t0 = None
     for s in range(0, len(cand), tranche):
-        if ctx.elapsed_min > deadline:
-            ctx.warn(f"LLM deadline ({deadline} min) reached after {done} units; remaining units use lower tiers")
+        absolute = ctx.deadline_at is not None and datetime.now(ZoneInfo("Asia/Kolkata")) >= ctx.deadline_at
+        elapsed = ctx.elapsed_min >= deadline
+        if absolute or elapsed:
+            deadline_hit = "absolute" if absolute else "elapsed"
+            why = f"absolute deadline {ctx.deadline_at.isoformat()}" if absolute else f"elapsed deadline {deadline} min"
+            ctx.warn(f"LLM {why} reached after {done} units; remaining units use lower tiers")
             break
         if not router.has_llm("bulk") and router.try_outage():
             stats["outage_switch_at_unit"] = stats.get("outage_switch_at_unit", done)
@@ -426,6 +445,10 @@ def _run_llm(ctx, units, leaf, conf, meth, spcls, selfc, llm_labelled, described
             spcls[uid] = final.spend_class
             llm_labelled[uid] = True
         done += len(chunk)
+    stats["deadline_hit"] = deadline_hit
+    stats["llm_units_done"] = done
+    stats.setdefault("deadline_hit", None)
+    stats.setdefault("llm_units_done", done)
     stats["llm_units_labelled"] = int(llm_labelled.sum())
     stats["llm_spend_share_labelled"] = round(float(units["spend"].to_numpy()[llm_labelled].sum() / max(units["spend"].sum(), 1e-9)), 4)
     return definitions, clf

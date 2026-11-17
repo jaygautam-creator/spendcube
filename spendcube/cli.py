@@ -3,6 +3,8 @@ from __future__ import annotations
 
 import argparse
 import sys
+from datetime import datetime
+from zoneinfo import ZoneInfo
 from pathlib import Path
 
 
@@ -28,7 +30,9 @@ def cmd_run(a) -> int:
     if active:
         print("SPENDCUBE MOCK ACTIVE: mock_active: true", file=sys.stderr)
     path, errors = run_pipeline(cfg, out_dir=Path(a.out), no_llm=a.no_llm, limit=a.limit,
-                                llm_mode=mode, verbose=a.verbose, cfg_path=a.config, mock_active=active)
+                                llm_mode=mode, verbose=a.verbose, cfg_path=a.config, mock_active=active,
+                                deadline_at=datetime.strptime(a.deadline_at, "%Y-%m-%dT%H:%M").replace(
+                                    tzinfo=ZoneInfo("Asia/Kolkata")) if a.deadline_at else None)
     print(f"{path}  validation={'OK' if not errors else 'FAILED'}")
     for e in errors:
         print("  -", e)
@@ -118,6 +122,7 @@ def main(argv: list[str] | None = None) -> int:
     r.add_argument("--out", default="outputs")
     r.add_argument("--no-llm", action="store_true")
     r.add_argument("--llm-mode", choices=["dev", "blind"], default=None)
+    r.add_argument("--deadline-at", default=None, help="absolute cutoff YYYY-MM-DDTHH:MM in Asia/Kolkata")
     r.add_argument("-v", "--verbose", action="store_true")
     r.set_defaults(fn=cmd_run)
 
