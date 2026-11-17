@@ -104,5 +104,5 @@ entities:
 
 # Blank-description tier (classify/blank.py): key voting then a context-only model, learned from the run itself
 classification:
-  llm: {budget: {share: 1.0, reserve: 0, max_requests: 10}}     # D-50: B2 knee ~25-60 requests, A2 flat (curves in EVAL_LOG); C takes the rest
+  llm: {budget: {share: 1.0, reserve: 0, max_requests: 0}}      # D-50: A2 LLM budget 0 (curve: LLM hurts 99.51 -> 99.43)
   blank: {enabled: true, mode: vote_first, vote_min_share: 0.6, cap: 0.6, min_known: 30}

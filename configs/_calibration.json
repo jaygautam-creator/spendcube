@@ -45,7 +45,22 @@
     0.65
    ],
    "n": 680,
-   "note": "minimax across A/B (scripts/fit_llm_conf.py): conf<0.6 -> 0.2, else 0.65"
+   "note": "minimax across A/B (scripts/fit_llm_conf.py): conf<0.6 -> 0.2, else 0.65",
+   "tiebreak": 0.05,
+   "mids": [
+    [
+     0.0,
+     0.5999,
+     0.3
+    ],
+    [
+     0.6,
+     1.0,
+     0.8
+    ]
+   ],
+   "lo": 0.05,
+   "hi": 0.95
   }
  }
 }

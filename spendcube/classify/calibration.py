@@ -47,7 +47,14 @@ class Calibrator:
         for g, m in self.groups.items():
             sel = (grp == g).to_numpy()
             if sel.any():
-                out[sel] = np.interp(conf.to_numpy()[sel], m["x"], m["y"])
+                raw = conf.to_numpy()[sel]
+                v = np.interp(raw, m["x"], m["y"])
+                if m.get("tiebreak"):       # keep ranking inside a flat band: + tb*(raw - band_mid), monotone in raw per band
+                    mid = np.zeros_like(raw)
+                    for lo, hi, mdl in m["mids"]:
+                        mid[(raw >= lo) & (raw <= hi)] = mdl
+                    v = np.clip(v + float(m["tiebreak"]) * (raw - mid), m.get("lo", 0.05), m.get("hi", 0.95))
+                out[sel] = v
         return out.clip(0.01, 0.99)
 
     def save(self, path: str | Path) -> None:

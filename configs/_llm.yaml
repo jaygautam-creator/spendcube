@@ -12,12 +12,12 @@ classification:
     budget:
       enabled: true
       share: 1.0
-      reserve: 70                  # requests kept back for the later jobs (B2 60 + A2 10)
+      reserve: 60                  # kept back for B2 (60 max); A2 uses 0
       util_cap: 0.7
       pool: [gemini_flash_lite_35, gemini_flash_lite_31]
       exempt_roles: [compile, arbiter]
       # shown by `doctor`; mirrors the per-company overrides (B: max 60 reserve 10; A: max 10)
-      blind_plan: {C: {share: 1.0, reserve: 70}, B2: {share: 1.0, reserve: 10, max: 60}, A2: {share: 1.0, reserve: 0, max: 10}}
+      blind_plan: {C: {share: 1.0, reserve: 60}, B2: {share: 1.0, reserve: 10, max: 60}, A2: {share: 1.0, reserve: 0, max: 0}}
     # D-47: confidence ceiling per answering entry (failover models measured far weaker: Groq gpt-oss 8% vs 30% for
     # Flash-Lite 3.1 on the same 60 units), so their labels never present as confident
     entry_conf_cap: {groq_gptoss120b: 0.5, ollama_local: 0.4, gemma4_31b: 0.7}
