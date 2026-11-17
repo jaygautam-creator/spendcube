@@ -37,3 +37,15 @@ class Limiter:
             now = time.time()
             for _ in range(self.rpm or 1):
                 self._q.append((now + seconds - 60, 0))
+
+    def available_in(self, est_tokens: int = 1000) -> float:
+        """Estimated wait until a request fits, without reserving quota."""
+        with self._lock:
+            now = time.time()
+            active = [(t, n) for t, n in self._q if now - t < 60]
+            wait = 0.0
+            if self.rpm and len(active) >= self.rpm:
+                wait = max(wait, active[0][0] + 60 - now)
+            if self.tpm and sum(n for _, n in active) + est_tokens > self.tpm and active:
+                wait = max(wait, active[0][0] + 60 - now)
+            return max(0.0, wait)

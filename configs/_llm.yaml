@@ -5,6 +5,7 @@
 classification:
   llm:
     enabled: true
+    parallel_pool: {enabled: false, entries: [gemini_flash_lite_35, gemini_flash_lite_31]}
     # D-42/D-50: per-job request budget (enforced in the router). Pool = the two Flash-Lites, capped at util_cap x RPD.
     # job budget = min(max_requests, share x (remaining pool quota - reserve)). Blind-day order C -> B2 -> A2:
     # C (this default) takes everything except the reserve kept for B2 and A2; B and A override in their configs.

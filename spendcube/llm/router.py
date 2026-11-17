@@ -76,6 +76,9 @@ class Router:
             ent.limiter = Limiter(ent.rpm, ent.tpm)
             ent.profile = resolve_key_env(ent.key_env, mode) or ent.provider
             self.entries[ent.id] = ent
+        pool_cfg = self.cfg.get("parallel_pool", {})
+        self.parallel_pool = bool(pool_cfg.get("enabled", False)) if isinstance(pool_cfg, dict) else False
+        self.parallel_ids = list(pool_cfg.get("entries", [])) if self.parallel_pool and isinstance(pool_cfg, dict) else []
         self.budget: Optional[int] = None
         self.spent = 0
         self.budget_info: dict = {}
@@ -177,9 +180,21 @@ class Router:
             oc = (self.cfg.get("outage") or {}).get("chain", ["ollama_local"])
             return [self.entries[i] for i in oc if i in self.entries and self._usable(self.entries[i])]
         ids = list(self.roles.get(role) or list(self.entries))
+        if self.parallel_pool and role in {"bulk", "top_spend"} and self.parallel_ids:
+            ids = self.parallel_ids + [i for i in ids if i not in self.parallel_ids]
         if self.cfg.get("allow_outage_models", False):
             ids += [i for i in self.cfg.get("outage_chain", []) if i not in ids]
         return [self.entries[i] for i in ids if i in self.entries and self._usable(self.entries[i])]
+
+    def _pool_candidates(self, role: str, exclude_entries: tuple, est_tokens: int) -> list[Entry]:
+        if not self.parallel_pool or role not in {"bulk", "top_spend"}:
+            return []
+        candidates = [self.entries[i] for i in self.parallel_ids if i in self.entries and i not in exclude_entries
+                      and self._usable(self.entries[i]) and
+                      (self.entries[i].rpd is None or self.ledger.requests_today(self.entries[i].profile, i) < self.entries[i].rpd)]
+        candidates.sort(key=lambda e: (e.limiter.available_in(est_tokens),
+                                       self.ledger.requests_today(e.profile, e.id)))
+        return candidates
 
     def has_llm(self, role: str) -> bool:
         return bool(self.chain(role))
@@ -215,6 +230,30 @@ class Router:
              thinking: Optional[str] = None, max_tokens: int = 4096, exclude_entries: tuple = (),
              max_wait: float = 120.0, n_units: int = 0) -> Optional[CallOutcome]:
         est = (len(system) + len(user)) // 3 + max_tokens // 4
+        if self.parallel_pool and role in {"bulk", "top_spend"}:
+            chain = self.chain(role)
+            pool_chain = [self.entries[i] for i in self.parallel_ids if i in self.entries and i not in exclude_entries]
+            candidates = list(dict.fromkeys([e.id for e in pool_chain + chain]))
+            entries = [self.entries[i] for i in candidates if i in self.entries and i not in exclude_entries]
+            # Reuse any valid cached response before dispatch, independent of which model populated it.
+            for e in entries:
+                ck = make_key(e.provider, e.model, PROMPT_VERSION, system, user, thinking or "")
+                hit = self.cache.get(ck)
+                if hit is not None:
+                    ok, _ = validate(hit["parsed"])
+                    if ok:
+                        self.stats["cache_hits"] += 1
+                        return CallOutcome(hit["parsed"], e.id, e.model, hit.get("usage", {}), cached=True)
+            pool_order = [e for e in self._pool_candidates(role, exclude_entries, est) if e.id in self.parallel_ids]
+            ordered = pool_order + [e for e in entries if e.id not in self.parallel_ids]
+            for e in ordered:
+                ck = make_key(e.provider, e.model, PROMPT_VERSION, system, user, thinking or "")
+                out = self._try_entry(e, role, system, user, schema, validate, thinking, max_tokens, est,
+                                      max_wait, ck, n_units)
+                if out is not None:
+                    return out
+            self.stats["failures"] += 1
+            return None
         for e in self.chain(role):
             if e.id in exclude_entries:
                 continue
@@ -244,14 +283,17 @@ class Router:
         for attempt in range(4):
             if e.id in self.dead:
                 return None
-            if role not in self.exempt_roles and e.id in self.pool_ids and self.budget_exhausted():
-                return None
             if e.rpd is not None and self.ledger.requests_today(e.profile, e.id) >= e.rpd:
                 self._mark_dead(e, f"daily request cap {e.rpd} reached")
                 return None
             if not e.limiter.acquire(est, max_wait):
                 log.info("limiter wait too long for %s; trying next entry", e.id)
                 return None
+            if role not in self.exempt_roles and e.id in self.pool_ids:
+                with self._lock:
+                    if self.budget is not None and self.spent >= self.budget:
+                        return None
+                    self.spent += 1       # atomic shared reservation; every ensuing provider request is billable
             call_started = time.perf_counter()
             r = prov.complete_json(system, cur_user, schema, e.model, max_tokens, thinking, self.timeout)
             elapsed_ms = round((time.perf_counter() - call_started) * 1000, 2)
@@ -259,8 +301,6 @@ class Router:
             self.ledger.record(e.profile, e.id, r.usage.get("in", 0), r.usage.get("out", 0) + r.usage.get("thinking", 0),
                                ok_call, r.error_kind)
             with self._lock:
-                if role not in self.exempt_roles and e.id in self.pool_ids:
-                    self.spent += 1
                 self.stats["calls"] += 1
                 self.stats["tok_in"] += r.usage.get("in", 0)
                 self.stats["tok_out"] += r.usage.get("out", 0) + r.usage.get("thinking", 0)
@@ -305,6 +345,9 @@ class Router:
             if kind in ("server", "timeout") and attempt < 1:   # back off once (jittered), then fail over (D-28c)
                 time.sleep(random.uniform(2.0, 8.0))
                 continue
+            if kind in ("server", "timeout"):
+                self._mark_dead(e, f"repeated {kind} failure")
+                return None
             if kind == "parse" and not repaired:
                 repaired = True
                 self.stats["repairs"] += 1
