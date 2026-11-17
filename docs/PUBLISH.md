@@ -62,3 +62,9 @@ Never use `git add -A` / `git add .`: the kit is symlinked/present in the workin
 Public repo created from a fresh orphan `main` (the local pre-publish history is kept only on the local branch
 `local-history` and is never pushed: 36 of its 52 commits contain data strings). From here on every commit on `main` is
 pushed in order; `.githooks/pre-push` blocks any push with tracked data files, key patterns, or failing leak tests.
+
+## Freeze preflight
+
+Run `scripts/freeze_check.sh` before tagging the freeze. It prints PASS/FAIL for the clean public history, leak gates,
+full tests, output row counts and validation, config loading, documentation, prompt/pool settings, and a blind doctor
+list-only check when the blind key is absent. It never makes generate calls.
