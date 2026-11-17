@@ -1,0 +1,3001 @@
+line_id,l1,l2,l3,l4,true_exclusion,net_usd,true_spend_usd
+C000001,Clinical Supplies,Consumables,Gloves and PPE,,,196.72,196.72
+C000002,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,27728.20,27728.20
+C000003,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,1796.28,1796.28
+C000004,IT,Hardware,,,,1580.64,1580.64
+C000005,IT,Software,Licences,,,12199.73,12199.73
+C000006,Professional Services,Consulting,Management Consulting,,,2289.83,2289.83
+C000007,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,1867.80,1867.80
+C000008,Professional Services,Consulting,Management Consulting,,,14556.05,14556.05
+C000009,Food and Catering,,,,,1946.02,1946.02
+C000010,IT,Software,Licences,,,2496.65,2496.65
+C000011,IT,Software,Licences,,NOT_APPROVED,7315.04,0.00
+C000012,Pharmaceuticals,Generics,,,,2584.16,2584.16
+C000013,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,4160.98,4160.98
+C000014,Pharmaceuticals,Oncology,Chemotherapy Agents,,,1791.09,1791.09
+C000015,Pharmaceuticals,Oncology,Chemotherapy Agents,,,677.47,677.47
+C000016,Food and Catering,,,,,11488.04,11488.04
+C000017,Pharmaceuticals,Oncology,Chemotherapy Agents,,,1659.74,1659.74
+C000018,,,,,NON_PROCUREMENT,9273.47,0.00
+C000019,Clinical Supplies,Consumables,Gloves and PPE,,,423.36,423.36
+C000020,IT,Hardware,,,,1998.10,1998.10
+C000021,Professional Services,Consulting,Management Consulting,,NOT_APPROVED,7767.10,0.00
+C000022,Clinical Supplies,Consumables,Gloves and PPE,,,423.45,423.45
+C000023,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,7123.79,7123.79
+C000024,Professional Services,Consulting,Management Consulting,,,56734.33,56734.33
+C000025,Pharmaceuticals,Oncology,Chemotherapy Agents,,,925.83,925.83
+C000026,Pharmaceuticals,Generics,,,,28.90,28.90
+C000027,IT,Software,Licences,,,15117.01,15117.01
+C000028,Food and Catering,,,,,3553.65,3553.65
+C000029,Food and Catering,,,,,450.35,450.35
+C000030,Facilities,Cleaning Services,,,,3198.52,3198.52
+C000031,IT,Hardware,,,,641.61,641.61
+C000032,,,,,NON_PROCUREMENT,11591.39,0.00
+C000033,IT,Hardware,,,,3462.44,3462.44
+C000034,IT,Software,Licences,,,8891.23,8891.23
+C000035,Professional Services,Legal,,,NOT_APPROVED,6712.01,0.00
+C000036,IT,Software,Licences,,,687.15,687.15
+C000037,IT,Software,Licences,,,10962.71,10962.71
+C000038,Clinical Supplies,Implants,Cardiac,Stents,,3782.83,3782.83
+C000039,Clinical Supplies,Consumables,Wound Care,,NOT_APPROVED,323.40,0.00
+C000040,Clinical Supplies,Consumables,Gloves and PPE,,,201.92,201.92
+C000041,Facilities,Cleaning Services,,,,2355.42,2355.42
+C000042,IT,Hardware,,,,8035.30,8035.30
+C000043,Facilities,Cleaning Services,,,,2002.47,2002.47
+C000044,,,,,NON_PROCUREMENT,13379.18,0.00
+C000045,Clinical Supplies,Consumables,Gloves and PPE,,,281.53,281.53
+C000046,Facilities,Cleaning Services,,,,1408.75,1408.75
+C000047,Professional Services,Legal,,,,4605.15,4605.15
+C000048,IT,Hardware,,,,2558.92,2558.92
+C000049,Pharmaceuticals,Generics,,,,148.64,148.64
+C000050,Facilities,Maintenance,HVAC,,NOT_APPROVED,1750.95,0.00
+C000051,Clinical Supplies,Implants,Cardiac,Stents,CANCELLED,1052.67,0.00
+C000052,Pharmaceuticals,Generics,,,,745.90,745.90
+C000053,Professional Services,Consulting,Management Consulting,,,5615.73,5615.73
+C000054,Pharmaceuticals,Oncology,Chemotherapy Agents,,,11858.97,11858.97
+C000055,Pharmaceuticals,Oncology,Chemotherapy Agents,,,845.79,845.79
+C000056,Pharmaceuticals,Generics,,,,484.23,484.23
+C000057,IT,Hardware,,,,2160.72,2160.72
+C000058,Facilities,Cleaning Services,,,,211.45,211.45
+C000059,Facilities,Maintenance,HVAC,,,2402.68,2402.68
+C000060,Facilities,Cleaning Services,,,,6879.26,6879.26
+C000061,Clinical Supplies,Consumables,Wound Care,,,103.07,103.07
+C000062,Professional Services,Consulting,Management Consulting,,,8765.83,8765.83
+C000063,Clinical Supplies,Implants,Cardiac,Stents,,8119.46,8119.46
+C000064,Professional Services,Consulting,Management Consulting,,,2232.55,2232.55
+C000065,Pharmaceuticals,Generics,,,NOT_APPROVED,2881.97,0.00
+C000066,Clinical Supplies,Consumables,Wound Care,,,227.19,227.19
+C000067,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,6224.90,6224.90
+C000068,IT,Hardware,,,,15168.98,15168.98
+C000069,Professional Services,Legal,,,,6464.73,6464.73
+C000070,Clinical Supplies,Consumables,Gloves and PPE,,,154.91,154.91
+C000071,Pharmaceuticals,Generics,,,,80.24,80.24
+C000072,Clinical Supplies,Implants,Cardiac,Stents,,1932.83,1932.83
+C000073,,,,,NON_PROCUREMENT,18227.62,0.00
+C000074,Facilities,Maintenance,HVAC,,,3196.82,3196.82
+C000075,IT,Hardware,,,,15397.70,15397.70
+C000076,Clinical Supplies,Implants,Cardiac,Stents,NOT_APPROVED,3745.15,0.00
+C000077,IT,Hardware,,,,3146.62,3146.62
+C000078,Facilities,Maintenance,HVAC,,,280.67,280.67
+C000079,Food and Catering,,,,,156.70,156.70
+C000080,Clinical Supplies,Implants,Cardiac,Stents,,6451.05,6451.05
+C000081,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,3554.36,3554.36
+C000082,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,4861.86,4861.86
+C000083,Facilities,Maintenance,HVAC,,,2072.07,2072.07
+C000084,Clinical Supplies,Implants,Cardiac,Stents,,3645.38,3645.38
+C000085,Clinical Supplies,Consumables,Wound Care,,,147.11,147.11
+C000086,Clinical Supplies,Consumables,Wound Care,,,256.25,256.25
+C000087,,,,,NON_PROCUREMENT,760.87,0.00
+C000088,Professional Services,Consulting,Management Consulting,,,64616.09,64616.09
+C000089,Facilities,Cleaning Services,,,,20933.15,20933.15
+C000090,Professional Services,Legal,,,,6880.18,6880.18
+C000091,Pharmaceuticals,Oncology,Chemotherapy Agents,,,19308.86,19308.86
+C000092,,,,,NON_PROCUREMENT,16053.77,0.00
+C000093,Facilities,Cleaning Services,,,,3209.12,3209.12
+C000094,Professional Services,Consulting,Management Consulting,,,12429.54,12429.54
+C000095,Clinical Supplies,Consumables,Wound Care,,,90.74,90.74
+C000096,Professional Services,Consulting,Management Consulting,,,55299.38,55299.38
+C000097,Professional Services,Consulting,Management Consulting,,NOT_APPROVED,10815.49,0.00
+C000098,Pharmaceuticals,Generics,,,NOT_APPROVED,274.93,0.00
+C000099,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,11504.38,11504.38
+C000100,Pharmaceuticals,Oncology,Chemotherapy Agents,,,3084.99,3084.99
+C000101,IT,Software,Licences,,,3784.34,3784.34
+C000102,Facilities,Cleaning Services,,,,3744.75,3744.75
+C000103,Pharmaceuticals,Oncology,Chemotherapy Agents,,,1372.05,1372.05
+C000104,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2854.77,2854.77
+C000105,Clinical Supplies,Consumables,Wound Care,,,540.36,540.36
+C000106,Food and Catering,,,,,4140.15,4140.15
+C000107,IT,Software,Licences,,,3927.86,3927.86
+C000108,Pharmaceuticals,Oncology,Chemotherapy Agents,,CANCELLED,4501.52,0.00
+C000109,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,18212.12,18212.12
+C000110,Professional Services,Consulting,Management Consulting,,,10012.76,10012.76
+C000111,Clinical Supplies,Consumables,Gloves and PPE,,,803.96,803.96
+C000112,Facilities,Cleaning Services,,,,4761.45,4761.45
+C000113,Professional Services,Consulting,Management Consulting,,,17430.11,17430.11
+C000114,Clinical Supplies,Consumables,Gloves and PPE,,,383.30,383.30
+C000115,Professional Services,Consulting,Management Consulting,,,8955.78,8955.78
+C000116,Pharmaceuticals,Oncology,Chemotherapy Agents,,,1181.10,1181.10
+C000117,Clinical Supplies,Implants,Orthopaedic,Hip Systems,NOT_APPROVED,5658.50,0.00
+C000118,Facilities,Cleaning Services,,,,9065.50,9065.50
+C000119,Clinical Supplies,Implants,Cardiac,Stents,,8787.92,8787.92
+C000120,IT,Hardware,,,,2358.35,2358.35
+C000121,Food and Catering,,,,,687.52,687.52
+C000122,Facilities,Cleaning Services,,,,20861.51,20861.51
+C000123,IT,Software,Licences,,,1392.95,1392.95
+C000124,Facilities,Cleaning Services,,,,2272.27,2272.27
+C000125,IT,Software,Licences,,,7432.23,7432.23
+C000126,Pharmaceuticals,Oncology,Chemotherapy Agents,,,4079.64,4079.64
+C000127,Professional Services,Legal,,,,3831.86,3831.86
+C000128,Professional Services,Consulting,Management Consulting,,,10519.97,10519.97
+C000129,Food and Catering,,,,,2364.65,2364.65
+C000130,Facilities,Maintenance,HVAC,,,5632.56,5632.56
+C000131,Professional Services,Consulting,Management Consulting,,,48884.24,48884.24
+C000132,Facilities,Cleaning Services,,,NOT_APPROVED,4467.43,0.00
+C000133,Pharmaceuticals,Generics,,,,970.24,970.24
+C000134,Food and Catering,,,,,2451.18,2451.18
+C000135,IT,Software,Licences,,,10993.23,10993.23
+C000136,Pharmaceuticals,Generics,,,CANCELLED,913.62,0.00
+C000137,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,8885.75,8885.75
+C000138,Clinical Supplies,Consumables,Gloves and PPE,,,496.00,496.00
+C000139,Clinical Supplies,Implants,Cardiac,Stents,,2246.36,2246.36
+C000140,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,3870.72,3870.72
+C000141,Pharmaceuticals,Generics,,,,949.08,949.08
+C000142,Clinical Supplies,Consumables,Wound Care,,,186.52,186.52
+C000143,IT,Software,Licences,,,16881.61,16881.61
+C000144,Clinical Supplies,Consumables,Wound Care,,,281.55,281.55
+C000145,Facilities,Maintenance,HVAC,,,5448.11,5448.11
+C000146,Clinical Supplies,Consumables,Gloves and PPE,,,677.91,677.91
+C000147,Professional Services,Consulting,Management Consulting,,,10082.93,10082.93
+C000148,Clinical Supplies,Consumables,Gloves and PPE,,,122.63,122.63
+C000149,IT,Software,Licences,,,10462.97,10462.97
+C000150,Food and Catering,,,,,338.84,338.84
+C000151,IT,Software,Licences,,,1441.26,1441.26
+C000152,Facilities,Cleaning Services,,,,606.00,606.00
+C000153,Facilities,Cleaning Services,,,,786.97,786.97
+C000154,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,4757.29,4757.29
+C000155,Food and Catering,,,,CANCELLED,656.78,0.00
+C000156,IT,Software,Licences,,,2327.67,2327.67
+C000157,Food and Catering,,,,,312.72,312.72
+C000158,Professional Services,Legal,,,,7660.32,7660.32
+C000159,IT,Software,Licences,,,8029.68,8029.68
+C000160,Facilities,Maintenance,HVAC,,NOT_APPROVED,3873.47,0.00
+C000161,Pharmaceuticals,Oncology,Chemotherapy Agents,,,11799.80,11799.80
+C000162,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,5938.44,5938.44
+C000163,Pharmaceuticals,Oncology,Chemotherapy Agents,,,6433.08,6433.08
+C000164,Professional Services,Legal,,,NOT_APPROVED,7964.51,0.00
+C000165,Food and Catering,,,,,1428.32,1428.32
+C000166,Professional Services,Consulting,Management Consulting,,CANCELLED,15132.07,0.00
+C000167,Pharmaceuticals,Oncology,Chemotherapy Agents,,,3523.36,3523.36
+C000168,Food and Catering,,,,,2122.14,2122.14
+C000169,Clinical Supplies,Consumables,Gloves and PPE,,,383.71,383.71
+C000170,Facilities,Maintenance,HVAC,,NOT_APPROVED,2972.16,0.00
+C000171,Professional Services,Consulting,Management Consulting,,,8822.80,8822.80
+C000172,,,,,NON_PROCUREMENT,15325.21,0.00
+C000173,Pharmaceuticals,Oncology,Chemotherapy Agents,,,9972.53,9972.53
+C000174,Professional Services,Legal,,,,1966.80,1966.80
+C000175,Pharmaceuticals,Oncology,Chemotherapy Agents,,,21748.46,21748.46
+C000176,Facilities,Maintenance,HVAC,,,2335.24,2335.24
+C000177,Facilities,Cleaning Services,,,NOT_APPROVED,728.61,0.00
+C000178,IT,Hardware,,,,1438.61,1438.61
+C000179,Facilities,Cleaning Services,,,,4547.44,4547.44
+C000180,Food and Catering,,,,,765.51,765.51
+C000181,Clinical Supplies,Consumables,Gloves and PPE,,,79.12,79.12
+C000182,IT,Software,Licences,,,8789.99,8789.99
+C000183,IT,Hardware,,,,2546.64,2546.64
+C000184,Professional Services,Legal,,,,10323.34,10323.34
+C000185,Clinical Supplies,Implants,Cardiac,Stents,,2746.46,2746.46
+C000186,Clinical Supplies,Consumables,Wound Care,,,123.72,123.72
+C000187,,,,,NON_PROCUREMENT,16939.76,0.00
+C000188,Clinical Supplies,Implants,Cardiac,Stents,,3694.78,3694.78
+C000189,Facilities,Cleaning Services,,,NOT_APPROVED,1018.80,0.00
+C000190,IT,Hardware,,,,19030.16,19030.16
+C000191,Clinical Supplies,Implants,Cardiac,Stents,,3949.18,3949.18
+C000192,Clinical Supplies,Implants,Orthopaedic,Hip Systems,CANCELLED,18501.66,0.00
+C000193,Professional Services,Consulting,Management Consulting,,,14439.17,14439.17
+C000194,Pharmaceuticals,Oncology,Chemotherapy Agents,,,4442.87,4442.87
+C000195,IT,Software,Licences,,,4127.13,4127.13
+C000196,,,,,NON_PROCUREMENT,9053.32,0.00
+C000197,,,,,NON_PROCUREMENT,1307.11,0.00
+C000198,Clinical Supplies,Implants,Cardiac,Stents,,2517.14,2517.14
+C000199,Clinical Supplies,Implants,Cardiac,Stents,,3623.90,3623.90
+C000200,Clinical Supplies,Implants,Cardiac,Stents,,2075.18,2075.18
+C000201,Professional Services,Consulting,Management Consulting,,,18268.04,18268.04
+C000202,Food and Catering,,,,,9371.03,9371.03
+C000203,Clinical Supplies,Consumables,Gloves and PPE,,,914.53,914.53
+C000204,Clinical Supplies,Implants,Cardiac,Stents,,2236.20,2236.20
+C000205,IT,Hardware,,,,3349.32,3349.32
+C000206,Pharmaceuticals,Generics,,,,487.27,487.27
+C000207,Pharmaceuticals,Generics,,,,572.65,572.65
+C000208,Professional Services,Legal,,,,27716.41,27716.41
+C000209,Pharmaceuticals,Generics,,,,626.43,626.43
+C000210,Facilities,Cleaning Services,,,,24996.94,24996.94
+C000211,Pharmaceuticals,Oncology,Chemotherapy Agents,,,1652.73,1652.73
+C000212,Food and Catering,,,,,1245.89,1245.89
+C000213,Professional Services,Consulting,Management Consulting,,,10610.54,10610.54
+C000214,Professional Services,Consulting,Management Consulting,,,10818.21,10818.21
+C000215,IT,Hardware,,,,19360.51,19360.51
+C000216,Professional Services,Consulting,Management Consulting,,,10338.46,10338.46
+C000217,Professional Services,Consulting,Management Consulting,,,12583.03,12583.03
+C000218,Clinical Supplies,Consumables,Gloves and PPE,,NOT_APPROVED,356.83,0.00
+C000219,Clinical Supplies,Consumables,Gloves and PPE,,,161.75,161.75
+C000220,IT,Hardware,,,,5888.05,5888.05
+C000221,Clinical Supplies,Consumables,Gloves and PPE,,CANCELLED,320.52,0.00
+C000222,IT,Software,Licences,,,2764.37,2764.37
+C000223,Food and Catering,,,,,7111.76,7111.76
+C000224,Pharmaceuticals,Oncology,Chemotherapy Agents,,,8028.97,8028.97
+C000225,Clinical Supplies,Consumables,Gloves and PPE,,NOT_APPROVED,1988.28,0.00
+C000226,Facilities,Cleaning Services,,,,1539.52,1539.52
+C000227,Pharmaceuticals,Generics,,,,889.34,889.34
+C000228,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,5001.17,5001.17
+C000229,Facilities,Maintenance,HVAC,,,1766.00,1766.00
+C000230,IT,Software,Licences,,,1246.73,1246.73
+C000231,Facilities,Maintenance,HVAC,,,5512.42,5512.42
+C000232,Food and Catering,,,,,3326.17,3326.17
+C000233,Clinical Supplies,Consumables,Wound Care,,,241.92,241.92
+C000234,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,5195.03,5195.03
+C000235,Food and Catering,,,,,792.30,792.30
+C000236,Professional Services,Consulting,Management Consulting,,,7350.09,7350.09
+C000237,Facilities,Cleaning Services,,,,878.54,878.54
+C000238,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,2701.75,2701.75
+C000239,IT,Hardware,,,,3641.84,3641.84
+C000240,Food and Catering,,,,,2367.15,2367.15
+C000241,IT,Hardware,,,NOT_APPROVED,1482.62,0.00
+C000242,Clinical Supplies,Consumables,Gloves and PPE,,,324.40,324.40
+C000243,Facilities,Maintenance,HVAC,,,9811.17,9811.17
+C000244,Clinical Supplies,Implants,Orthopaedic,Hip Systems,NOT_APPROVED,2741.94,0.00
+C000245,Facilities,Maintenance,HVAC,,NOT_APPROVED,13580.60,0.00
+C000246,Food and Catering,,,,,216.45,216.45
+C000247,Clinical Supplies,Implants,Cardiac,Stents,,2823.85,2823.85
+C000248,Pharmaceuticals,Oncology,Chemotherapy Agents,,,3049.47,3049.47
+C000249,Facilities,Cleaning Services,,,,4838.36,4838.36
+C000250,Food and Catering,,,,,4499.83,4499.83
+C000251,Food and Catering,,,,,1396.97,1396.97
+C000252,Clinical Supplies,Consumables,Gloves and PPE,,,21.95,21.95
+C000253,Professional Services,Consulting,Management Consulting,,,26788.98,26788.98
+C000254,IT,Hardware,,,,259.80,259.80
+C000255,Professional Services,Legal,,,,4957.22,4957.22
+C000256,Professional Services,Consulting,Management Consulting,,,43387.27,43387.27
+C000257,Clinical Supplies,Implants,Cardiac,Stents,,3654.65,3654.65
+C000258,IT,Software,Licences,,NOT_APPROVED,4201.24,0.00
+C000259,IT,Hardware,,,,1098.11,1098.11
+C000260,Clinical Supplies,Implants,Cardiac,Stents,,4671.91,4671.91
+C000261,Clinical Supplies,Consumables,Wound Care,,,278.66,278.66
+C000262,Facilities,Maintenance,HVAC,,,2114.93,2114.93
+C000263,Pharmaceuticals,Generics,,,NOT_APPROVED,769.47,0.00
+C000264,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,1927.18,1927.18
+C000265,,,,,NON_PROCUREMENT,5312.04,0.00
+C000266,Professional Services,Consulting,Management Consulting,,,8541.43,8541.43
+C000267,Professional Services,Consulting,Management Consulting,,,14227.59,14227.59
+C000268,Pharmaceuticals,Generics,,,,604.71,604.71
+C000269,IT,Hardware,,,,2368.51,2368.51
+C000270,Professional Services,Legal,,,,9940.93,9940.93
+C000271,,,,,NON_PROCUREMENT,19056.68,0.00
+C000272,Professional Services,Legal,,,,3880.27,3880.27
+C000273,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,5619.83,5619.83
+C000274,Clinical Supplies,Consumables,Wound Care,,,23.88,23.88
+C000275,Facilities,Cleaning Services,,,,2259.70,2259.70
+C000276,Pharmaceuticals,Oncology,Chemotherapy Agents,,,3169.25,3169.25
+C000277,Pharmaceuticals,Oncology,Chemotherapy Agents,,,3419.83,3419.83
+C000278,Professional Services,Consulting,Management Consulting,,NOT_APPROVED,19658.17,0.00
+C000279,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,5542.08,5542.08
+C000280,Pharmaceuticals,Oncology,Chemotherapy Agents,,,9764.02,9764.02
+C000281,Clinical Supplies,Consumables,Gloves and PPE,,,333.73,333.73
+C000282,Pharmaceuticals,Generics,,,,160.74,160.74
+C000283,Clinical Supplies,Consumables,Gloves and PPE,,,186.95,186.95
+C000284,Food and Catering,,,,,1617.56,1617.56
+C000285,Clinical Supplies,Implants,Orthopaedic,Hip Systems,NOT_APPROVED,6151.51,0.00
+C000286,Professional Services,Consulting,Management Consulting,,,26685.24,26685.24
+C000287,IT,Software,Licences,,,12989.67,12989.67
+C000288,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,5942.62,5942.62
+C000289,Facilities,Cleaning Services,,,,720.18,720.18
+C000290,Clinical Supplies,Implants,Cardiac,Stents,,3152.15,3152.15
+C000291,Clinical Supplies,Implants,Cardiac,Stents,,1228.10,1228.10
+C000292,Professional Services,Legal,,,,36485.29,36485.29
+C000293,Clinical Supplies,Implants,Cardiac,Stents,NOT_APPROVED,5791.67,0.00
+C000294,Clinical Supplies,Consumables,Gloves and PPE,,,165.85,165.85
+C000295,Food and Catering,,,,,1591.25,1591.25
+C000296,Facilities,Cleaning Services,,,,3274.64,3274.64
+C000297,IT,Software,Licences,,,3455.42,3455.42
+C000298,Facilities,Cleaning Services,,,NOT_APPROVED,3007.78,0.00
+C000299,Clinical Supplies,Consumables,Gloves and PPE,,,1039.77,1039.77
+C000300,Clinical Supplies,Consumables,Gloves and PPE,,,179.28,179.28
+C000301,IT,Hardware,,,,631.16,631.16
+C000302,Clinical Supplies,Consumables,Wound Care,,,153.81,153.81
+C000303,Professional Services,Consulting,Management Consulting,,,8624.59,8624.59
+C000304,Food and Catering,,,,,154.33,154.33
+C000305,Pharmaceuticals,Oncology,Chemotherapy Agents,,NOT_APPROVED,3790.72,0.00
+C000306,Clinical Supplies,Consumables,Wound Care,,,15.30,15.30
+C000307,Professional Services,Consulting,Management Consulting,,,9300.39,9300.39
+C000308,Professional Services,Consulting,Management Consulting,,,11284.96,11284.96
+C000309,Clinical Supplies,Consumables,Wound Care,,,151.88,151.88
+C000310,Clinical Supplies,Implants,Cardiac,Stents,CANCELLED,13399.30,0.00
+C000311,Professional Services,Consulting,Management Consulting,,,10656.81,10656.81
+C000312,Clinical Supplies,Consumables,Gloves and PPE,,,1056.61,1056.61
+C000313,Professional Services,Consulting,Management Consulting,,,1300.02,1300.02
+C000314,Professional Services,Consulting,Management Consulting,,,1029.07,1029.07
+C000315,Clinical Supplies,Implants,Cardiac,Stents,,1986.92,1986.92
+C000316,Pharmaceuticals,Generics,,,,325.91,325.91
+C000317,IT,Software,Licences,,,8673.89,8673.89
+C000318,Pharmaceuticals,Generics,,,,628.86,628.86
+C000319,Clinical Supplies,Consumables,Wound Care,,,211.32,211.32
+C000320,Professional Services,Consulting,Management Consulting,,,13682.99,13682.99
+C000321,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,1951.62,1951.62
+C000322,Clinical Supplies,Implants,Cardiac,Stents,,3088.75,3088.75
+C000323,Pharmaceuticals,Oncology,Chemotherapy Agents,,,3278.22,3278.22
+C000324,Food and Catering,,,,NOT_APPROVED,220.84,0.00
+C000325,IT,Software,Licences,,,24015.80,24015.80
+C000326,Clinical Supplies,Implants,Cardiac,Stents,,7124.02,7124.02
+C000327,Clinical Supplies,Consumables,Wound Care,,,225.51,225.51
+C000328,IT,Hardware,,,,2078.30,2078.30
+C000329,Pharmaceuticals,Generics,,,,552.85,552.85
+C000330,Clinical Supplies,Consumables,Gloves and PPE,,,285.05,285.05
+C000331,IT,Hardware,,,,1641.53,1641.53
+C000332,Food and Catering,,,,,803.51,803.51
+C000333,Clinical Supplies,Consumables,Wound Care,,,38.10,38.10
+C000334,IT,Software,Licences,,,33994.01,33994.01
+C000335,IT,Hardware,,,,762.08,762.08
+C000336,,,,,NON_PROCUREMENT,4703.85,0.00
+C000337,Professional Services,Consulting,Management Consulting,,,1582.95,1582.95
+C000338,Professional Services,Consulting,Management Consulting,,,2771.07,2771.07
+C000339,Pharmaceuticals,Generics,,,,497.34,497.34
+C000340,IT,Hardware,,,,2941.07,2941.07
+C000341,Pharmaceuticals,Generics,,,,1029.07,1029.07
+C000342,Professional Services,Legal,,,,7947.27,7947.27
+C000343,IT,Hardware,,,,3253.04,3253.04
+C000344,Clinical Supplies,Implants,Cardiac,Stents,,7074.07,7074.07
+C000345,IT,Software,Licences,,,5771.18,5771.18
+C000346,Professional Services,Consulting,Management Consulting,,NOT_APPROVED,12072.25,0.00
+C000347,Pharmaceuticals,Generics,,,,244.35,244.35
+C000348,IT,Hardware,,,,17805.55,17805.55
+C000349,Facilities,Cleaning Services,,,,4427.98,4427.98
+C000350,Facilities,Maintenance,HVAC,,,2807.86,2807.86
+C000351,IT,Hardware,,,,3026.78,3026.78
+C000352,Clinical Supplies,Implants,Cardiac,Stents,,5352.04,5352.04
+C000353,Pharmaceuticals,Oncology,Chemotherapy Agents,,,4431.67,4431.67
+C000354,IT,Software,Licences,,,1594.84,1594.84
+C000355,Facilities,Cleaning Services,,,,4418.83,4418.83
+C000356,IT,Hardware,,,,1470.84,1470.84
+C000357,Food and Catering,,,,,10385.59,10385.59
+C000358,Professional Services,Legal,,,,1361.00,1361.00
+C000359,Facilities,Maintenance,HVAC,,,676.13,676.13
+C000360,Facilities,Maintenance,HVAC,,NOT_APPROVED,1285.09,0.00
+C000361,Clinical Supplies,Consumables,Wound Care,,CANCELLED,37.50,0.00
+C000362,Food and Catering,,,,,2069.41,2069.41
+C000363,Facilities,Cleaning Services,,,,726.96,726.96
+C000364,Facilities,Maintenance,HVAC,,,2603.05,2603.05
+C000365,Facilities,Cleaning Services,,,,2783.51,2783.51
+C000366,IT,Software,Licences,,,10825.81,10825.81
+C000367,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,4758.02,4758.02
+C000368,,,,,NON_PROCUREMENT,10852.43,0.00
+C000369,Professional Services,Legal,,,,7831.49,7831.49
+C000370,Facilities,Maintenance,HVAC,,,2496.23,2496.23
+C000371,Facilities,Cleaning Services,,,,24189.93,24189.93
+C000372,Professional Services,Consulting,Management Consulting,,NOT_APPROVED,18913.09,0.00
+C000373,Professional Services,Consulting,Management Consulting,,,5688.09,5688.09
+C000374,IT,Hardware,,,,8453.36,8453.36
+C000375,Clinical Supplies,Implants,Cardiac,Stents,,3355.61,3355.61
+C000376,IT,Software,Licences,,,1314.68,1314.68
+C000377,Professional Services,Legal,,,NOT_APPROVED,2882.95,0.00
+C000378,Clinical Supplies,Consumables,Gloves and PPE,,,45.93,45.93
+C000379,Professional Services,Legal,,,NOT_APPROVED,1627.50,0.00
+C000380,,,,,NON_PROCUREMENT,11833.16,0.00
+C000381,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,3425.64,3425.64
+C000382,Facilities,Maintenance,HVAC,,,976.64,976.64
+C000383,Facilities,Cleaning Services,,,NOT_APPROVED,1466.95,0.00
+C000384,,,,,NON_PROCUREMENT,3088.83,0.00
+C000385,Clinical Supplies,Implants,Cardiac,Stents,,2071.93,2071.93
+C000386,Clinical Supplies,Consumables,Gloves and PPE,,,285.90,285.90
+C000387,Facilities,Maintenance,HVAC,,NOT_APPROVED,11055.29,0.00
+C000388,Pharmaceuticals,Oncology,Chemotherapy Agents,,,21067.12,21067.12
+C000389,Professional Services,Legal,,,,7639.14,7639.14
+C000390,Pharmaceuticals,Generics,,,,889.36,889.36
+C000391,Pharmaceuticals,Generics,,,,2287.37,2287.37
+C000392,Professional Services,Consulting,Management Consulting,,CANCELLED,30533.99,0.00
+C000393,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,3129.39,3129.39
+C000394,IT,Software,Licences,,,7806.48,7806.48
+C000395,Pharmaceuticals,Generics,,,,1192.41,1192.41
+C000396,Clinical Supplies,Consumables,Gloves and PPE,,,80.88,80.88
+C000397,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,2418.42,2418.42
+C000398,Pharmaceuticals,Oncology,Chemotherapy Agents,,,3248.37,3248.37
+C000399,Professional Services,Legal,,,,15349.86,15349.86
+C000400,Facilities,Cleaning Services,,,,654.65,654.65
+C000401,Professional Services,Legal,,,,10209.17,10209.17
+C000402,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,1631.36,1631.36
+C000403,Clinical Supplies,Consumables,Wound Care,,NOT_APPROVED,195.45,0.00
+C000404,Clinical Supplies,Consumables,Wound Care,,,120.55,120.55
+C000405,Professional Services,Legal,,,,5586.03,5586.03
+C000406,Pharmaceuticals,Oncology,Chemotherapy Agents,,,4631.13,4631.13
+C000407,Facilities,Maintenance,HVAC,,,1880.39,1880.39
+C000408,Facilities,Maintenance,HVAC,,,12853.16,12853.16
+C000409,Clinical Supplies,Implants,Cardiac,Stents,,14062.53,14062.53
+C000410,IT,Hardware,,,,18238.84,18238.84
+C000411,Pharmaceuticals,Oncology,Chemotherapy Agents,,CANCELLED,8227.63,0.00
+C000412,Professional Services,Consulting,Management Consulting,,,25210.35,25210.35
+C000413,Facilities,Maintenance,HVAC,,,457.00,457.00
+C000414,Professional Services,Legal,,,,3873.92,3873.92
+C000415,Facilities,Cleaning Services,,,,4556.08,4556.08
+C000416,Professional Services,Legal,,,,17071.26,17071.26
+C000417,Food and Catering,,,,NOT_APPROVED,617.75,0.00
+C000418,Clinical Supplies,Implants,Cardiac,Stents,,4217.74,4217.74
+C000419,Facilities,Maintenance,HVAC,,,11745.27,11745.27
+C000420,Clinical Supplies,Consumables,Gloves and PPE,,,714.56,714.56
+C000421,Facilities,Maintenance,HVAC,,,2262.18,2262.18
+C000422,Facilities,Cleaning Services,,,,4400.09,4400.09
+C000423,Facilities,Maintenance,HVAC,,,5141.70,5141.70
+C000424,Professional Services,Consulting,Management Consulting,,,7847.76,7847.76
+C000425,Facilities,Maintenance,HVAC,,CANCELLED,2868.10,0.00
+C000426,IT,Software,Licences,,,33672.95,33672.95
+C000427,Professional Services,Consulting,Management Consulting,,,3834.27,3834.27
+C000428,Professional Services,Legal,,,,14968.00,14968.00
+C000429,Food and Catering,,,,,10620.28,10620.28
+C000430,Clinical Supplies,Implants,Cardiac,Stents,NOT_APPROVED,3422.89,0.00
+C000431,Clinical Supplies,Consumables,Gloves and PPE,,,51.30,51.30
+C000432,Facilities,Cleaning Services,,,NOT_APPROVED,2093.11,0.00
+C000433,Clinical Supplies,Consumables,Gloves and PPE,,,1511.12,1511.12
+C000434,Facilities,Maintenance,HVAC,,,8598.63,8598.63
+C000435,IT,Hardware,,,,3041.89,3041.89
+C000436,Clinical Supplies,Consumables,Wound Care,,,295.50,295.50
+C000437,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,5247.52,5247.52
+C000438,Clinical Supplies,Consumables,Gloves and PPE,,,267.28,267.28
+C000439,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,6863.45,6863.45
+C000440,Clinical Supplies,Consumables,Wound Care,,,75.12,75.12
+C000441,Clinical Supplies,Implants,Orthopaedic,Hip Systems,NOT_APPROVED,4477.55,0.00
+C000442,IT,Software,Licences,,,29684.81,29684.81
+C000443,Professional Services,Consulting,Management Consulting,,,2036.01,2036.01
+C000444,Professional Services,Legal,,,,6046.32,6046.32
+C000445,,,,,NON_PROCUREMENT,8941.21,0.00
+C000446,Clinical Supplies,Consumables,Gloves and PPE,,,225.96,225.96
+C000447,Facilities,Cleaning Services,,,CANCELLED,1415.91,0.00
+C000448,Professional Services,Consulting,Management Consulting,,,9805.28,9805.28
+C000449,Facilities,Cleaning Services,,,,4406.87,4406.87
+C000450,Clinical Supplies,Consumables,Gloves and PPE,,,179.24,179.24
+C000451,Clinical Supplies,Consumables,Gloves and PPE,,CANCELLED,157.49,0.00
+C000452,Clinical Supplies,Consumables,Gloves and PPE,,,38.85,38.85
+C000453,Pharmaceuticals,Oncology,Chemotherapy Agents,,,1771.05,1771.05
+C000454,Facilities,Cleaning Services,,,,5630.93,5630.93
+C000455,Pharmaceuticals,Oncology,Chemotherapy Agents,,,11817.22,11817.22
+C000456,IT,Software,Licences,,,1419.60,1419.60
+C000457,Clinical Supplies,Implants,Orthopaedic,Hip Systems,NOT_APPROVED,10054.20,0.00
+C000458,Clinical Supplies,Consumables,Wound Care,,NOT_APPROVED,578.77,0.00
+C000459,,,,,NON_PROCUREMENT,7762.90,0.00
+C000460,Pharmaceuticals,Oncology,Chemotherapy Agents,,,338.51,338.51
+C000461,Professional Services,Consulting,Management Consulting,,,5482.66,5482.66
+C000462,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,3089.37,3089.37
+C000463,Pharmaceuticals,Generics,,,,227.35,227.35
+C000464,Clinical Supplies,Consumables,Wound Care,,,250.90,250.90
+C000465,Clinical Supplies,Implants,Cardiac,Stents,,2305.45,2305.45
+C000466,Pharmaceuticals,Generics,,,NOT_APPROVED,585.58,0.00
+C000467,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2755.50,2755.50
+C000468,Clinical Supplies,Consumables,Gloves and PPE,,,487.15,487.15
+C000469,Food and Catering,,,,,1280.66,1280.66
+C000470,Clinical Supplies,Consumables,Wound Care,,,145.23,145.23
+C000471,IT,Hardware,,,NOT_APPROVED,1896.32,0.00
+C000472,Food and Catering,,,,,4988.51,4988.51
+C000473,Facilities,Maintenance,HVAC,,,11086.08,11086.08
+C000474,Food and Catering,,,,NOT_APPROVED,1365.05,0.00
+C000475,Clinical Supplies,Consumables,Gloves and PPE,,,329.52,329.52
+C000476,IT,Software,Licences,,,2806.48,2806.48
+C000477,Clinical Supplies,Consumables,Gloves and PPE,,,196.12,196.12
+C000478,Professional Services,Legal,,,NOT_APPROVED,8662.83,0.00
+C000479,IT,Hardware,,,,2309.45,2309.45
+C000480,Food and Catering,,,,,664.39,664.39
+C000481,Clinical Supplies,Consumables,Gloves and PPE,,,34.23,34.23
+C000482,Clinical Supplies,Consumables,Wound Care,,,146.70,146.70
+C000483,Facilities,Maintenance,HVAC,,CANCELLED,335.97,0.00
+C000484,IT,Software,Licences,,,1396.76,1396.76
+C000485,Clinical Supplies,Consumables,Wound Care,,,242.48,242.48
+C000486,Facilities,Cleaning Services,,,NOT_APPROVED,2532.49,0.00
+C000487,Food and Catering,,,,,109.39,109.39
+C000488,Food and Catering,,,,NOT_APPROVED,1803.27,0.00
+C000489,Clinical Supplies,Implants,Cardiac,Stents,,3523.88,3523.88
+C000490,Professional Services,Consulting,Management Consulting,,,7659.35,7659.35
+C000491,Food and Catering,,,,,3741.51,3741.51
+C000492,Professional Services,Legal,,,,2550.59,2550.59
+C000493,Clinical Supplies,Consumables,Wound Care,,,250.61,250.61
+C000494,Food and Catering,,,,,11194.67,11194.67
+C000495,Clinical Supplies,Implants,Orthopaedic,Hip Systems,NOT_APPROVED,4367.27,0.00
+C000496,Professional Services,Legal,,,,39183.86,39183.86
+C000497,IT,Software,Licences,,,5183.86,5183.86
+C000498,,,,,NON_PROCUREMENT,8631.09,0.00
+C000499,Pharmaceuticals,Oncology,Chemotherapy Agents,,,3831.80,3831.80
+C000500,Professional Services,Consulting,Management Consulting,,,4324.02,4324.02
+C000501,,,,,NON_PROCUREMENT,13046.38,0.00
+C000502,Facilities,Maintenance,HVAC,,,2498.28,2498.28
+C000503,IT,Software,Licences,,,6524.39,6524.39
+C000504,Clinical Supplies,Implants,Cardiac,Stents,,3128.02,3128.02
+C000505,Facilities,Maintenance,HVAC,,,693.76,693.76
+C000506,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,4058.43,4058.43
+C000507,Clinical Supplies,Consumables,Wound Care,,,206.16,206.16
+C000508,Clinical Supplies,Consumables,Gloves and PPE,,NOT_APPROVED,1454.27,0.00
+C000509,Food and Catering,,,,,6071.54,6071.54
+C000510,Pharmaceuticals,Oncology,Chemotherapy Agents,,,1295.40,1295.40
+C000511,Professional Services,Consulting,Management Consulting,,,5699.63,5699.63
+C000512,Clinical Supplies,Consumables,Wound Care,,,182.54,182.54
+C000513,Clinical Supplies,Consumables,Gloves and PPE,,,686.29,686.29
+C000514,Food and Catering,,,,,12318.24,12318.24
+C000515,Food and Catering,,,,,769.02,769.02
+C000516,Professional Services,Legal,,,,2050.51,2050.51
+C000517,,,,,NON_PROCUREMENT,2771.09,0.00
+C000518,Professional Services,Legal,,,,10038.58,10038.58
+C000519,Professional Services,Consulting,Management Consulting,,CANCELLED,71042.74,0.00
+C000520,Facilities,Cleaning Services,,,,5176.61,5176.61
+C000521,Clinical Supplies,Implants,Cardiac,Stents,,2743.27,2743.27
+C000522,IT,Software,Licences,,,12676.35,12676.35
+C000523,Facilities,Cleaning Services,,,,5620.64,5620.64
+C000524,,,,,NON_PROCUREMENT,2905.82,0.00
+C000525,Clinical Supplies,Consumables,Gloves and PPE,,,304.27,304.27
+C000526,Clinical Supplies,Implants,Cardiac,Stents,NOT_APPROVED,3973.98,0.00
+C000527,Professional Services,Legal,,,,3604.23,3604.23
+C000528,IT,Software,Licences,,CANCELLED,15941.95,0.00
+C000529,Clinical Supplies,Consumables,Gloves and PPE,,,1686.78,1686.78
+C000530,Professional Services,Consulting,Management Consulting,,,27553.12,27553.12
+C000531,Food and Catering,,,,,1812.89,1812.89
+C000532,Facilities,Maintenance,HVAC,,,1279.60,1279.60
+C000533,Facilities,Cleaning Services,,,,9382.49,9382.49
+C000534,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,1537.95,1537.95
+C000535,Facilities,Cleaning Services,,,,5812.52,5812.52
+C000536,,,,,NON_PROCUREMENT,5818.91,0.00
+C000537,IT,Hardware,,,NOT_APPROVED,3932.49,0.00
+C000538,IT,Software,Licences,,,3819.93,3819.93
+C000539,Professional Services,Consulting,Management Consulting,,,10505.68,10505.68
+C000540,IT,Hardware,,,,3158.76,3158.76
+C000541,Facilities,Maintenance,HVAC,,,5740.16,5740.16
+C000542,IT,Software,Licences,,,6407.26,6407.26
+C000543,IT,Hardware,,,,16176.20,16176.20
+C000544,IT,Software,Licences,,,686.01,686.01
+C000545,Professional Services,Legal,,,,1537.10,1537.10
+C000546,Pharmaceuticals,Generics,,,,162.49,162.49
+C000547,Clinical Supplies,Consumables,Gloves and PPE,,,62.85,62.85
+C000548,Clinical Supplies,Consumables,Wound Care,,,410.35,410.35
+C000549,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2048.36,2048.36
+C000550,IT,Hardware,,,,2452.29,2452.29
+C000551,Clinical Supplies,Consumables,Gloves and PPE,,,553.86,553.86
+C000552,Facilities,Maintenance,HVAC,,,4316.83,4316.83
+C000553,Pharmaceuticals,Oncology,Chemotherapy Agents,,,4361.60,4361.60
+C000554,Professional Services,Legal,,,,22820.98,22820.98
+C000555,Facilities,Cleaning Services,,,NOT_APPROVED,10514.46,0.00
+C000556,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,4644.61,4644.61
+C000557,Facilities,Maintenance,HVAC,,,420.46,420.46
+C000558,Clinical Supplies,Consumables,Wound Care,,,111.45,111.45
+C000559,Professional Services,Legal,,,,4678.57,4678.57
+C000560,Clinical Supplies,Implants,Cardiac,Stents,,2228.07,2228.07
+C000561,Clinical Supplies,Implants,Cardiac,Stents,,7075.74,7075.74
+C000562,Clinical Supplies,Consumables,Wound Care,,,66.04,66.04
+C000563,Clinical Supplies,Consumables,Gloves and PPE,,,222.34,222.34
+C000564,Clinical Supplies,Consumables,Wound Care,,NOT_APPROVED,799.90,0.00
+C000565,Facilities,Cleaning Services,,,,3254.67,3254.67
+C000566,Facilities,Maintenance,HVAC,,,759.88,759.88
+C000567,Facilities,Maintenance,HVAC,,NOT_APPROVED,2644.50,0.00
+C000568,Clinical Supplies,Consumables,Gloves and PPE,,,129.07,129.07
+C000569,Facilities,Maintenance,HVAC,,,779.50,779.50
+C000570,Facilities,Cleaning Services,,,,2781.10,2781.10
+C000571,Facilities,Maintenance,HVAC,,,1160.43,1160.43
+C000572,Clinical Supplies,Consumables,Gloves and PPE,,,247.98,247.98
+C000573,Facilities,Maintenance,HVAC,,,608.99,608.99
+C000574,Clinical Supplies,Consumables,Gloves and PPE,,,168.34,168.34
+C000575,Facilities,Cleaning Services,,,,2798.27,2798.27
+C000576,Facilities,Maintenance,HVAC,,,876.66,876.66
+C000577,Clinical Supplies,Implants,Cardiac,Stents,,730.96,730.96
+C000578,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,7626.14,7626.14
+C000579,Professional Services,Legal,,,,1056.54,1056.54
+C000580,Clinical Supplies,Consumables,Gloves and PPE,,,346.83,346.83
+C000581,IT,Hardware,,,,19513.78,19513.78
+C000582,Professional Services,Consulting,Management Consulting,,,14664.04,14664.04
+C000583,Facilities,Maintenance,HVAC,,,1854.42,1854.42
+C000584,Facilities,Maintenance,HVAC,,,2073.52,2073.52
+C000585,Professional Services,Legal,,,,7690.59,7690.59
+C000586,Pharmaceuticals,Generics,,,,106.39,106.39
+C000587,Pharmaceuticals,Oncology,Chemotherapy Agents,,NOT_APPROVED,2016.59,0.00
+C000588,Facilities,Cleaning Services,,,,2215.57,2215.57
+C000589,Facilities,Maintenance,HVAC,,,1645.28,1645.28
+C000590,Facilities,Cleaning Services,,,,4022.02,4022.02
+C000591,Pharmaceuticals,Oncology,Chemotherapy Agents,,,16710.10,16710.10
+C000592,Pharmaceuticals,Oncology,Chemotherapy Agents,,CANCELLED,9766.86,0.00
+C000593,Facilities,Maintenance,HVAC,,,8688.57,8688.57
+C000594,IT,Hardware,,,,14761.52,14761.52
+C000595,Clinical Supplies,Consumables,Gloves and PPE,,,773.03,773.03
+C000596,Clinical Supplies,Implants,Cardiac,Stents,,17131.62,17131.62
+C000597,Professional Services,Legal,,,,6616.26,6616.26
+C000598,Professional Services,Consulting,Management Consulting,,,12502.26,12502.26
+C000599,Professional Services,Consulting,Management Consulting,,,2728.01,2728.01
+C000600,Professional Services,Consulting,Management Consulting,,,9954.20,9954.20
+C000601,Professional Services,Legal,,,,7801.82,7801.82
+C000602,Professional Services,Consulting,Management Consulting,,,22113.90,22113.90
+C000603,Professional Services,Legal,,,,11430.21,11430.21
+C000604,Professional Services,Legal,,,,958.46,958.46
+C000605,Facilities,Maintenance,HVAC,,CANCELLED,2566.03,0.00
+C000606,Clinical Supplies,Implants,Cardiac,Stents,,2994.76,2994.76
+C000607,IT,Software,Licences,,,7009.54,7009.54
+C000608,Clinical Supplies,Implants,Cardiac,Stents,,1744.96,1744.96
+C000609,Pharmaceuticals,Generics,,,,853.86,853.86
+C000610,Facilities,Maintenance,HVAC,,,13690.83,13690.83
+C000611,IT,Software,Licences,,,40390.84,40390.84
+C000612,Food and Catering,,,,,5727.75,5727.75
+C000613,Pharmaceuticals,Oncology,Chemotherapy Agents,,,1309.48,1309.48
+C000614,IT,Hardware,,,CANCELLED,3934.60,0.00
+C000615,Food and Catering,,,,,143.17,143.17
+C000616,IT,Software,Licences,,,929.02,929.02
+C000617,Facilities,Cleaning Services,,,,8142.10,8142.10
+C000618,Professional Services,Consulting,Management Consulting,,,8807.07,8807.07
+C000619,IT,Software,Licences,,,23212.92,23212.92
+C000620,Professional Services,Legal,,,,6325.30,6325.30
+C000621,Facilities,Maintenance,HVAC,,,1058.53,1058.53
+C000622,Pharmaceuticals,Generics,,,,4387.20,4387.20
+C000623,Food and Catering,,,,,276.79,276.79
+C000624,Food and Catering,,,,,508.91,508.91
+C000625,Professional Services,Legal,,,,3329.52,3329.52
+C000626,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2941.73,2941.73
+C000627,,,,,NON_PROCUREMENT,13614.05,0.00
+C000628,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2149.70,2149.70
+C000629,IT,Software,Licences,,,6887.79,6887.79
+C000630,Facilities,Cleaning Services,,,,2806.53,2806.53
+C000631,Professional Services,Consulting,Management Consulting,,,12753.48,12753.48
+C000632,Facilities,Cleaning Services,,,NOT_APPROVED,7914.58,0.00
+C000633,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,3849.90,3849.90
+C000634,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,12409.20,12409.20
+C000635,Professional Services,Legal,,,,4529.84,4529.84
+C000636,,,,,NON_PROCUREMENT,12023.95,0.00
+C000637,Professional Services,Consulting,Management Consulting,,CANCELLED,4949.40,0.00
+C000638,Clinical Supplies,Consumables,Gloves and PPE,,,514.36,514.36
+C000639,Clinical Supplies,Consumables,Wound Care,,CANCELLED,151.84,0.00
+C000640,Food and Catering,,,,,4033.03,4033.03
+C000641,IT,Hardware,,,,7999.09,7999.09
+C000642,Facilities,Maintenance,HVAC,,,1251.99,1251.99
+C000643,IT,Software,Licences,,,860.88,860.88
+C000644,Pharmaceuticals,Oncology,Chemotherapy Agents,,,1758.19,1758.19
+C000645,Food and Catering,,,,,205.41,205.41
+C000646,Clinical Supplies,Consumables,Gloves and PPE,,,132.34,132.34
+C000647,Pharmaceuticals,Oncology,Chemotherapy Agents,,,15928.02,15928.02
+C000648,Clinical Supplies,Consumables,Gloves and PPE,,,21.15,21.15
+C000649,Clinical Supplies,Consumables,Wound Care,,,985.95,985.95
+C000650,Professional Services,Legal,,,,6661.75,6661.75
+C000651,Clinical Supplies,Consumables,Gloves and PPE,,,248.25,248.25
+C000652,Facilities,Cleaning Services,,,,249.20,249.20
+C000653,Professional Services,Consulting,Management Consulting,,,6370.79,6370.79
+C000654,Facilities,Maintenance,HVAC,,,7810.82,7810.82
+C000655,Facilities,Cleaning Services,,,,20416.29,20416.29
+C000656,Professional Services,Consulting,Management Consulting,,,4342.57,4342.57
+C000657,Food and Catering,,,,,3831.22,3831.22
+C000658,,,,,NON_PROCUREMENT,8023.83,0.00
+C000659,IT,Software,Licences,,,5879.26,5879.26
+C000660,Professional Services,Legal,,,,9814.54,9814.54
+C000661,Clinical Supplies,Consumables,Wound Care,,,541.75,541.75
+C000662,Professional Services,Legal,,,,5833.90,5833.90
+C000663,Clinical Supplies,Implants,Cardiac,Stents,,2162.82,2162.82
+C000664,IT,Hardware,,,,7286.16,7286.16
+C000665,IT,Hardware,,,,3980.47,3980.47
+C000666,Professional Services,Legal,,,,4220.46,4220.46
+C000667,Pharmaceuticals,Generics,,,,273.91,273.91
+C000668,Facilities,Maintenance,HVAC,,,2146.24,2146.24
+C000669,,,,,NON_PROCUREMENT,4100.24,0.00
+C000670,Clinical Supplies,Consumables,Gloves and PPE,,,80.20,80.20
+C000671,Facilities,Cleaning Services,,,,428.13,428.13
+C000672,Pharmaceuticals,Generics,,,,27.30,27.30
+C000673,IT,Hardware,,,,3001.53,3001.53
+C000674,Clinical Supplies,Implants,Cardiac,Stents,,1738.26,1738.26
+C000675,Food and Catering,,,,,2387.07,2387.07
+C000676,Clinical Supplies,Consumables,Gloves and PPE,,,325.04,325.04
+C000677,Food and Catering,,,,,1922.61,1922.61
+C000678,Food and Catering,,,,,2373.35,2373.35
+C000679,Professional Services,Consulting,Management Consulting,,,1295.53,1295.53
+C000680,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,5452.44,5452.44
+C000681,Clinical Supplies,Implants,Cardiac,Stents,,4663.27,4663.27
+C000682,Pharmaceuticals,Oncology,Chemotherapy Agents,,NOT_APPROVED,12988.83,0.00
+C000683,Pharmaceuticals,Oncology,Chemotherapy Agents,,,1113.99,1113.99
+C000684,Pharmaceuticals,Oncology,Chemotherapy Agents,,,17195.66,17195.66
+C000685,Food and Catering,,,,,954.45,954.45
+C000686,Professional Services,Consulting,Management Consulting,,,8003.61,8003.61
+C000687,Professional Services,Consulting,Management Consulting,,,7847.21,7847.21
+C000688,Pharmaceuticals,Oncology,Chemotherapy Agents,,,6625.98,6625.98
+C000689,Clinical Supplies,Consumables,Gloves and PPE,,,133.69,133.69
+C000690,Professional Services,Legal,,,,897.55,897.55
+C000691,Pharmaceuticals,Oncology,Chemotherapy Agents,,,1055.38,1055.38
+C000692,Clinical Supplies,Consumables,Gloves and PPE,,,297.51,297.51
+C000693,Clinical Supplies,Consumables,Wound Care,,,418.13,418.13
+C000694,Clinical Supplies,Consumables,Gloves and PPE,,,1331.84,1331.84
+C000695,Clinical Supplies,Consumables,Gloves and PPE,,CANCELLED,549.61,0.00
+C000696,Clinical Supplies,Consumables,Wound Care,,NOT_APPROVED,177.30,0.00
+C000697,Professional Services,Legal,,,,5901.61,5901.61
+C000698,Pharmaceuticals,Generics,,,,853.03,853.03
+C000699,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,3245.44,3245.44
+C000700,Facilities,Maintenance,HVAC,,,225.58,225.58
+C000701,Clinical Supplies,Consumables,Gloves and PPE,,,247.16,247.16
+C000702,Clinical Supplies,Consumables,Wound Care,,,1267.08,1267.08
+C000703,Facilities,Maintenance,HVAC,,,1166.53,1166.53
+C000704,IT,Software,Licences,,,8170.19,8170.19
+C000705,Professional Services,Legal,,,,3089.33,3089.33
+C000706,Clinical Supplies,Consumables,Gloves and PPE,,,418.85,418.85
+C000707,Food and Catering,,,,,1403.43,1403.43
+C000708,IT,Software,Licences,,,1529.98,1529.98
+C000709,Clinical Supplies,Consumables,Wound Care,,,280.54,280.54
+C000710,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,5404.05,5404.05
+C000711,Facilities,Cleaning Services,,,,21842.66,21842.66
+C000712,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,10071.46,10071.46
+C000713,Clinical Supplies,Implants,Cardiac,Stents,,3710.95,3710.95
+C000714,IT,Software,Licences,,,15780.91,15780.91
+C000715,Clinical Supplies,Consumables,Gloves and PPE,,,92.50,92.50
+C000716,Pharmaceuticals,Oncology,Chemotherapy Agents,,,4263.52,4263.52
+C000717,Professional Services,Legal,,,,4748.05,4748.05
+C000718,Facilities,Cleaning Services,,,,2862.26,2862.26
+C000719,,,,,NON_PROCUREMENT,2825.86,0.00
+C000720,Facilities,Cleaning Services,,,NOT_APPROVED,3012.55,0.00
+C000721,IT,Hardware,,,,858.49,858.49
+C000722,IT,Hardware,,,,2991.73,2991.73
+C000723,Clinical Supplies,Implants,Cardiac,Stents,,6398.26,6398.26
+C000724,Professional Services,Consulting,Management Consulting,,,29602.96,29602.96
+C000725,IT,Software,Licences,,CANCELLED,5262.82,0.00
+C000726,IT,Hardware,,,,3052.30,3052.30
+C000727,Professional Services,Legal,,,NOT_APPROVED,12107.89,0.00
+C000728,IT,Hardware,,,,893.36,893.36
+C000729,Professional Services,Consulting,Management Consulting,,,40072.18,40072.18
+C000730,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,2416.25,2416.25
+C000731,Food and Catering,,,,,1544.78,1544.78
+C000732,IT,Hardware,,,,16548.42,16548.42
+C000733,Clinical Supplies,Implants,Cardiac,Stents,,3993.64,3993.64
+C000734,IT,Software,Licences,,,6596.29,6596.29
+C000735,Food and Catering,,,,,2885.14,2885.14
+C000736,Pharmaceuticals,Oncology,Chemotherapy Agents,,CANCELLED,8178.91,0.00
+C000737,Pharmaceuticals,Generics,,,,850.87,850.87
+C000738,Clinical Supplies,Consumables,Wound Care,,CANCELLED,151.75,0.00
+C000739,Facilities,Maintenance,HVAC,,,5794.62,5794.62
+C000740,Facilities,Maintenance,HVAC,,,1727.05,1727.05
+C000741,Facilities,Maintenance,HVAC,,,557.16,557.16
+C000742,IT,Software,Licences,,,8542.17,8542.17
+C000743,IT,Hardware,,,NOT_APPROVED,940.95,0.00
+C000744,IT,Hardware,,,,3249.16,3249.16
+C000745,Professional Services,Consulting,Management Consulting,,NOT_APPROVED,1057.41,0.00
+C000746,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,946.19,946.19
+C000747,Professional Services,Legal,,,,5654.55,5654.55
+C000748,IT,Hardware,,,,1476.57,1476.57
+C000749,Pharmaceuticals,Oncology,Chemotherapy Agents,,,3830.53,3830.53
+C000750,Facilities,Cleaning Services,,,,9553.00,9553.00
+C000751,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2988.42,2988.42
+C000752,Professional Services,Legal,,,,13241.29,13241.29
+C000753,Professional Services,Legal,,,,30239.68,30239.68
+C000754,Pharmaceuticals,Oncology,Chemotherapy Agents,,,4319.85,4319.85
+C000755,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2248.79,2248.79
+C000756,Clinical Supplies,Implants,Cardiac,Stents,,3159.88,3159.88
+C000757,Clinical Supplies,Implants,Orthopaedic,Hip Systems,CANCELLED,2312.47,0.00
+C000758,Facilities,Cleaning Services,,,,4188.61,4188.61
+C000759,Pharmaceuticals,Oncology,Chemotherapy Agents,,,1867.36,1867.36
+C000760,Food and Catering,,,,,2278.41,2278.41
+C000761,Clinical Supplies,Consumables,Gloves and PPE,,NOT_APPROVED,87.88,0.00
+C000762,Clinical Supplies,Implants,Cardiac,Stents,,2972.08,2972.08
+C000763,Pharmaceuticals,Oncology,Chemotherapy Agents,,,1274.23,1274.23
+C000764,Pharmaceuticals,Oncology,Chemotherapy Agents,,,3360.51,3360.51
+C000765,Food and Catering,,,,,4997.85,4997.85
+C000766,Food and Catering,,,,,1367.08,1367.08
+C000767,IT,Hardware,,,,2315.58,2315.58
+C000768,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2860.03,2860.03
+C000769,Pharmaceuticals,Generics,,,,676.27,676.27
+C000770,Food and Catering,,,,,1864.82,1864.82
+C000771,Clinical Supplies,Implants,Cardiac,Stents,,1192.47,1192.47
+C000772,Clinical Supplies,Consumables,Gloves and PPE,,CANCELLED,810.52,0.00
+C000773,Facilities,Cleaning Services,,,,4756.62,4756.62
+C000774,Facilities,Cleaning Services,,,,3603.15,3603.15
+C000775,,,,,NON_PROCUREMENT,3261.14,0.00
+C000776,IT,Software,Licences,,,1395.40,1395.40
+C000777,Pharmaceuticals,Generics,,,,1458.82,1458.82
+C000778,IT,Hardware,,,,8117.00,8117.00
+C000779,Facilities,Cleaning Services,,,NOT_APPROVED,3745.02,0.00
+C000780,Food and Catering,,,,,2308.99,2308.99
+C000781,Clinical Supplies,Implants,Cardiac,Stents,,850.98,850.98
+C000782,Clinical Supplies,Implants,Cardiac,Stents,NOT_APPROVED,3923.40,0.00
+C000783,IT,Hardware,,,,934.96,934.96
+C000784,Clinical Supplies,Consumables,Gloves and PPE,,,380.08,380.08
+C000785,Clinical Supplies,Consumables,Gloves and PPE,,,196.76,196.76
+C000786,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,2918.39,2918.39
+C000787,Pharmaceuticals,Oncology,Chemotherapy Agents,,,1797.51,1797.51
+C000788,Clinical Supplies,Consumables,Wound Care,,CANCELLED,929.72,0.00
+C000789,Professional Services,Legal,,,CANCELLED,29961.57,0.00
+C000790,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,1763.48,1763.48
+C000791,,,,,NON_PROCUREMENT,14934.93,0.00
+C000792,Clinical Supplies,Implants,Cardiac,Stents,,14444.67,14444.67
+C000793,Pharmaceuticals,Generics,,,NOT_APPROVED,560.08,0.00
+C000794,IT,Software,Licences,,,44242.50,44242.50
+C000795,Professional Services,Consulting,Management Consulting,,,63655.89,63655.89
+C000796,Facilities,Maintenance,HVAC,,,2316.28,2316.28
+C000797,IT,Software,Licences,,NOT_APPROVED,2244.74,0.00
+C000798,Clinical Supplies,Consumables,Gloves and PPE,,,275.26,275.26
+C000799,Professional Services,Consulting,Management Consulting,,,3597.90,3597.90
+C000800,Food and Catering,,,,,1360.84,1360.84
+C000801,,,,,NON_PROCUREMENT,9509.37,0.00
+C000802,Clinical Supplies,Consumables,Wound Care,,,225.18,225.18
+C000803,Facilities,Maintenance,HVAC,,,4387.10,4387.10
+C000804,Facilities,Cleaning Services,,,,4220.48,4220.48
+C000805,,,,,NON_PROCUREMENT,18461.25,0.00
+C000806,,,,,NON_PROCUREMENT,15714.75,0.00
+C000807,Professional Services,Legal,,,NOT_APPROVED,3904.29,0.00
+C000808,Clinical Supplies,Implants,Cardiac,Stents,,11093.08,11093.08
+C000809,IT,Software,Licences,,,2300.21,2300.21
+C000810,IT,Hardware,,,,2678.09,2678.09
+C000811,Clinical Supplies,Consumables,Gloves and PPE,,,135.67,135.67
+C000812,,,,,NON_PROCUREMENT,14362.66,0.00
+C000813,IT,Software,Licences,,,5344.54,5344.54
+C000814,Pharmaceuticals,Generics,,,,441.73,441.73
+C000815,Pharmaceuticals,Generics,,,,1624.48,1624.48
+C000816,Professional Services,Consulting,Management Consulting,,,7378.91,7378.91
+C000817,Facilities,Maintenance,HVAC,,,190.09,190.09
+C000818,IT,Software,Licences,,,6637.86,6637.86
+C000819,Food and Catering,,,,,3113.10,3113.10
+C000820,IT,Software,Licences,,,5080.04,5080.04
+C000821,Professional Services,Legal,,,NOT_APPROVED,7131.53,0.00
+C000822,Clinical Supplies,Consumables,Wound Care,,,81.48,81.48
+C000823,Clinical Supplies,Consumables,Gloves and PPE,,,129.37,129.37
+C000824,Clinical Supplies,Implants,Cardiac,Stents,,3800.19,3800.19
+C000825,Facilities,Maintenance,HVAC,,,2259.95,2259.95
+C000826,,,,,NON_PROCUREMENT,12341.64,0.00
+C000827,Clinical Supplies,Consumables,Wound Care,,,265.44,265.44
+C000828,Facilities,Cleaning Services,,,,4495.88,4495.88
+C000829,IT,Hardware,,,,1906.60,1906.60
+C000830,IT,Hardware,,,,1623.97,1623.97
+C000831,Food and Catering,,,,NOT_APPROVED,1427.33,0.00
+C000832,IT,Software,Licences,,,23228.52,23228.52
+C000833,Pharmaceuticals,Generics,,,,679.07,679.07
+C000834,Pharmaceuticals,Generics,,,,393.65,393.65
+C000835,IT,Software,Licences,,,3023.93,3023.93
+C000836,Pharmaceuticals,Generics,,,,244.75,244.75
+C000837,IT,Software,Licences,,CANCELLED,5059.02,0.00
+C000838,Facilities,Cleaning Services,,,,1191.04,1191.04
+C000839,,,,,NON_PROCUREMENT,7140.41,0.00
+C000840,Clinical Supplies,Consumables,Gloves and PPE,,,204.42,204.42
+C000841,IT,Software,Licences,,,29689.51,29689.51
+C000842,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,3903.62,3903.62
+C000843,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2497.62,2497.62
+C000844,Pharmaceuticals,Generics,,,,735.93,735.93
+C000845,Clinical Supplies,Implants,Cardiac,Stents,,1839.12,1839.12
+C000846,Facilities,Maintenance,HVAC,,,1628.13,1628.13
+C000847,Clinical Supplies,Consumables,Gloves and PPE,,,83.77,83.77
+C000848,Facilities,Maintenance,HVAC,,NOT_APPROVED,2367.57,0.00
+C000849,Professional Services,Consulting,Management Consulting,,NOT_APPROVED,4390.65,0.00
+C000850,Pharmaceuticals,Oncology,Chemotherapy Agents,,,721.80,721.80
+C000851,Professional Services,Legal,,,,1979.88,1979.88
+C000852,Professional Services,Consulting,Management Consulting,,,22890.62,22890.62
+C000853,Pharmaceuticals,Oncology,Chemotherapy Agents,,,1450.65,1450.65
+C000854,Pharmaceuticals,Oncology,Chemotherapy Agents,,,4726.65,4726.65
+C000855,Clinical Supplies,Consumables,Gloves and PPE,,,277.75,277.75
+C000856,Professional Services,Consulting,Management Consulting,,,4321.08,4321.08
+C000857,IT,Software,Licences,,NOT_APPROVED,1155.21,0.00
+C000858,Pharmaceuticals,Generics,,,NOT_APPROVED,525.74,0.00
+C000859,Clinical Supplies,Consumables,Wound Care,,,294.59,294.59
+C000860,Clinical Supplies,Consumables,Gloves and PPE,,,106.07,106.07
+C000861,Clinical Supplies,Consumables,Gloves and PPE,,,266.45,266.45
+C000862,Food and Catering,,,,,198.14,198.14
+C000863,Professional Services,Consulting,Management Consulting,,NOT_APPROVED,28409.34,0.00
+C000864,Clinical Supplies,Consumables,Gloves and PPE,,,340.71,340.71
+C000865,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,1540.22,1540.22
+C000866,Facilities,Cleaning Services,,,,5638.08,5638.08
+C000867,IT,Software,Licences,,,2856.66,2856.66
+C000868,Professional Services,Consulting,Management Consulting,,,29625.54,29625.54
+C000869,Professional Services,Legal,,,,35449.13,35449.13
+C000870,Clinical Supplies,Consumables,Gloves and PPE,,,593.07,593.07
+C000871,,,,,NON_PROCUREMENT,8628.23,0.00
+C000872,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,3332.58,3332.58
+C000873,Professional Services,Consulting,Management Consulting,,,1355.78,1355.78
+C000874,,,,,NON_PROCUREMENT,1477.98,0.00
+C000875,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,3821.47,3821.47
+C000876,Facilities,Maintenance,HVAC,,,2585.16,2585.16
+C000877,Facilities,Maintenance,HVAC,,,534.05,534.05
+C000878,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,11443.45,11443.45
+C000879,Clinical Supplies,Consumables,Wound Care,,,95.47,95.47
+C000880,IT,Hardware,,,,3472.46,3472.46
+C000881,Clinical Supplies,Implants,Cardiac,Stents,,3496.30,3496.30
+C000882,Clinical Supplies,Consumables,Gloves and PPE,,,246.17,246.17
+C000883,Professional Services,Consulting,Management Consulting,,,71623.98,71623.98
+C000884,Professional Services,Legal,,,NOT_APPROVED,6120.39,0.00
+C000885,Clinical Supplies,Implants,Orthopaedic,Hip Systems,NOT_APPROVED,9574.28,0.00
+C000886,Pharmaceuticals,Oncology,Chemotherapy Agents,,,5976.59,5976.59
+C000887,,,,,NON_PROCUREMENT,9965.85,0.00
+C000888,Clinical Supplies,Consumables,Wound Care,,,240.44,240.44
+C000889,Facilities,Maintenance,HVAC,,,4429.67,4429.67
+C000890,IT,Software,Licences,,,7171.74,7171.74
+C000891,Clinical Supplies,Consumables,Wound Care,,,71.88,71.88
+C000892,Professional Services,Consulting,Management Consulting,,,12193.69,12193.69
+C000893,Clinical Supplies,Consumables,Gloves and PPE,,NOT_APPROVED,194.23,0.00
+C000894,Clinical Supplies,Implants,Cardiac,Stents,,18646.98,18646.98
+C000895,IT,Hardware,,,NOT_APPROVED,3389.23,0.00
+C000896,Facilities,Maintenance,HVAC,,,1327.59,1327.59
+C000897,Pharmaceuticals,Generics,,,,181.73,181.73
+C000898,Food and Catering,,,,,6213.97,6213.97
+C000899,Pharmaceuticals,Oncology,Chemotherapy Agents,,,15983.75,15983.75
+C000900,,,,,NON_PROCUREMENT,844.20,0.00
+C000901,Clinical Supplies,Consumables,Gloves and PPE,,,771.74,771.74
+C000902,Clinical Supplies,Implants,Orthopaedic,Hip Systems,NOT_APPROVED,2537.92,0.00
+C000903,Clinical Supplies,Implants,Cardiac,Stents,,4826.59,4826.59
+C000904,Clinical Supplies,Implants,Cardiac,Stents,,1579.48,1579.48
+C000905,Clinical Supplies,Consumables,Wound Care,,,217.89,217.89
+C000906,IT,Hardware,,,,19419.74,19419.74
+C000907,Facilities,Maintenance,HVAC,,,335.10,335.10
+C000908,IT,Software,Licences,,,6992.67,6992.67
+C000909,Professional Services,Legal,,,,26988.62,26988.62
+C000910,Professional Services,Legal,,,CANCELLED,8395.00,0.00
+C000911,Pharmaceuticals,Oncology,Chemotherapy Agents,,,3025.48,3025.48
+C000912,Food and Catering,,,,CANCELLED,3433.53,0.00
+C000913,Professional Services,Legal,,,,1192.40,1192.40
+C000914,Pharmaceuticals,Oncology,Chemotherapy Agents,,,3407.59,3407.59
+C000915,Facilities,Cleaning Services,,,,1168.77,1168.77
+C000916,Food and Catering,,,,,2300.03,2300.03
+C000917,IT,Hardware,,,,362.68,362.68
+C000918,Professional Services,Consulting,Management Consulting,,,2730.00,2730.00
+C000919,IT,Hardware,,,,1520.01,1520.01
+C000920,,,,,NON_PROCUREMENT,4368.95,0.00
+C000921,Pharmaceuticals,Generics,,,,317.10,317.10
+C000922,Pharmaceuticals,Oncology,Chemotherapy Agents,,,5656.32,5656.32
+C000923,Food and Catering,,,,,5978.67,5978.67
+C000924,,,,,NON_PROCUREMENT,19332.63,0.00
+C000925,Facilities,Maintenance,HVAC,,,2680.54,2680.54
+C000926,Clinical Supplies,Implants,Orthopaedic,Hip Systems,NOT_APPROVED,5628.17,0.00
+C000927,,,,,NON_PROCUREMENT,9342.08,0.00
+C000928,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,10350.57,10350.57
+C000929,IT,Hardware,,,,3242.89,3242.89
+C000930,Pharmaceuticals,Generics,,,,442.58,442.58
+C000931,IT,Software,Licences,,,2352.45,2352.45
+C000932,Facilities,Maintenance,HVAC,,,1388.02,1388.02
+C000933,Clinical Supplies,Implants,Cardiac,Stents,,3038.67,3038.67
+C000934,Facilities,Maintenance,HVAC,,,1631.03,1631.03
+C000935,Clinical Supplies,Consumables,Wound Care,,NOT_APPROVED,133.35,0.00
+C000936,IT,Hardware,,,,1755.54,1755.54
+C000937,Professional Services,Consulting,Management Consulting,,CANCELLED,2832.45,0.00
+C000938,IT,Software,Licences,,,20412.90,20412.90
+C000939,Professional Services,Consulting,Management Consulting,,CANCELLED,8697.58,0.00
+C000940,IT,Software,Licences,,,8315.17,8315.17
+C000941,Facilities,Maintenance,HVAC,,,1690.29,1690.29
+C000942,Pharmaceuticals,Oncology,Chemotherapy Agents,,NOT_APPROVED,4545.33,0.00
+C000943,Facilities,Cleaning Services,,,,2617.11,2617.11
+C000944,Facilities,Cleaning Services,,,,9461.47,9461.47
+C000945,Clinical Supplies,Implants,Cardiac,Stents,CANCELLED,1952.36,0.00
+C000946,Food and Catering,,,,,473.66,473.66
+C000947,Pharmaceuticals,Generics,,,,4260.30,4260.30
+C000948,IT,Software,Licences,,,1003.68,1003.68
+C000949,Food and Catering,,,,,2234.64,2234.64
+C000950,Professional Services,Consulting,Management Consulting,,,5164.25,5164.25
+C000951,Clinical Supplies,Implants,Cardiac,Stents,,1581.53,1581.53
+C000952,Facilities,Maintenance,HVAC,,CANCELLED,1399.66,0.00
+C000953,IT,Software,Licences,,,9574.22,9574.22
+C000954,Clinical Supplies,Consumables,Gloves and PPE,,,90.18,90.18
+C000955,IT,Software,Licences,,,11902.32,11902.32
+C000956,Food and Catering,,,,,4750.82,4750.82
+C000957,Professional Services,Legal,,,,3342.57,3342.57
+C000958,Clinical Supplies,Implants,Cardiac,Stents,,6836.26,6836.26
+C000959,Food and Catering,,,,,1307.51,1307.51
+C000960,Professional Services,Consulting,Management Consulting,,,5788.01,5788.01
+C000961,Facilities,Maintenance,HVAC,,,721.84,721.84
+C000962,,,,,NON_PROCUREMENT,6269.48,0.00
+C000963,Facilities,Cleaning Services,,,,3376.02,3376.02
+C000964,Pharmaceuticals,Oncology,Chemotherapy Agents,,,3273.76,3273.76
+C000965,IT,Software,Licences,,,7946.40,7946.40
+C000966,Food and Catering,,,,,11119.88,11119.88
+C000967,IT,Software,Licences,,NOT_APPROVED,8625.67,0.00
+C000968,,,,,NON_PROCUREMENT,15840.08,0.00
+C000969,Pharmaceuticals,Generics,,,,638.52,638.52
+C000970,Pharmaceuticals,Oncology,Chemotherapy Agents,,,1029.04,1029.04
+C000971,Clinical Supplies,Implants,Cardiac,Stents,,6697.92,6697.92
+C000972,IT,Hardware,,,CANCELLED,8518.32,0.00
+C000973,Professional Services,Consulting,Management Consulting,,,14576.33,14576.33
+C000974,Professional Services,Legal,,,,2428.12,2428.12
+C000975,IT,Software,Licences,,,7657.75,7657.75
+C000976,Facilities,Cleaning Services,,,CANCELLED,15595.00,0.00
+C000977,IT,Hardware,,,,5793.34,5793.34
+C000978,Food and Catering,,,,,2989.60,2989.60
+C000979,Professional Services,Consulting,Management Consulting,,NOT_APPROVED,7179.11,0.00
+C000980,IT,Software,Licences,,,1915.64,1915.64
+C000981,Facilities,Cleaning Services,,,,1772.54,1772.54
+C000982,Facilities,Cleaning Services,,,NOT_APPROVED,2908.95,0.00
+C000983,,,,,NON_PROCUREMENT,15091.07,0.00
+C000984,Clinical Supplies,Consumables,Wound Care,,,155.79,155.79
+C000985,Professional Services,Consulting,Management Consulting,,,14319.75,14319.75
+C000986,,,,,NON_PROCUREMENT,4521.11,0.00
+C000987,Clinical Supplies,Consumables,Wound Care,,,151.91,151.91
+C000988,Facilities,Maintenance,HVAC,,,2864.41,2864.41
+C000989,Food and Catering,,,,,1914.95,1914.95
+C000990,Pharmaceuticals,Oncology,Chemotherapy Agents,,CANCELLED,8885.98,0.00
+C000991,Clinical Supplies,Consumables,Gloves and PPE,,,187.62,187.62
+C000992,IT,Hardware,,,,1559.35,1559.35
+C000993,Facilities,Cleaning Services,,,,2993.34,2993.34
+C000994,Professional Services,Legal,,,,6771.76,6771.76
+C000995,Clinical Supplies,Consumables,Gloves and PPE,,,125.27,125.27
+C000996,Clinical Supplies,Consumables,Gloves and PPE,,,203.78,203.78
+C000997,Clinical Supplies,Consumables,Gloves and PPE,,,42.77,42.77
+C000998,Professional Services,Legal,,,,37849.91,37849.91
+C000999,,,,,NON_PROCUREMENT,15232.26,0.00
+C001000,Facilities,Maintenance,HVAC,,NOT_APPROVED,2538.12,0.00
+C001001,Facilities,Maintenance,HVAC,,NOT_APPROVED,4550.84,0.00
+C001002,Facilities,Cleaning Services,,,,1376.90,1376.90
+C001003,Professional Services,Legal,,,,1121.46,1121.46
+C001004,Facilities,Cleaning Services,,,,1174.21,1174.21
+C001005,,,,,NON_PROCUREMENT,19011.34,0.00
+C001006,Clinical Supplies,Implants,Cardiac,Stents,,6866.44,6866.44
+C001007,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2247.08,2247.08
+C001008,Food and Catering,,,,,4608.30,4608.30
+C001009,Facilities,Cleaning Services,,,,9169.53,9169.53
+C001010,IT,Hardware,,,NOT_APPROVED,1158.22,0.00
+C001011,Food and Catering,,,,NOT_APPROVED,1847.51,0.00
+C001012,Professional Services,Legal,,,,1450.53,1450.53
+C001013,Clinical Supplies,Consumables,Gloves and PPE,,NOT_APPROVED,714.78,0.00
+C001014,IT,Hardware,,,,2276.62,2276.62
+C001015,Pharmaceuticals,Generics,,,,755.49,755.49
+C001016,,,,,NON_PROCUREMENT,2194.33,0.00
+C001017,Professional Services,Consulting,Management Consulting,,,4183.38,4183.38
+C001018,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,2461.46,2461.46
+C001019,Professional Services,Legal,,,,32298.32,32298.32
+C001020,Facilities,Maintenance,HVAC,,,191.86,191.86
+C001021,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2235.78,2235.78
+C001022,Professional Services,Consulting,Management Consulting,,,20263.15,20263.15
+C001023,Facilities,Cleaning Services,,,,2695.62,2695.62
+C001024,Pharmaceuticals,Oncology,Chemotherapy Agents,,,3653.00,3653.00
+C001025,,,,,NON_PROCUREMENT,896.62,0.00
+C001026,Pharmaceuticals,Generics,,,,4307.61,4307.61
+C001027,Food and Catering,,,,,3099.77,3099.77
+C001028,IT,Software,Licences,,,8574.58,8574.58
+C001029,Food and Catering,,,,CANCELLED,643.41,0.00
+C001030,IT,Hardware,,,,2119.21,2119.21
+C001031,Professional Services,Legal,,,,22888.58,22888.58
+C001032,Professional Services,Consulting,Management Consulting,,CANCELLED,10573.03,0.00
+C001033,Food and Catering,,,,,821.67,821.67
+C001034,Pharmaceuticals,Generics,,,,692.34,692.34
+C001035,IT,Software,Licences,,,1473.66,1473.66
+C001036,,,,,NON_PROCUREMENT,2334.74,0.00
+C001037,Clinical Supplies,Implants,Cardiac,Stents,NOT_APPROVED,7671.89,0.00
+C001038,Pharmaceuticals,Generics,,,NOT_APPROVED,461.47,0.00
+C001039,Professional Services,Consulting,Management Consulting,,,9942.23,9942.23
+C001040,Facilities,Cleaning Services,,,,2708.81,2708.81
+C001041,Food and Catering,,,,,5640.51,5640.51
+C001042,IT,Hardware,,,,3802.56,3802.56
+C001043,Professional Services,Legal,,,,6904.24,6904.24
+C001044,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,5880.62,5880.62
+C001045,Pharmaceuticals,Oncology,Chemotherapy Agents,,NOT_APPROVED,3757.64,0.00
+C001046,Pharmaceuticals,Generics,,,,209.49,209.49
+C001047,Pharmaceuticals,Generics,,,,892.16,892.16
+C001048,Pharmaceuticals,Oncology,Chemotherapy Agents,,,8664.48,8664.48
+C001049,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,6284.49,6284.49
+C001050,IT,Software,Licences,,,4612.63,4612.63
+C001051,Pharmaceuticals,Oncology,Chemotherapy Agents,,,705.51,705.51
+C001052,Facilities,Cleaning Services,,,,587.89,587.89
+C001053,Professional Services,Legal,,,,1920.31,1920.31
+C001054,IT,Software,Licences,,,10770.83,10770.83
+C001055,IT,Software,Licences,,,7881.63,7881.63
+C001056,,,,,NON_PROCUREMENT,18740.84,0.00
+C001057,Professional Services,Legal,,,,7121.12,7121.12
+C001058,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,2840.14,2840.14
+C001059,Clinical Supplies,Consumables,Wound Care,,,249.74,249.74
+C001060,IT,Hardware,,,,19079.64,19079.64
+C001061,Pharmaceuticals,Oncology,Chemotherapy Agents,,,7176.33,7176.33
+C001062,Food and Catering,,,,,5109.27,5109.27
+C001063,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,28479.34,28479.34
+C001064,,,,,NON_PROCUREMENT,7695.93,0.00
+C001065,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,5191.06,5191.06
+C001066,Clinical Supplies,Consumables,Gloves and PPE,,,159.15,159.15
+C001067,Facilities,Cleaning Services,,,,651.08,651.08
+C001068,Professional Services,Legal,,,NOT_APPROVED,4112.82,0.00
+C001069,IT,Hardware,,,,2207.77,2207.77
+C001070,Food and Catering,,,,,2402.66,2402.66
+C001071,Professional Services,Consulting,Management Consulting,,,54740.10,54740.10
+C001072,Clinical Supplies,Implants,Cardiac,Stents,,3343.68,3343.68
+C001073,Professional Services,Legal,,,,7177.14,7177.14
+C001074,Professional Services,Legal,,,,4768.52,4768.52
+C001075,Professional Services,Consulting,Management Consulting,,,1751.65,1751.65
+C001076,Facilities,Maintenance,HVAC,,,2909.57,2909.57
+C001077,Pharmaceuticals,Generics,,,,784.77,784.77
+C001078,Professional Services,Legal,,,NOT_APPROVED,7719.21,0.00
+C001079,Pharmaceuticals,Oncology,Chemotherapy Agents,,,4353.73,4353.73
+C001080,,,,,NON_PROCUREMENT,11205.32,0.00
+C001081,Facilities,Cleaning Services,,,,1285.82,1285.82
+C001082,Pharmaceuticals,Generics,,,NOT_APPROVED,3458.91,0.00
+C001083,Professional Services,Consulting,Management Consulting,,,7024.87,7024.87
+C001084,Food and Catering,,,,,12056.61,12056.61
+C001085,IT,Software,Licences,,,9620.93,9620.93
+C001086,Clinical Supplies,Consumables,Gloves and PPE,,,282.01,282.01
+C001087,Food and Catering,,,,,665.68,665.68
+C001088,IT,Hardware,,,,2983.18,2983.18
+C001089,,,,,NON_PROCUREMENT,595.11,0.00
+C001090,IT,Software,Licences,,,36831.53,36831.53
+C001091,Pharmaceuticals,Generics,,,,818.15,818.15
+C001092,Clinical Supplies,Consumables,Gloves and PPE,,,228.38,228.38
+C001093,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,3627.07,3627.07
+C001094,IT,Software,Licences,,,3735.34,3735.34
+C001095,Professional Services,Consulting,Management Consulting,,,3385.84,3385.84
+C001096,Facilities,Cleaning Services,,,,1308.10,1308.10
+C001097,Food and Catering,,,,,2927.27,2927.27
+C001098,Food and Catering,,,,,1130.66,1130.66
+C001099,Pharmaceuticals,Generics,,,,191.68,191.68
+C001100,Clinical Supplies,Consumables,Wound Care,,,154.69,154.69
+C001101,Clinical Supplies,Consumables,Wound Care,,,460.58,460.58
+C001102,Facilities,Maintenance,HVAC,,,4473.26,4473.26
+C001103,Clinical Supplies,Consumables,Gloves and PPE,,,370.54,370.54
+C001104,Clinical Supplies,Implants,Cardiac,Stents,,12043.89,12043.89
+C001105,Clinical Supplies,Implants,Cardiac,Stents,,1857.73,1857.73
+C001106,Clinical Supplies,Implants,Cardiac,Stents,,7049.87,7049.87
+C001107,Professional Services,Consulting,Management Consulting,,,13557.57,13557.57
+C001108,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,959.78,959.78
+C001109,,,,,NON_PROCUREMENT,624.89,0.00
+C001110,Professional Services,Consulting,Management Consulting,,NOT_APPROVED,11639.93,0.00
+C001111,Professional Services,Consulting,Management Consulting,,CANCELLED,1342.48,0.00
+C001112,Professional Services,Legal,,,CANCELLED,5097.01,0.00
+C001113,Pharmaceuticals,Generics,,,NOT_APPROVED,1061.44,0.00
+C001114,Professional Services,Legal,,,,5663.46,5663.46
+C001115,Food and Catering,,,,,9982.27,9982.27
+C001116,Pharmaceuticals,Oncology,Chemotherapy Agents,,,6720.68,6720.68
+C001117,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,1868.78,1868.78
+C001118,Food and Catering,,,,,2453.73,2453.73
+C001119,IT,Software,Licences,,,3329.05,3329.05
+C001120,Clinical Supplies,Consumables,Gloves and PPE,,,1973.22,1973.22
+C001121,Facilities,Cleaning Services,,,,1219.95,1219.95
+C001122,Food and Catering,,,,,1103.03,1103.03
+C001123,Food and Catering,,,,,6309.38,6309.38
+C001124,Food and Catering,,,,,2212.50,2212.50
+C001125,Food and Catering,,,,,68.99,68.99
+C001126,Clinical Supplies,Implants,Orthopaedic,Hip Systems,NOT_APPROVED,8857.31,0.00
+C001127,IT,Hardware,,,,3209.69,3209.69
+C001128,Professional Services,Consulting,Management Consulting,,,3828.67,3828.67
+C001129,Professional Services,Legal,,,,7282.52,7282.52
+C001130,Food and Catering,,,,,109.65,109.65
+C001131,Food and Catering,,,,,641.18,641.18
+C001132,,,,,NON_PROCUREMENT,8632.55,0.00
+C001133,Food and Catering,,,,,1825.53,1825.53
+C001134,Food and Catering,,,,,2009.46,2009.46
+C001135,Food and Catering,,,,,844.52,844.52
+C001136,Pharmaceuticals,Oncology,Chemotherapy Agents,,,1188.49,1188.49
+C001137,,,,,NON_PROCUREMENT,12386.76,0.00
+C001138,Clinical Supplies,Implants,Orthopaedic,Hip Systems,NOT_APPROVED,3628.75,0.00
+C001139,Professional Services,Legal,,,,4110.87,4110.87
+C001140,,,,,NON_PROCUREMENT,2120.52,0.00
+C001141,Professional Services,Legal,,,,5180.25,5180.25
+C001142,Clinical Supplies,Consumables,Gloves and PPE,,,505.11,505.11
+C001143,IT,Software,Licences,,,708.93,708.93
+C001144,Pharmaceuticals,Generics,,,,406.48,406.48
+C001145,Clinical Supplies,Consumables,Gloves and PPE,,,60.53,60.53
+C001146,Pharmaceuticals,Generics,,,,411.95,411.95
+C001147,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,4172.01,4172.01
+C001148,Professional Services,Legal,,,,5880.42,5880.42
+C001149,Clinical Supplies,Implants,Cardiac,Stents,,1067.09,1067.09
+C001150,IT,Hardware,,,,3976.77,3976.77
+C001151,Food and Catering,,,,,2139.26,2139.26
+C001152,Pharmaceuticals,Oncology,Chemotherapy Agents,,NOT_APPROVED,1335.35,0.00
+C001153,Clinical Supplies,Consumables,Gloves and PPE,,,267.67,267.67
+C001154,Professional Services,Consulting,Management Consulting,,,2701.60,2701.60
+C001155,Professional Services,Legal,,,,33001.51,33001.51
+C001156,Clinical Supplies,Consumables,Wound Care,,,122.20,122.20
+C001157,Clinical Supplies,Implants,Orthopaedic,Hip Systems,NOT_APPROVED,20922.76,0.00
+C001158,Clinical Supplies,Consumables,Wound Care,,,282.26,282.26
+C001159,IT,Hardware,,,,1201.95,1201.95
+C001160,Clinical Supplies,Consumables,Gloves and PPE,,,340.28,340.28
+C001161,Professional Services,Legal,,,,2619.27,2619.27
+C001162,Facilities,Cleaning Services,,,,9434.73,9434.73
+C001163,Professional Services,Consulting,Management Consulting,,CANCELLED,8020.43,0.00
+C001164,Clinical Supplies,Consumables,Wound Care,,,283.28,283.28
+C001165,Pharmaceuticals,Oncology,Chemotherapy Agents,,CANCELLED,2168.40,0.00
+C001166,Professional Services,Consulting,Management Consulting,,,12912.91,12912.91
+C001167,Pharmaceuticals,Oncology,Chemotherapy Agents,,,7574.12,7574.12
+C001168,Professional Services,Legal,,,,4071.23,4071.23
+C001169,Facilities,Cleaning Services,,,,999.52,999.52
+C001170,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,5432.42,5432.42
+C001171,Clinical Supplies,Implants,Cardiac,Stents,,3539.81,3539.81
+C001172,Pharmaceuticals,Oncology,Chemotherapy Agents,,,6495.83,6495.83
+C001173,Food and Catering,,,,,1571.30,1571.30
+C001174,Professional Services,Legal,,,,5554.28,5554.28
+C001175,,,,,NON_PROCUREMENT,12767.42,0.00
+C001176,Pharmaceuticals,Generics,,,,676.10,676.10
+C001177,Clinical Supplies,Implants,Cardiac,Stents,,4794.65,4794.65
+C001178,Clinical Supplies,Implants,Cardiac,Stents,CANCELLED,1464.12,0.00
+C001179,Professional Services,Legal,,,,2629.64,2629.64
+C001180,,,,,NON_PROCUREMENT,8367.54,0.00
+C001181,IT,Software,Licences,,,2583.60,2583.60
+C001182,IT,Hardware,,,,4523.83,4523.83
+C001183,Clinical Supplies,Consumables,Wound Care,,,1174.26,1174.26
+C001184,Food and Catering,,,,,1325.79,1325.79
+C001185,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,4235.98,4235.98
+C001186,IT,Software,Licences,,,12101.42,12101.42
+C001187,Clinical Supplies,Implants,Cardiac,Stents,,3485.93,3485.93
+C001188,IT,Hardware,,,,6813.78,6813.78
+C001189,Facilities,Cleaning Services,,,,276.55,276.55
+C001190,Food and Catering,,,,,2161.03,2161.03
+C001191,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2163.72,2163.72
+C001192,Professional Services,Legal,,,,15198.52,15198.52
+C001193,Clinical Supplies,Consumables,Wound Care,,,174.11,174.11
+C001194,Facilities,Maintenance,HVAC,,,1842.98,1842.98
+C001195,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2292.53,2292.53
+C001196,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,11994.43,11994.43
+C001197,Clinical Supplies,Implants,Cardiac,Stents,,3711.66,3711.66
+C001198,Professional Services,Consulting,Management Consulting,,,5586.51,5586.51
+C001199,,,,,NON_PROCUREMENT,17251.02,0.00
+C001200,Facilities,Cleaning Services,,,,3093.93,3093.93
+C001201,IT,Software,Licences,,,7520.04,7520.04
+C001202,Clinical Supplies,Consumables,Gloves and PPE,,,79.07,79.07
+C001203,Pharmaceuticals,Generics,,,CANCELLED,234.62,0.00
+C001204,IT,Software,Licences,,,1153.28,1153.28
+C001205,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,14700.41,14700.41
+C001206,Facilities,Cleaning Services,,,,3404.38,3404.38
+C001207,,,,,NON_PROCUREMENT,12473.24,0.00
+C001208,Pharmaceuticals,Generics,,,,272.75,272.75
+C001209,Clinical Supplies,Implants,Cardiac,Stents,,1665.68,1665.68
+C001210,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,4543.53,4543.53
+C001211,IT,Hardware,,,,196.92,196.92
+C001212,Professional Services,Consulting,Management Consulting,,,10729.57,10729.57
+C001213,Pharmaceuticals,Oncology,Chemotherapy Agents,,,659.60,659.60
+C001214,Pharmaceuticals,Generics,,,NOT_APPROVED,113.18,0.00
+C001215,Clinical Supplies,Consumables,Gloves and PPE,,NOT_APPROVED,303.20,0.00
+C001216,IT,Software,Licences,,,364.22,364.22
+C001217,Clinical Supplies,Implants,Cardiac,Stents,,1520.10,1520.10
+C001218,IT,Software,Licences,,,21084.61,21084.61
+C001219,Facilities,Maintenance,HVAC,,,2942.93,2942.93
+C001220,Facilities,Maintenance,HVAC,,,1956.68,1956.68
+C001221,Professional Services,Legal,,,,3175.24,3175.24
+C001222,IT,Hardware,,,,1936.77,1936.77
+C001223,Clinical Supplies,Implants,Cardiac,Stents,,1234.57,1234.57
+C001224,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,3140.72,3140.72
+C001225,Clinical Supplies,Implants,Cardiac,Stents,,3663.45,3663.45
+C001226,Pharmaceuticals,Generics,,,,315.27,315.27
+C001227,Clinical Supplies,Consumables,Gloves and PPE,,NOT_APPROVED,370.58,0.00
+C001228,Professional Services,Consulting,Management Consulting,,,10889.07,10889.07
+C001229,Pharmaceuticals,Generics,,,,585.36,585.36
+C001230,Professional Services,Legal,,,,7934.41,7934.41
+C001231,Pharmaceuticals,Generics,,,,4041.86,4041.86
+C001232,Clinical Supplies,Consumables,Wound Care,,,235.14,235.14
+C001233,Clinical Supplies,Implants,Cardiac,Stents,,2950.84,2950.84
+C001234,Pharmaceuticals,Generics,,,,3689.95,3689.95
+C001235,Food and Catering,,,,,8262.45,8262.45
+C001236,Professional Services,Legal,,,,12754.67,12754.67
+C001237,Clinical Supplies,Implants,Cardiac,Stents,,11770.64,11770.64
+C001238,Pharmaceuticals,Oncology,Chemotherapy Agents,,,842.70,842.70
+C001239,Professional Services,Consulting,Management Consulting,,,51612.70,51612.70
+C001240,Professional Services,Legal,,,,6354.79,6354.79
+C001241,Clinical Supplies,Consumables,Wound Care,,,250.27,250.27
+C001242,Facilities,Cleaning Services,,,,2977.60,2977.60
+C001243,Pharmaceuticals,Oncology,Chemotherapy Agents,,,15295.82,15295.82
+C001244,,,,,NON_PROCUREMENT,14943.11,0.00
+C001245,Clinical Supplies,Consumables,Wound Care,,,198.40,198.40
+C001246,Facilities,Maintenance,HVAC,,,2057.76,2057.76
+C001247,Facilities,Cleaning Services,,,,6655.63,6655.63
+C001248,Facilities,Cleaning Services,,,,1026.89,1026.89
+C001249,Clinical Supplies,Implants,Cardiac,Stents,,1427.72,1427.72
+C001250,Clinical Supplies,Implants,Cardiac,Stents,NOT_APPROVED,1703.24,0.00
+C001251,Pharmaceuticals,Generics,,,,454.90,454.90
+C001252,Facilities,Maintenance,HVAC,,,2254.09,2254.09
+C001253,Facilities,Cleaning Services,,,NOT_APPROVED,8365.29,0.00
+C001254,Professional Services,Consulting,Management Consulting,,,6498.50,6498.50
+C001255,Pharmaceuticals,Generics,,,,1490.86,1490.86
+C001256,Facilities,Cleaning Services,,,,3833.45,3833.45
+C001257,Pharmaceuticals,Generics,,,,497.39,497.39
+C001258,Food and Catering,,,,,1129.99,1129.99
+C001259,Professional Services,Consulting,Management Consulting,,,1608.31,1608.31
+C001260,Professional Services,Consulting,Management Consulting,,,7281.83,7281.83
+C001261,Clinical Supplies,Consumables,Gloves and PPE,,,380.85,380.85
+C001262,Pharmaceuticals,Oncology,Chemotherapy Agents,,,8453.80,8453.80
+C001263,Clinical Supplies,Consumables,Gloves and PPE,,,76.47,76.47
+C001264,Clinical Supplies,Consumables,Gloves and PPE,,,746.60,746.60
+C001265,Clinical Supplies,Consumables,Wound Care,,,182.89,182.89
+C001266,Clinical Supplies,Consumables,Gloves and PPE,,,71.77,71.77
+C001267,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,3208.22,3208.22
+C001268,IT,Software,Licences,,,3164.53,3164.53
+C001269,Pharmaceuticals,Oncology,Chemotherapy Agents,,,21348.15,21348.15
+C001270,Facilities,Maintenance,HVAC,,,3078.13,3078.13
+C001271,Food and Catering,,,,NOT_APPROVED,2442.67,0.00
+C001272,Food and Catering,,,,,3319.59,3319.59
+C001273,Professional Services,Consulting,Management Consulting,,,13232.15,13232.15
+C001274,Clinical Supplies,Consumables,Gloves and PPE,,,196.09,196.09
+C001275,Professional Services,Legal,,,,5878.62,5878.62
+C001276,Clinical Supplies,Implants,Cardiac,Stents,NOT_APPROVED,7666.99,0.00
+C001277,Facilities,Cleaning Services,,,,6117.98,6117.98
+C001278,Pharmaceuticals,Generics,,,,10.11,10.11
+C001279,Pharmaceuticals,Generics,,,,641.22,641.22
+C001280,IT,Hardware,,,,3760.49,3760.49
+C001281,Professional Services,Consulting,Management Consulting,,,26279.00,26279.00
+C001282,Facilities,Cleaning Services,,,,8765.56,8765.56
+C001283,Clinical Supplies,Implants,Cardiac,Stents,,7307.86,7307.86
+C001284,Clinical Supplies,Consumables,Gloves and PPE,,,231.92,231.92
+C001285,Clinical Supplies,Consumables,Gloves and PPE,,,389.24,389.24
+C001286,Facilities,Cleaning Services,,,,3035.64,3035.64
+C001287,,,,,NON_PROCUREMENT,5108.61,0.00
+C001288,Pharmaceuticals,Generics,,,CANCELLED,620.22,0.00
+C001289,Clinical Supplies,Implants,Cardiac,Stents,NOT_APPROVED,1190.65,0.00
+C001290,IT,Hardware,,,,8288.98,8288.98
+C001291,IT,Software,Licences,,,2172.53,2172.53
+C001292,Facilities,Maintenance,HVAC,,,176.09,176.09
+C001293,Facilities,Maintenance,HVAC,,,305.12,305.12
+C001294,Clinical Supplies,Consumables,Wound Care,,,274.26,274.26
+C001295,Clinical Supplies,Implants,Cardiac,Stents,,16606.13,16606.13
+C001296,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,21656.54,21656.54
+C001297,Food and Catering,,,,,3265.82,3265.82
+C001298,Pharmaceuticals,Generics,,,,116.80,116.80
+C001299,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,5803.16,5803.16
+C001300,IT,Software,Licences,,,27883.70,27883.70
+C001301,Professional Services,Legal,,,,5176.49,5176.49
+C001302,Food and Catering,,,,,1433.01,1433.01
+C001303,Clinical Supplies,Consumables,Gloves and PPE,,,774.49,774.49
+C001304,Clinical Supplies,Implants,Cardiac,Stents,,15918.32,15918.32
+C001305,Clinical Supplies,Consumables,Gloves and PPE,,,279.03,279.03
+C001306,Food and Catering,,,,,2389.35,2389.35
+C001307,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2585.14,2585.14
+C001308,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2710.39,2710.39
+C001309,Professional Services,Consulting,Management Consulting,,,7322.80,7322.80
+C001310,Facilities,Cleaning Services,,,,266.46,266.46
+C001311,Clinical Supplies,Implants,Cardiac,Stents,,2661.20,2661.20
+C001312,Facilities,Cleaning Services,,,,3529.38,3529.38
+C001313,IT,Hardware,,,,2071.50,2071.50
+C001314,Facilities,Maintenance,HVAC,,,1393.65,1393.65
+C001315,Facilities,Cleaning Services,,,,2681.63,2681.63
+C001316,Pharmaceuticals,Generics,,,,1244.14,1244.14
+C001317,Food and Catering,,,,,444.13,444.13
+C001318,Professional Services,Consulting,Management Consulting,,NOT_APPROVED,39015.97,0.00
+C001319,Clinical Supplies,Consumables,Wound Care,,,138.28,138.28
+C001320,Food and Catering,,,,,1538.51,1538.51
+C001321,Professional Services,Legal,,,,39190.31,39190.31
+C001322,Professional Services,Legal,,,,7282.15,7282.15
+C001323,Food and Catering,,,,,1666.72,1666.72
+C001324,IT,Software,Licences,,,5179.82,5179.82
+C001325,IT,Hardware,,,,3868.82,3868.82
+C001326,IT,Hardware,,,,13476.35,13476.35
+C001327,Professional Services,Consulting,Management Consulting,,,9556.35,9556.35
+C001328,Clinical Supplies,Consumables,Gloves and PPE,,CANCELLED,273.11,0.00
+C001329,Professional Services,Legal,,,NOT_APPROVED,1898.05,0.00
+C001330,Pharmaceuticals,Oncology,Chemotherapy Agents,,,759.74,759.74
+C001331,IT,Hardware,,,,7255.60,7255.60
+C001332,Clinical Supplies,Consumables,Gloves and PPE,,,597.22,597.22
+C001333,Pharmaceuticals,Oncology,Chemotherapy Agents,,,14119.84,14119.84
+C001334,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,10549.00,10549.00
+C001335,Clinical Supplies,Consumables,Wound Care,,,74.80,74.80
+C001336,,,,,NON_PROCUREMENT,604.07,0.00
+C001337,Professional Services,Consulting,Management Consulting,,,2567.20,2567.20
+C001338,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,27992.66,27992.66
+C001339,Clinical Supplies,Consumables,Gloves and PPE,,CANCELLED,1543.46,0.00
+C001340,IT,Software,Licences,,,703.61,703.61
+C001341,IT,Software,Licences,,NOT_APPROVED,7806.31,0.00
+C001342,Pharmaceuticals,Generics,,,,496.00,496.00
+C001343,Professional Services,Consulting,Management Consulting,,,8924.47,8924.47
+C001344,Clinical Supplies,Consumables,Gloves and PPE,,,760.31,760.31
+C001345,Clinical Supplies,Implants,Cardiac,Stents,,3295.33,3295.33
+C001346,IT,Hardware,,,,3726.53,3726.53
+C001347,Pharmaceuticals,Generics,,,,212.42,212.42
+C001348,,,,,NON_PROCUREMENT,1962.66,0.00
+C001349,Professional Services,Consulting,Management Consulting,,,1170.20,1170.20
+C001350,IT,Hardware,,,,1139.84,1139.84
+C001351,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,8696.02,8696.02
+C001352,Professional Services,Legal,,,,5075.52,5075.52
+C001353,Facilities,Cleaning Services,,,NOT_APPROVED,2956.23,0.00
+C001354,IT,Software,Licences,,NOT_APPROVED,11756.03,0.00
+C001355,IT,Software,Licences,,,32108.25,32108.25
+C001356,Facilities,Maintenance,HVAC,,,1387.70,1387.70
+C001357,Clinical Supplies,Consumables,Wound Care,,,412.08,412.08
+C001358,Facilities,Maintenance,HVAC,,,953.35,953.35
+C001359,IT,Software,Licences,,,3582.23,3582.23
+C001360,Professional Services,Legal,,,,1340.00,1340.00
+C001361,Facilities,Maintenance,HVAC,,,2680.35,2680.35
+C001362,Professional Services,Consulting,Management Consulting,,,2145.25,2145.25
+C001363,Clinical Supplies,Consumables,Gloves and PPE,,,614.11,614.11
+C001364,Clinical Supplies,Consumables,Wound Care,,,38.02,38.02
+C001365,Food and Catering,,,,,1933.97,1933.97
+C001366,Professional Services,Consulting,Management Consulting,,,11845.15,11845.15
+C001367,Professional Services,Legal,,,,2598.90,2598.90
+C001368,Professional Services,Legal,,,,1667.04,1667.04
+C001369,Pharmaceuticals,Generics,,,,3882.48,3882.48
+C001370,,,,,NON_PROCUREMENT,16473.83,0.00
+C001371,IT,Software,Licences,,,510.72,510.72
+C001372,Facilities,Maintenance,HVAC,,,1676.34,1676.34
+C001373,Professional Services,Legal,,,,2474.38,2474.38
+C001374,,,,,NON_PROCUREMENT,14398.79,0.00
+C001375,Facilities,Maintenance,HVAC,,,366.82,366.82
+C001376,,,,,NON_PROCUREMENT,16178.82,0.00
+C001377,,,,,NON_PROCUREMENT,8298.04,0.00
+C001378,Professional Services,Legal,,,,13925.30,13925.30
+C001379,Professional Services,Consulting,Management Consulting,,,16844.17,16844.17
+C001380,Facilities,Cleaning Services,,,,2227.09,2227.09
+C001381,Food and Catering,,,,CANCELLED,1987.38,0.00
+C001382,Professional Services,Legal,,,,3092.32,3092.32
+C001383,Food and Catering,,,,,1535.20,1535.20
+C001384,Facilities,Cleaning Services,,,,2329.78,2329.78
+C001385,Clinical Supplies,Consumables,Wound Care,,,348.56,348.56
+C001386,IT,Software,Licences,,,8987.27,8987.27
+C001387,Professional Services,Legal,,,,7443.70,7443.70
+C001388,Professional Services,Legal,,,,8314.26,8314.26
+C001389,Professional Services,Legal,,,,5336.25,5336.25
+C001390,Food and Catering,,,,,141.72,141.72
+C001391,Facilities,Maintenance,HVAC,,,9179.46,9179.46
+C001392,Clinical Supplies,Consumables,Gloves and PPE,,,262.99,262.99
+C001393,Pharmaceuticals,Generics,,,,896.08,896.08
+C001394,Pharmaceuticals,Oncology,Chemotherapy Agents,,,928.80,928.80
+C001395,Clinical Supplies,Consumables,Wound Care,,,285.87,285.87
+C001396,Clinical Supplies,Consumables,Gloves and PPE,,NOT_APPROVED,153.53,0.00
+C001397,Facilities,Maintenance,HVAC,,,1429.27,1429.27
+C001398,Food and Catering,,,,NOT_APPROVED,1229.38,0.00
+C001399,Professional Services,Legal,,,,6862.17,6862.17
+C001400,IT,Software,Licences,,,3832.14,3832.14
+C001401,IT,Hardware,,,,1318.60,1318.60
+C001402,IT,Software,Licences,,,4122.54,4122.54
+C001403,IT,Hardware,,,CANCELLED,6374.63,0.00
+C001404,Clinical Supplies,Consumables,Gloves and PPE,,,310.49,310.49
+C001405,,,,,NON_PROCUREMENT,8219.62,0.00
+C001406,Food and Catering,,,,,1681.43,1681.43
+C001407,IT,Software,Licences,,,15226.33,15226.33
+C001408,IT,Software,Licences,,,14860.29,14860.29
+C001409,Facilities,Maintenance,HVAC,,,1531.84,1531.84
+C001410,Clinical Supplies,Consumables,Wound Care,,,208.08,208.08
+C001411,IT,Software,Licences,,,5928.34,5928.34
+C001412,Pharmaceuticals,Oncology,Chemotherapy Agents,,,15480.61,15480.61
+C001413,Facilities,Cleaning Services,,,,6855.54,6855.54
+C001414,Facilities,Cleaning Services,,,,18501.01,18501.01
+C001415,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,26744.46,26744.46
+C001416,IT,Software,Licences,,,5251.85,5251.85
+C001417,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2886.12,2886.12
+C001418,Clinical Supplies,Consumables,Gloves and PPE,,,72.74,72.74
+C001419,Facilities,Cleaning Services,,,,4359.29,4359.29
+C001420,Clinical Supplies,Consumables,Gloves and PPE,,,1991.68,1991.68
+C001421,Pharmaceuticals,Generics,,,NOT_APPROVED,464.78,0.00
+C001422,Pharmaceuticals,Oncology,Chemotherapy Agents,,,1799.55,1799.55
+C001423,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,3883.70,3883.70
+C001424,Facilities,Maintenance,HVAC,,,2334.52,2334.52
+C001425,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,21763.64,21763.64
+C001426,Facilities,Cleaning Services,,,,3840.30,3840.30
+C001427,IT,Software,Licences,,,636.85,636.85
+C001428,Clinical Supplies,Implants,Cardiac,Stents,,3804.76,3804.76
+C001429,Facilities,Maintenance,HVAC,,,1718.09,1718.09
+C001430,Clinical Supplies,Consumables,Gloves and PPE,,,510.72,510.72
+C001431,IT,Hardware,,,,2778.15,2778.15
+C001432,Facilities,Cleaning Services,,,,15407.28,15407.28
+C001433,Facilities,Maintenance,HVAC,,NOT_APPROVED,821.93,0.00
+C001434,Clinical Supplies,Consumables,Wound Care,,,87.83,87.83
+C001435,Clinical Supplies,Implants,Cardiac,Stents,NOT_APPROVED,817.49,0.00
+C001436,Professional Services,Consulting,Management Consulting,,,11188.27,11188.27
+C001437,Clinical Supplies,Consumables,Gloves and PPE,,,43.41,43.41
+C001438,Facilities,Cleaning Services,,,CANCELLED,5128.25,0.00
+C001439,Professional Services,Consulting,Management Consulting,,,2191.84,2191.84
+C001440,Food and Catering,,,,,149.61,149.61
+C001441,Facilities,Maintenance,HVAC,,,4636.86,4636.86
+C001442,Clinical Supplies,Implants,Cardiac,Stents,,2769.25,2769.25
+C001443,IT,Hardware,,,,4769.60,4769.60
+C001444,IT,Software,Licences,,,5725.80,5725.80
+C001445,Professional Services,Consulting,Management Consulting,,,8144.16,8144.16
+C001446,Facilities,Maintenance,HVAC,,,11912.90,11912.90
+C001447,Professional Services,Legal,,,,13865.25,13865.25
+C001448,Professional Services,Legal,,,,10728.77,10728.77
+C001449,Food and Catering,,,,,1680.16,1680.16
+C001450,Professional Services,Consulting,Management Consulting,,,5366.28,5366.28
+C001451,IT,Software,Licences,,,29449.87,29449.87
+C001452,Clinical Supplies,Consumables,Gloves and PPE,,,379.79,379.79
+C001453,IT,Software,Licences,,,856.48,856.48
+C001454,Clinical Supplies,Consumables,Wound Care,,NOT_APPROVED,212.26,0.00
+C001455,Clinical Supplies,Implants,Cardiac,Stents,,4602.86,4602.86
+C001456,Clinical Supplies,Consumables,Gloves and PPE,,,159.09,159.09
+C001457,Professional Services,Legal,,,,10512.47,10512.47
+C001458,Clinical Supplies,Implants,Cardiac,Stents,,1282.55,1282.55
+C001459,Professional Services,Consulting,Management Consulting,,,9002.60,9002.60
+C001460,Facilities,Cleaning Services,,,,24642.88,24642.88
+C001461,Facilities,Cleaning Services,,,,3302.15,3302.15
+C001462,Pharmaceuticals,Oncology,Chemotherapy Agents,,NOT_APPROVED,530.35,0.00
+C001463,Professional Services,Legal,,,,28420.72,28420.72
+C001464,Pharmaceuticals,Generics,,,,665.82,665.82
+C001465,Clinical Supplies,Consumables,Gloves and PPE,,,773.01,773.01
+C001466,Pharmaceuticals,Oncology,Chemotherapy Agents,,,19091.51,19091.51
+C001467,Clinical Supplies,Implants,Cardiac,Stents,,2229.17,2229.17
+C001468,Professional Services,Consulting,Management Consulting,,,56073.40,56073.40
+C001469,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,14288.95,14288.95
+C001470,Food and Catering,,,,,1071.30,1071.30
+C001471,Pharmaceuticals,Generics,,,,722.15,722.15
+C001472,Pharmaceuticals,Generics,,,,429.59,429.59
+C001473,Facilities,Cleaning Services,,,,2233.63,2233.63
+C001474,Food and Catering,,,,,7924.15,7924.15
+C001475,Facilities,Maintenance,HVAC,,,1425.04,1425.04
+C001476,Pharmaceuticals,Generics,,,NOT_APPROVED,86.99,0.00
+C001477,Clinical Supplies,Consumables,Wound Care,,NOT_APPROVED,164.98,0.00
+C001478,Facilities,Cleaning Services,,,,3549.86,3549.86
+C001479,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,2358.40,2358.40
+C001480,Professional Services,Consulting,Management Consulting,,,1999.50,1999.50
+C001481,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,4688.03,4688.03
+C001482,Professional Services,Legal,,,,7769.12,7769.12
+C001483,Pharmaceuticals,Generics,,,,1529.92,1529.92
+C001484,Clinical Supplies,Consumables,Wound Care,,,1075.40,1075.40
+C001485,Pharmaceuticals,Oncology,Chemotherapy Agents,,,1761.28,1761.28
+C001486,Facilities,Maintenance,HVAC,,,5950.43,5950.43
+C001487,Pharmaceuticals,Oncology,Chemotherapy Agents,,,1269.09,1269.09
+C001488,IT,Software,Licences,,,24995.48,24995.48
+C001489,Professional Services,Consulting,Management Consulting,,,7651.78,7651.78
+C001490,Facilities,Cleaning Services,,,CANCELLED,7459.45,0.00
+C001491,Pharmaceuticals,Generics,,,CANCELLED,2539.96,0.00
+C001492,Pharmaceuticals,Oncology,Chemotherapy Agents,,,7073.71,7073.71
+C001493,Professional Services,Legal,,,,7250.70,7250.70
+C001494,Professional Services,Consulting,Management Consulting,,,3486.10,3486.10
+C001495,Facilities,Cleaning Services,,,,4591.77,4591.77
+C001496,Professional Services,Consulting,Management Consulting,,,9022.37,9022.37
+C001497,,,,,NON_PROCUREMENT,12279.63,0.00
+C001498,Facilities,Maintenance,HVAC,,,10135.32,10135.32
+C001499,Food and Catering,,,,,850.52,850.52
+C001500,Facilities,Maintenance,HVAC,,,606.61,606.61
+C001501,Facilities,Maintenance,HVAC,,,1819.95,1819.95
+C001502,Clinical Supplies,Consumables,Wound Care,,,944.66,944.66
+C001503,Facilities,Cleaning Services,,,,3548.88,3548.88
+C001504,IT,Hardware,,,,462.39,462.39
+C001505,IT,Software,Licences,,,20260.53,20260.53
+C001506,Pharmaceuticals,Generics,,,,1258.99,1258.99
+C001507,Clinical Supplies,Consumables,Gloves and PPE,,,468.43,468.43
+C001508,Clinical Supplies,Implants,Cardiac,Stents,,18208.11,18208.11
+C001509,Professional Services,Consulting,Management Consulting,,,8443.46,8443.46
+C001510,Facilities,Maintenance,HVAC,,,1774.34,1774.34
+C001511,Clinical Supplies,Consumables,Wound Care,,NOT_APPROVED,134.27,0.00
+C001512,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,4427.69,4427.69
+C001513,Food and Catering,,,,,1038.05,1038.05
+C001514,Clinical Supplies,Consumables,Wound Care,,,244.99,244.99
+C001515,Clinical Supplies,Consumables,Wound Care,,,1059.83,1059.83
+C001516,Clinical Supplies,Consumables,Gloves and PPE,,,317.39,317.39
+C001517,IT,Software,Licences,,,5034.37,5034.37
+C001518,IT,Hardware,,,,3474.21,3474.21
+C001519,Clinical Supplies,Consumables,Wound Care,,,235.42,235.42
+C001520,Food and Catering,,,,,2052.57,2052.57
+C001521,Clinical Supplies,Consumables,Wound Care,,,105.94,105.94
+C001522,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,2354.25,2354.25
+C001523,Food and Catering,,,,,1729.41,1729.41
+C001524,Clinical Supplies,Implants,Cardiac,Stents,,2043.15,2043.15
+C001525,Facilities,Maintenance,HVAC,,CANCELLED,1233.61,0.00
+C001526,Professional Services,Consulting,Management Consulting,,,11142.36,11142.36
+C001527,Pharmaceuticals,Oncology,Chemotherapy Agents,,,3891.27,3891.27
+C001528,Food and Catering,,,,,972.74,972.74
+C001529,Food and Catering,,,,,864.81,864.81
+C001530,IT,Hardware,,,,665.35,665.35
+C001531,Professional Services,Legal,,,,7463.80,7463.80
+C001532,Facilities,Maintenance,HVAC,,,1484.96,1484.96
+C001533,Clinical Supplies,Consumables,Gloves and PPE,,,222.11,222.11
+C001534,Clinical Supplies,Consumables,Wound Care,,,389.06,389.06
+C001535,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2870.14,2870.14
+C001536,,,,,NON_PROCUREMENT,17991.78,0.00
+C001537,Clinical Supplies,Implants,Cardiac,Stents,,2558.96,2558.96
+C001538,Professional Services,Legal,,,,6347.92,6347.92
+C001539,IT,Software,Licences,,,309.55,309.55
+C001540,IT,Hardware,,,,16269.27,16269.27
+C001541,Clinical Supplies,Consumables,Gloves and PPE,,,148.64,148.64
+C001542,Professional Services,Legal,,,,6127.70,6127.70
+C001543,IT,Hardware,,,,2105.36,2105.36
+C001544,IT,Hardware,,,,3569.70,3569.70
+C001545,Clinical Supplies,Consumables,Wound Care,,,47.55,47.55
+C001546,Facilities,Maintenance,HVAC,,,1363.29,1363.29
+C001547,Professional Services,Legal,,,,2495.36,2495.36
+C001548,Clinical Supplies,Implants,Cardiac,Stents,,1978.61,1978.61
+C001549,Clinical Supplies,Implants,Cardiac,Stents,,7196.33,7196.33
+C001550,Facilities,Maintenance,HVAC,,,2204.15,2204.15
+C001551,IT,Software,Licences,,,5668.90,5668.90
+C001552,Professional Services,Legal,,,NOT_APPROVED,5264.66,0.00
+C001553,Clinical Supplies,Implants,Cardiac,Stents,,2594.18,2594.18
+C001554,Pharmaceuticals,Generics,,,NOT_APPROVED,1926.33,0.00
+C001555,Pharmaceuticals,Generics,,,,3397.73,3397.73
+C001556,Clinical Supplies,Consumables,Gloves and PPE,,,135.93,135.93
+C001557,Clinical Supplies,Consumables,Wound Care,,,136.89,136.89
+C001558,,,,,NON_PROCUREMENT,12896.95,0.00
+C001559,Professional Services,Consulting,Management Consulting,,,11998.49,11998.49
+C001560,Clinical Supplies,Consumables,Wound Care,,,101.40,101.40
+C001561,Food and Catering,,,,,2075.65,2075.65
+C001562,Professional Services,Legal,,,,13952.95,13952.95
+C001563,Food and Catering,,,,NOT_APPROVED,124.25,0.00
+C001564,Food and Catering,,,,NOT_APPROVED,1770.81,0.00
+C001565,Professional Services,Legal,,,CANCELLED,1750.65,0.00
+C001566,Clinical Supplies,Consumables,Gloves and PPE,,,250.35,250.35
+C001567,Professional Services,Consulting,Management Consulting,,,6350.97,6350.97
+C001568,Pharmaceuticals,Oncology,Chemotherapy Agents,,,1949.61,1949.61
+C001569,Pharmaceuticals,Generics,,,,1640.63,1640.63
+C001570,IT,Hardware,,,,10026.07,10026.07
+C001571,Professional Services,Consulting,Management Consulting,,,10654.29,10654.29
+C001572,IT,Hardware,,,,3837.99,3837.99
+C001573,Facilities,Maintenance,HVAC,,,723.01,723.01
+C001574,Facilities,Maintenance,HVAC,,CANCELLED,104.61,0.00
+C001575,Facilities,Cleaning Services,,,,1255.74,1255.74
+C001576,Clinical Supplies,Implants,Cardiac,Stents,NOT_APPROVED,3288.13,0.00
+C001577,Professional Services,Consulting,Management Consulting,,,18984.60,18984.60
+C001578,IT,Hardware,,,NOT_APPROVED,1084.74,0.00
+C001579,Facilities,Maintenance,HVAC,,,4253.53,4253.53
+C001580,Facilities,Maintenance,HVAC,,NOT_APPROVED,2940.13,0.00
+C001581,Professional Services,Consulting,Management Consulting,,CANCELLED,11793.17,0.00
+C001582,Clinical Supplies,Consumables,Gloves and PPE,,,1921.41,1921.41
+C001583,IT,Hardware,,,,3183.08,3183.08
+C001584,Professional Services,Legal,,,NOT_APPROVED,5211.73,0.00
+C001585,Facilities,Cleaning Services,,,,3540.93,3540.93
+C001586,,,,,NON_PROCUREMENT,11438.70,0.00
+C001587,Clinical Supplies,Implants,Cardiac,Stents,,3848.15,3848.15
+C001588,IT,Software,Licences,,,4173.87,4173.87
+C001589,IT,Software,Licences,,,3270.53,3270.53
+C001590,Facilities,Cleaning Services,,,,3055.74,3055.74
+C001591,,,,,NON_PROCUREMENT,19151.99,0.00
+C001592,Professional Services,Legal,,,,2204.93,2204.93
+C001593,Pharmaceuticals,Generics,,,,713.61,713.61
+C001594,Food and Catering,,,,,11710.78,11710.78
+C001595,Professional Services,Consulting,Management Consulting,,,20285.87,20285.87
+C001596,IT,Hardware,,,,1413.55,1413.55
+C001597,Facilities,Cleaning Services,,,,2854.18,2854.18
+C001598,Facilities,Cleaning Services,,,,1814.97,1814.97
+C001599,,,,,NON_PROCUREMENT,15588.75,0.00
+C001600,IT,Hardware,,,,2734.51,2734.51
+C001601,Facilities,Maintenance,HVAC,,,1214.63,1214.63
+C001602,Clinical Supplies,Consumables,Wound Care,,,151.49,151.49
+C001603,Facilities,Maintenance,HVAC,,,5972.25,5972.25
+C001604,Clinical Supplies,Consumables,Gloves and PPE,,,384.17,384.17
+C001605,Facilities,Maintenance,HVAC,,,787.06,787.06
+C001606,Food and Catering,,,,,1468.28,1468.28
+C001607,Clinical Supplies,Consumables,Gloves and PPE,,,138.85,138.85
+C001608,,,,,NON_PROCUREMENT,19067.92,0.00
+C001609,Clinical Supplies,Consumables,Wound Care,,,176.00,176.00
+C001610,Facilities,Maintenance,HVAC,,,720.66,720.66
+C001611,Facilities,Maintenance,HVAC,,,131.70,131.70
+C001612,Pharmaceuticals,Generics,,,NOT_APPROVED,494.46,0.00
+C001613,Professional Services,Legal,,,,13591.16,13591.16
+C001614,Professional Services,Consulting,Management Consulting,,,35294.90,35294.90
+C001615,IT,Software,Licences,,CANCELLED,2384.22,0.00
+C001616,Pharmaceuticals,Oncology,Chemotherapy Agents,,,3356.97,3356.97
+C001617,Professional Services,Legal,,,,9044.60,9044.60
+C001618,Professional Services,Legal,,,,2504.93,2504.93
+C001619,Clinical Supplies,Consumables,Gloves and PPE,,,192.16,192.16
+C001620,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2272.92,2272.92
+C001621,Professional Services,Legal,,,,5248.86,5248.86
+C001622,Pharmaceuticals,Oncology,Chemotherapy Agents,,NOT_APPROVED,5117.71,0.00
+C001623,Facilities,Cleaning Services,,,,7853.46,7853.46
+C001624,Food and Catering,,,,,1954.22,1954.22
+C001625,Professional Services,Legal,,,,771.95,771.95
+C001626,Pharmaceuticals,Generics,,,NOT_APPROVED,359.24,0.00
+C001627,IT,Hardware,,,,516.71,516.71
+C001628,Pharmaceuticals,Oncology,Chemotherapy Agents,,,3792.32,3792.32
+C001629,IT,Hardware,,,,3501.44,3501.44
+C001630,IT,Hardware,,,,3897.20,3897.20
+C001631,Clinical Supplies,Consumables,Wound Care,,,49.72,49.72
+C001632,IT,Software,Licences,,,2096.14,2096.14
+C001633,,,,,NON_PROCUREMENT,18951.55,0.00
+C001634,Professional Services,Consulting,Management Consulting,,,16705.00,16705.00
+C001635,Pharmaceuticals,Generics,,,,373.55,373.55
+C001636,Professional Services,Legal,,,,2751.32,2751.32
+C001637,IT,Hardware,,,,3649.49,3649.49
+C001638,Facilities,Maintenance,HVAC,,NOT_APPROVED,906.57,0.00
+C001639,Facilities,Cleaning Services,,,,4786.63,4786.63
+C001640,IT,Software,Licences,,,14687.77,14687.77
+C001641,Professional Services,Consulting,Management Consulting,,,8975.17,8975.17
+C001642,Professional Services,Legal,,,NOT_APPROVED,4346.17,0.00
+C001643,IT,Hardware,,,,3334.21,3334.21
+C001644,Clinical Supplies,Consumables,Gloves and PPE,,,195.98,195.98
+C001645,Facilities,Maintenance,HVAC,,,1949.55,1949.55
+C001646,Clinical Supplies,Implants,Cardiac,Stents,,2104.11,2104.11
+C001647,Clinical Supplies,Consumables,Wound Care,,NOT_APPROVED,264.50,0.00
+C001648,Facilities,Maintenance,HVAC,,,2812.08,2812.08
+C001649,Clinical Supplies,Implants,Cardiac,Stents,,15875.42,15875.42
+C001650,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2738.59,2738.59
+C001651,Facilities,Maintenance,HVAC,,,793.59,793.59
+C001652,Clinical Supplies,Consumables,Wound Care,,,184.24,184.24
+C001653,Facilities,Maintenance,HVAC,,,2580.51,2580.51
+C001654,Clinical Supplies,Implants,Cardiac,Stents,NOT_APPROVED,2796.26,0.00
+C001655,Pharmaceuticals,Oncology,Chemotherapy Agents,,,4075.18,4075.18
+C001656,Professional Services,Legal,,,,17389.68,17389.68
+C001657,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2299.95,2299.95
+C001658,Facilities,Maintenance,HVAC,,,7346.13,7346.13
+C001659,IT,Software,Licences,,,924.60,924.60
+C001660,IT,Software,Licences,,NOT_APPROVED,5081.78,0.00
+C001661,Clinical Supplies,Consumables,Gloves and PPE,,,321.05,321.05
+C001662,Professional Services,Consulting,Management Consulting,,,6379.21,6379.21
+C001663,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,5444.35,5444.35
+C001664,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2078.49,2078.49
+C001665,Pharmaceuticals,Oncology,Chemotherapy Agents,,,506.55,506.55
+C001666,Facilities,Cleaning Services,,,NOT_APPROVED,4987.15,0.00
+C001667,IT,Hardware,,,NOT_APPROVED,1826.49,0.00
+C001668,Pharmaceuticals,Generics,,,,216.77,216.77
+C001669,Clinical Supplies,Consumables,Wound Care,,,1294.53,1294.53
+C001670,Facilities,Maintenance,HVAC,,,750.09,750.09
+C001671,Facilities,Maintenance,HVAC,,,4958.74,4958.74
+C001672,,,,,NON_PROCUREMENT,3406.24,0.00
+C001673,Clinical Supplies,Consumables,Wound Care,,,395.86,395.86
+C001674,Food and Catering,,,,,4304.54,4304.54
+C001675,Clinical Supplies,Consumables,Gloves and PPE,,,98.10,98.10
+C001676,Facilities,Cleaning Services,,,,1890.75,1890.75
+C001677,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,977.33,977.33
+C001678,Food and Catering,,,,,3290.85,3290.85
+C001679,,,,,NON_PROCUREMENT,4269.25,0.00
+C001680,Clinical Supplies,Consumables,Wound Care,,,286.41,286.41
+C001681,Pharmaceuticals,Generics,,,,1963.72,1963.72
+C001682,IT,Hardware,,,,490.39,490.39
+C001683,Clinical Supplies,Implants,Cardiac,Stents,,2361.44,2361.44
+C001684,Professional Services,Legal,,,NOT_APPROVED,3858.05,0.00
+C001685,Clinical Supplies,Consumables,Wound Care,,,88.47,88.47
+C001686,Facilities,Cleaning Services,,,,5057.17,5057.17
+C001687,IT,Hardware,,,,3148.10,3148.10
+C001688,Facilities,Cleaning Services,,,,5171.24,5171.24
+C001689,Facilities,Maintenance,HVAC,,,4131.85,4131.85
+C001690,Clinical Supplies,Consumables,Wound Care,,CANCELLED,264.24,0.00
+C001691,Food and Catering,,,,,3708.72,3708.72
+C001692,Food and Catering,,,,,167.76,167.76
+C001693,Clinical Supplies,Consumables,Gloves and PPE,,CANCELLED,123.60,0.00
+C001694,Facilities,Maintenance,HVAC,,,1513.53,1513.53
+C001695,Facilities,Cleaning Services,,,,6803.92,6803.92
+C001696,Professional Services,Consulting,Management Consulting,,,14250.80,14250.80
+C001697,Professional Services,Consulting,Management Consulting,,,19713.16,19713.16
+C001698,IT,Software,Licences,,,4556.10,4556.10
+C001699,Pharmaceuticals,Oncology,Chemotherapy Agents,,,21220.56,21220.56
+C001700,Food and Catering,,,,,6873.52,6873.52
+C001701,Clinical Supplies,Consumables,Wound Care,,,274.01,274.01
+C001702,Clinical Supplies,Consumables,Wound Care,,,168.29,168.29
+C001703,Clinical Supplies,Consumables,Wound Care,,,871.52,871.52
+C001704,Professional Services,Legal,,,,7414.42,7414.42
+C001705,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,5357.86,5357.86
+C001706,Pharmaceuticals,Oncology,Chemotherapy Agents,,,733.45,733.45
+C001707,Food and Catering,,,,,1533.26,1533.26
+C001708,Pharmaceuticals,Oncology,Chemotherapy Agents,,,4933.70,4933.70
+C001709,IT,Software,Licences,,,5066.97,5066.97
+C001710,IT,Hardware,,,,10609.53,10609.53
+C001711,Pharmaceuticals,Generics,,,,238.52,238.52
+C001712,Pharmaceuticals,Oncology,Chemotherapy Agents,,,4625.66,4625.66
+C001713,Clinical Supplies,Consumables,Gloves and PPE,,,417.98,417.98
+C001714,Professional Services,Legal,,,,7133.47,7133.47
+C001715,,,,,NON_PROCUREMENT,4860.38,0.00
+C001716,Pharmaceuticals,Oncology,Chemotherapy Agents,,,300.92,300.92
+C001717,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,3093.18,3093.18
+C001718,Facilities,Cleaning Services,,,,2054.54,2054.54
+C001719,Clinical Supplies,Implants,Orthopaedic,Hip Systems,NOT_APPROVED,9694.10,0.00
+C001720,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2520.30,2520.30
+C001721,,,,,NON_PROCUREMENT,5692.03,0.00
+C001722,Facilities,Maintenance,HVAC,,,965.37,965.37
+C001723,,,,,NON_PROCUREMENT,9669.36,0.00
+C001724,Pharmaceuticals,Generics,,,,187.76,187.76
+C001725,Facilities,Cleaning Services,,,,1742.70,1742.70
+C001726,Pharmaceuticals,Generics,,,,2201.99,2201.99
+C001727,IT,Software,Licences,,NOT_APPROVED,4340.36,0.00
+C001728,Clinical Supplies,Implants,Orthopaedic,Hip Systems,NOT_APPROVED,10330.65,0.00
+C001729,Facilities,Maintenance,HVAC,,,3419.43,3419.43
+C001730,Food and Catering,,,,,170.45,170.45
+C001731,IT,Hardware,,,,10198.95,10198.95
+C001732,Pharmaceuticals,Generics,,,,839.41,839.41
+C001733,,,,,NON_PROCUREMENT,10294.54,0.00
+C001734,Facilities,Maintenance,HVAC,,NOT_APPROVED,1106.62,0.00
+C001735,Facilities,Maintenance,HVAC,,,384.09,384.09
+C001736,Clinical Supplies,Consumables,Gloves and PPE,,,1317.78,1317.78
+C001737,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,3226.46,3226.46
+C001738,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,945.32,945.32
+C001739,IT,Software,Licences,,,5488.68,5488.68
+C001740,Facilities,Cleaning Services,,,,405.60,405.60
+C001741,Facilities,Cleaning Services,,,,18115.02,18115.02
+C001742,Clinical Supplies,Implants,Cardiac,Stents,CANCELLED,1608.22,0.00
+C001743,Food and Catering,,,,,1838.66,1838.66
+C001744,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2295.39,2295.39
+C001745,Pharmaceuticals,Oncology,Chemotherapy Agents,,,7045.24,7045.24
+C001746,Professional Services,Legal,,,,4574.81,4574.81
+C001747,IT,Software,Licences,,,11989.80,11989.80
+C001748,Professional Services,Legal,,,,994.73,994.73
+C001749,Clinical Supplies,Consumables,Gloves and PPE,,,369.65,369.65
+C001750,Pharmaceuticals,Oncology,Chemotherapy Agents,,NOT_APPROVED,844.34,0.00
+C001751,Facilities,Cleaning Services,,,,10686.95,10686.95
+C001752,Pharmaceuticals,Generics,,,,588.18,588.18
+C001753,Professional Services,Legal,,,,21069.23,21069.23
+C001754,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,1088.17,1088.17
+C001755,Clinical Supplies,Consumables,Gloves and PPE,,,391.87,391.87
+C001756,Pharmaceuticals,Oncology,Chemotherapy Agents,,CANCELLED,1701.82,0.00
+C001757,Pharmaceuticals,Generics,,,,589.25,589.25
+C001758,Clinical Supplies,Consumables,Gloves and PPE,,,363.83,363.83
+C001759,Facilities,Maintenance,HVAC,,,2319.82,2319.82
+C001760,Food and Catering,,,,,1696.58,1696.58
+C001761,IT,Software,Licences,,,21357.36,21357.36
+C001762,Clinical Supplies,Implants,Cardiac,Stents,,4344.27,4344.27
+C001763,Professional Services,Legal,,,,2255.73,2255.73
+C001764,Pharmaceuticals,Generics,,,,686.61,686.61
+C001765,Clinical Supplies,Implants,Cardiac,Stents,,3709.22,3709.22
+C001766,Clinical Supplies,Consumables,Gloves and PPE,,,319.97,319.97
+C001767,Pharmaceuticals,Generics,,,,511.10,511.10
+C001768,Professional Services,Consulting,Management Consulting,,,17973.08,17973.08
+C001769,IT,Software,Licences,,,7191.99,7191.99
+C001770,Facilities,Maintenance,HVAC,,,4967.66,4967.66
+C001771,Pharmaceuticals,Oncology,Chemotherapy Agents,,NOT_APPROVED,3808.35,0.00
+C001772,Facilities,Cleaning Services,,,CANCELLED,1568.41,0.00
+C001773,Pharmaceuticals,Oncology,Chemotherapy Agents,,,1073.90,1073.90
+C001774,IT,Software,Licences,,,10696.43,10696.43
+C001775,Professional Services,Consulting,Management Consulting,,,13330.08,13330.08
+C001776,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,5599.09,5599.09
+C001777,Professional Services,Legal,,,,12313.86,12313.86
+C001778,Clinical Supplies,Implants,Cardiac,Stents,,3577.32,3577.32
+C001779,Clinical Supplies,Consumables,Gloves and PPE,,,1714.71,1714.71
+C001780,Facilities,Cleaning Services,,,,8294.00,8294.00
+C001781,Clinical Supplies,Consumables,Wound Care,,,49.73,49.73
+C001782,IT,Hardware,,,NOT_APPROVED,3339.38,0.00
+C001783,Professional Services,Consulting,Management Consulting,,CANCELLED,3635.57,0.00
+C001784,Pharmaceuticals,Generics,,,,541.17,541.17
+C001785,IT,Software,Licences,,,17757.73,17757.73
+C001786,Facilities,Maintenance,HVAC,,,3325.99,3325.99
+C001787,Clinical Supplies,Consumables,Gloves and PPE,,,668.15,668.15
+C001788,Pharmaceuticals,Generics,,,,201.63,201.63
+C001789,Pharmaceuticals,Generics,,,,1126.82,1126.82
+C001790,IT,Hardware,,,,591.85,591.85
+C001791,IT,Hardware,,,,1569.72,1569.72
+C001792,Pharmaceuticals,Oncology,Chemotherapy Agents,,,3897.00,3897.00
+C001793,Facilities,Cleaning Services,,,NOT_APPROVED,9917.98,0.00
+C001794,Pharmaceuticals,Oncology,Chemotherapy Agents,,,1757.61,1757.61
+C001795,Clinical Supplies,Consumables,Wound Care,,NOT_APPROVED,261.80,0.00
+C001796,Professional Services,Legal,,,,5379.33,5379.33
+C001797,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,7077.34,7077.34
+C001798,Clinical Supplies,Implants,Cardiac,Stents,,1855.78,1855.78
+C001799,Food and Catering,,,,,2584.58,2584.58
+C001800,Facilities,Maintenance,HVAC,,,1791.29,1791.29
+C001801,Food and Catering,,,,,656.63,656.63
+C001802,Professional Services,Legal,,,,6038.65,6038.65
+C001803,IT,Hardware,,,NOT_APPROVED,1266.97,0.00
+C001804,Pharmaceuticals,Oncology,Chemotherapy Agents,,,1087.95,1087.95
+C001805,Professional Services,Consulting,Management Consulting,,CANCELLED,14646.07,0.00
+C001806,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,3619.67,3619.67
+C001807,Clinical Supplies,Consumables,Wound Care,,,169.30,169.30
+C001808,Pharmaceuticals,Oncology,Chemotherapy Agents,,,3153.14,3153.14
+C001809,IT,Hardware,,,,19918.26,19918.26
+C001810,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,4822.58,4822.58
+C001811,IT,Hardware,,,,3825.06,3825.06
+C001812,Food and Catering,,,,,4211.08,4211.08
+C001813,Food and Catering,,,,,1679.40,1679.40
+C001814,Pharmaceuticals,Generics,,,NOT_APPROVED,53.50,0.00
+C001815,Food and Catering,,,,,307.70,307.70
+C001816,Food and Catering,,,,,135.92,135.92
+C001817,Pharmaceuticals,Generics,,,,730.58,730.58
+C001818,Clinical Supplies,Consumables,Wound Care,,NOT_APPROVED,283.41,0.00
+C001819,Pharmaceuticals,Generics,,,,798.33,798.33
+C001820,Food and Catering,,,,,833.16,833.16
+C001821,Pharmaceuticals,Oncology,Chemotherapy Agents,,,820.00,820.00
+C001822,Pharmaceuticals,Generics,,,,551.47,551.47
+C001823,IT,Hardware,,,,3166.33,3166.33
+C001824,IT,Hardware,,,NOT_APPROVED,810.47,0.00
+C001825,Clinical Supplies,Implants,Cardiac,Stents,,1316.76,1316.76
+C001826,Facilities,Cleaning Services,,,,4329.61,4329.61
+C001827,Facilities,Cleaning Services,,,,1303.84,1303.84
+C001828,Clinical Supplies,Consumables,Gloves and PPE,,,245.86,245.86
+C001829,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2474.57,2474.57
+C001830,Clinical Supplies,Implants,Cardiac,Stents,,12574.95,12574.95
+C001831,Clinical Supplies,Implants,Cardiac,Stents,CANCELLED,1198.24,0.00
+C001832,Food and Catering,,,,CANCELLED,657.10,0.00
+C001833,Food and Catering,,,,,3509.86,3509.86
+C001834,Clinical Supplies,Consumables,Gloves and PPE,,,555.11,555.11
+C001835,IT,Software,Licences,,,7774.52,7774.52
+C001836,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,10786.84,10786.84
+C001837,Pharmaceuticals,Generics,,,,273.25,273.25
+C001838,Professional Services,Legal,,,,9024.11,9024.11
+C001839,Pharmaceuticals,Oncology,Chemotherapy Agents,,,1106.42,1106.42
+C001840,Clinical Supplies,Consumables,Gloves and PPE,,,180.32,180.32
+C001841,Clinical Supplies,Implants,Cardiac,Stents,,2082.70,2082.70
+C001842,Pharmaceuticals,Oncology,Chemotherapy Agents,,,1231.88,1231.88
+C001843,Clinical Supplies,Implants,Cardiac,Stents,,6666.26,6666.26
+C001844,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,1678.89,1678.89
+C001845,Food and Catering,,,,CANCELLED,2128.08,0.00
+C001846,Facilities,Maintenance,HVAC,,,2756.46,2756.46
+C001847,Professional Services,Consulting,Management Consulting,,,16256.22,16256.22
+C001848,Professional Services,Legal,,,,5495.44,5495.44
+C001849,Professional Services,Legal,,,,4737.45,4737.45
+C001850,Pharmaceuticals,Generics,,,,17.40,17.40
+C001851,Facilities,Maintenance,HVAC,,NOT_APPROVED,2153.93,0.00
+C001852,Professional Services,Consulting,Management Consulting,,,6947.55,6947.55
+C001853,Facilities,Cleaning Services,,,NOT_APPROVED,1177.58,0.00
+C001854,Clinical Supplies,Implants,Cardiac,Stents,,2672.52,2672.52
+C001855,Professional Services,Legal,,,NOT_APPROVED,7200.04,0.00
+C001856,Pharmaceuticals,Oncology,Chemotherapy Agents,,,4579.58,4579.58
+C001857,Facilities,Maintenance,HVAC,,,2564.93,2564.93
+C001858,Pharmaceuticals,Oncology,Chemotherapy Agents,,,387.99,387.99
+C001859,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,5057.92,5057.92
+C001860,Clinical Supplies,Consumables,Gloves and PPE,,,228.38,228.38
+C001861,Clinical Supplies,Consumables,Wound Care,,,213.80,213.80
+C001862,Professional Services,Consulting,Management Consulting,,,8748.22,8748.22
+C001863,Clinical Supplies,Consumables,Wound Care,,,1042.92,1042.92
+C001864,IT,Hardware,,,,7446.10,7446.10
+C001865,Clinical Supplies,Consumables,Wound Care,,,240.90,240.90
+C001866,Professional Services,Consulting,Management Consulting,,,1955.51,1955.51
+C001867,Facilities,Maintenance,HVAC,,,2359.03,2359.03
+C001868,Professional Services,Consulting,Management Consulting,,,9438.18,9438.18
+C001869,Food and Catering,,,,,3401.69,3401.69
+C001870,Professional Services,Consulting,Management Consulting,,,5817.40,5817.40
+C001871,Pharmaceuticals,Oncology,Chemotherapy Agents,,NOT_APPROVED,9142.84,0.00
+C001872,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,2174.80,2174.80
+C001873,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,7588.95,7588.95
+C001874,Professional Services,Legal,,,,3339.24,3339.24
+C001875,Food and Catering,,,,,1720.63,1720.63
+C001876,Professional Services,Consulting,Management Consulting,,,7920.01,7920.01
+C001877,Clinical Supplies,Consumables,Wound Care,,NOT_APPROVED,183.73,0.00
+C001878,Facilities,Cleaning Services,,,,4818.94,4818.94
+C001879,Facilities,Maintenance,HVAC,,,4607.55,4607.55
+C001880,Pharmaceuticals,Oncology,Chemotherapy Agents,,,3984.50,3984.50
+C001881,Professional Services,Legal,,,,3292.87,3292.87
+C001882,Pharmaceuticals,Generics,,,,1421.55,1421.55
+C001883,Professional Services,Consulting,Management Consulting,,,29628.68,29628.68
+C001884,IT,Hardware,,,,1822.88,1822.88
+C001885,,,,,NON_PROCUREMENT,11279.38,0.00
+C001886,Food and Catering,,,,,4916.19,4916.19
+C001887,Clinical Supplies,Consumables,Wound Care,,,37.77,37.77
+C001888,Clinical Supplies,Consumables,Wound Care,,,94.00,94.00
+C001889,Professional Services,Legal,,,,1737.18,1737.18
+C001890,Clinical Supplies,Implants,Orthopaedic,Hip Systems,NOT_APPROVED,5526.53,0.00
+C001891,Pharmaceuticals,Oncology,Chemotherapy Agents,,,19680.87,19680.87
+C001892,IT,Software,Licences,,,2274.27,2274.27
+C001893,IT,Software,Licences,,,2220.27,2220.27
+C001894,Pharmaceuticals,Oncology,Chemotherapy Agents,,,9813.58,9813.58
+C001895,Clinical Supplies,Consumables,Gloves and PPE,,,448.87,448.87
+C001896,Pharmaceuticals,Generics,,,,546.11,546.11
+C001897,Professional Services,Legal,,,,5130.05,5130.05
+C001898,Professional Services,Consulting,Management Consulting,,NOT_APPROVED,6756.67,0.00
+C001899,,,,,NON_PROCUREMENT,11705.36,0.00
+C001900,Food and Catering,,,,,440.55,440.55
+C001901,Professional Services,Legal,,,,5322.95,5322.95
+C001902,Clinical Supplies,Consumables,Gloves and PPE,,,192.90,192.90
+C001903,Clinical Supplies,Implants,Orthopaedic,Hip Systems,NOT_APPROVED,4295.97,0.00
+C001904,Professional Services,Consulting,Management Consulting,,,6789.24,6789.24
+C001905,Professional Services,Legal,,,,1539.22,1539.22
+C001906,Food and Catering,,,,,6317.73,6317.73
+C001907,Pharmaceuticals,Oncology,Chemotherapy Agents,,NOT_APPROVED,3108.34,0.00
+C001908,Clinical Supplies,Consumables,Gloves and PPE,,,144.54,144.54
+C001909,Pharmaceuticals,Generics,,,,428.25,428.25
+C001910,Food and Catering,,,,,6827.37,6827.37
+C001911,Pharmaceuticals,Generics,,,,495.98,495.98
+C001912,Food and Catering,,,,,1375.60,1375.60
+C001913,Pharmaceuticals,Oncology,Chemotherapy Agents,,NOT_APPROVED,15127.03,0.00
+C001914,Food and Catering,,,,,1523.50,1523.50
+C001915,,,,,NON_PROCUREMENT,3054.58,0.00
+C001916,Clinical Supplies,Implants,Cardiac,Stents,,2960.50,2960.50
+C001917,Clinical Supplies,Consumables,Wound Care,,,262.33,262.33
+C001918,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,4094.46,4094.46
+C001919,Professional Services,Legal,,,,7151.04,7151.04
+C001920,Clinical Supplies,Implants,Cardiac,Stents,,992.56,992.56
+C001921,IT,Software,Licences,,NOT_APPROVED,5236.50,0.00
+C001922,Professional Services,Consulting,Management Consulting,,,7425.36,7425.36
+C001923,Clinical Supplies,Consumables,Wound Care,,,77.47,77.47
+C001924,Clinical Supplies,Implants,Cardiac,Stents,NOT_APPROVED,8076.68,0.00
+C001925,Food and Catering,,,,,8530.66,8530.66
+C001926,Facilities,Maintenance,HVAC,,,476.64,476.64
+C001927,Clinical Supplies,Implants,Cardiac,Stents,,2771.36,2771.36
+C001928,Clinical Supplies,Consumables,Gloves and PPE,,,285.12,285.12
+C001929,IT,Software,Licences,,,988.68,988.68
+C001930,Professional Services,Legal,,,,5430.61,5430.61
+C001931,Clinical Supplies,Implants,Cardiac,Stents,,15274.35,15274.35
+C001932,Pharmaceuticals,Generics,,,,888.47,888.47
+C001933,Professional Services,Consulting,Management Consulting,,,12671.43,12671.43
+C001934,Facilities,Cleaning Services,,,,5638.23,5638.23
+C001935,Facilities,Maintenance,HVAC,,,5634.45,5634.45
+C001936,Clinical Supplies,Consumables,Gloves and PPE,,NOT_APPROVED,560.66,0.00
+C001937,IT,Hardware,,,,5663.10,5663.10
+C001938,Pharmaceuticals,Generics,,,,617.09,617.09
+C001939,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,4425.55,4425.55
+C001940,Professional Services,Consulting,Management Consulting,,CANCELLED,49728.82,0.00
+C001941,Clinical Supplies,Implants,Cardiac,Stents,NOT_APPROVED,4283.00,0.00
+C001942,Facilities,Maintenance,HVAC,,,9025.51,9025.51
+C001943,Facilities,Cleaning Services,,,,3822.22,3822.22
+C001944,Clinical Supplies,Consumables,Wound Care,,NOT_APPROVED,175.83,0.00
+C001945,Facilities,Maintenance,HVAC,,CANCELLED,647.92,0.00
+C001946,Facilities,Cleaning Services,,,,7538.79,7538.79
+C001947,Facilities,Cleaning Services,,,,6298.68,6298.68
+C001948,Food and Catering,,,,,4908.73,4908.73
+C001949,Pharmaceuticals,Generics,,,,1358.63,1358.63
+C001950,IT,Hardware,,,,5425.00,5425.00
+C001951,Clinical Supplies,Consumables,Gloves and PPE,,,210.68,210.68
+C001952,,,,,NON_PROCUREMENT,6412.43,0.00
+C001953,Professional Services,Legal,,,,1964.97,1964.97
+C001954,Clinical Supplies,Consumables,Gloves and PPE,,,324.52,324.52
+C001955,Pharmaceuticals,Oncology,Chemotherapy Agents,,,6259.18,6259.18
+C001956,Facilities,Cleaning Services,,,,3340.12,3340.12
+C001957,Clinical Supplies,Consumables,Gloves and PPE,,,291.92,291.92
+C001958,Clinical Supplies,Implants,Orthopaedic,Hip Systems,NOT_APPROVED,7383.77,0.00
+C001959,Facilities,Cleaning Services,,,,1856.83,1856.83
+C001960,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,969.47,969.47
+C001961,Pharmaceuticals,Oncology,Chemotherapy Agents,,,3746.20,3746.20
+C001962,Pharmaceuticals,Oncology,Chemotherapy Agents,,,3982.34,3982.34
+C001963,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,4573.18,4573.18
+C001964,IT,Software,Licences,,,39639.12,39639.12
+C001965,Pharmaceuticals,Oncology,Chemotherapy Agents,,,14730.88,14730.88
+C001966,Clinical Supplies,Consumables,Wound Care,,,174.07,174.07
+C001967,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2368.58,2368.58
+C001968,Pharmaceuticals,Oncology,Chemotherapy Agents,,,1767.30,1767.30
+C001969,Facilities,Maintenance,HVAC,,NOT_APPROVED,702.98,0.00
+C001970,Facilities,Cleaning Services,,,,4350.83,4350.83
+C001971,Facilities,Maintenance,HVAC,,,5290.72,5290.72
+C001972,Facilities,Maintenance,HVAC,,NOT_APPROVED,907.96,0.00
+C001973,Pharmaceuticals,Oncology,Chemotherapy Agents,,,7372.60,7372.60
+C001974,IT,Software,Licences,,,6933.01,6933.01
+C001975,Pharmaceuticals,Generics,,,,418.11,418.11
+C001976,Clinical Supplies,Consumables,Wound Care,,,47.42,47.42
+C001977,Clinical Supplies,Consumables,Wound Care,,CANCELLED,336.03,0.00
+C001978,Pharmaceuticals,Generics,,,,2590.45,2590.45
+C001979,Facilities,Cleaning Services,,,,1187.24,1187.24
+C001980,Facilities,Maintenance,HVAC,,,2317.40,2317.40
+C001981,Facilities,Maintenance,HVAC,,,611.30,611.30
+C001982,Clinical Supplies,Consumables,Wound Care,,,239.52,239.52
+C001983,Clinical Supplies,Consumables,Gloves and PPE,,,290.60,290.60
+C001984,Professional Services,Consulting,Management Consulting,,CANCELLED,11344.67,0.00
+C001985,Food and Catering,,,,,1556.68,1556.68
+C001986,IT,Hardware,,,,1029.58,1029.58
+C001987,IT,Hardware,,,,3187.47,3187.47
+C001988,Food and Catering,,,,,1218.26,1218.26
+C001989,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,2775.43,2775.43
+C001990,Clinical Supplies,Implants,Cardiac,Stents,NOT_APPROVED,3292.24,0.00
+C001991,Food and Catering,,,,,517.97,517.97
+C001992,,,,,NON_PROCUREMENT,1994.55,0.00
+C001993,Facilities,Cleaning Services,,,,1088.09,1088.09
+C001994,,,,,NON_PROCUREMENT,16807.79,0.00
+C001995,Pharmaceuticals,Oncology,Chemotherapy Agents,,,6679.61,6679.61
+C001996,Food and Catering,,,,,1527.41,1527.41
+C001997,IT,Software,Licences,,,8096.95,8096.95
+C001998,Clinical Supplies,Consumables,Gloves and PPE,,,131.51,131.51
+C001999,Clinical Supplies,Implants,Cardiac,Stents,,2280.10,2280.10
+C002000,Clinical Supplies,Implants,Cardiac,Stents,NOT_APPROVED,2774.30,0.00
+C002001,Professional Services,Consulting,Management Consulting,,,49060.86,49060.86
+C002002,Clinical Supplies,Implants,Cardiac,Stents,,2007.39,2007.39
+C002003,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,4954.29,4954.29
+C002004,Professional Services,Legal,,,,5159.20,5159.20
+C002005,Clinical Supplies,Consumables,Wound Care,,,198.17,198.17
+C002006,IT,Software,Licences,,,4904.62,4904.62
+C002007,Clinical Supplies,Consumables,Gloves and PPE,,,241.12,241.12
+C002008,IT,Hardware,,,,3824.08,3824.08
+C002009,Clinical Supplies,Consumables,Gloves and PPE,,CANCELLED,26.40,0.00
+C002010,Food and Catering,,,,,1909.55,1909.55
+C002011,Clinical Supplies,Consumables,Gloves and PPE,,,307.88,307.88
+C002012,Pharmaceuticals,Oncology,Chemotherapy Agents,,,3264.97,3264.97
+C002013,IT,Hardware,,,,12224.33,12224.33
+C002014,Pharmaceuticals,Generics,,,NOT_APPROVED,258.63,0.00
+C002015,Facilities,Cleaning Services,,,,5198.36,5198.36
+C002016,Clinical Supplies,Consumables,Wound Care,,,497.40,497.40
+C002017,Clinical Supplies,Consumables,Gloves and PPE,,,142.21,142.21
+C002018,,,,,NON_PROCUREMENT,12959.21,0.00
+C002019,Professional Services,Consulting,Management Consulting,,,10787.81,10787.81
+C002020,Facilities,Cleaning Services,,,,2721.92,2721.92
+C002021,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,3835.94,3835.94
+C002022,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,1329.74,1329.74
+C002023,,,,,NON_PROCUREMENT,6494.73,0.00
+C002024,Facilities,Cleaning Services,,,,3326.82,3326.82
+C002025,IT,Hardware,,,,15252.38,15252.38
+C002026,Professional Services,Legal,,,,6277.97,6277.97
+C002027,IT,Software,Licences,,,16651.26,16651.26
+C002028,Clinical Supplies,Consumables,Wound Care,,,43.55,43.55
+C002029,Clinical Supplies,Consumables,Wound Care,,,15.04,15.04
+C002030,IT,Hardware,,,,7799.66,7799.66
+C002031,Pharmaceuticals,Generics,,,,261.76,261.76
+C002032,Professional Services,Legal,,,NOT_APPROVED,6369.34,0.00
+C002033,Clinical Supplies,Consumables,Wound Care,,,103.58,103.58
+C002034,Food and Catering,,,,,145.96,145.96
+C002035,Facilities,Maintenance,HVAC,,,809.36,809.36
+C002036,Facilities,Cleaning Services,,,,3184.87,3184.87
+C002037,Professional Services,Consulting,Management Consulting,,,24400.27,24400.27
+C002038,,,,,NON_PROCUREMENT,8452.71,0.00
+C002039,Pharmaceuticals,Generics,,,,670.66,670.66
+C002040,Food and Catering,,,,,2279.11,2279.11
+C002041,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,2301.70,2301.70
+C002042,Clinical Supplies,Implants,Cardiac,Stents,,3764.74,3764.74
+C002043,Clinical Supplies,Consumables,Wound Care,,,275.72,275.72
+C002044,Clinical Supplies,Consumables,Wound Care,,,115.74,115.74
+C002045,Facilities,Cleaning Services,,,,17729.48,17729.48
+C002046,,,,,NON_PROCUREMENT,12920.91,0.00
+C002047,Clinical Supplies,Implants,Orthopaedic,Hip Systems,CANCELLED,3160.46,0.00
+C002048,Professional Services,Legal,,,,4852.56,4852.56
+C002049,Pharmaceuticals,Oncology,Chemotherapy Agents,,,8140.87,8140.87
+C002050,IT,Software,Licences,,,3274.45,3274.45
+C002051,IT,Software,Licences,,,2495.05,2495.05
+C002052,Clinical Supplies,Consumables,Gloves and PPE,,,86.02,86.02
+C002053,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2548.49,2548.49
+C002054,Pharmaceuticals,Oncology,Chemotherapy Agents,,NOT_APPROVED,1746.45,0.00
+C002055,Clinical Supplies,Consumables,Wound Care,,,253.66,253.66
+C002056,Pharmaceuticals,Generics,,,,1396.26,1396.26
+C002057,Clinical Supplies,Consumables,Gloves and PPE,,,180.15,180.15
+C002058,,,,,NON_PROCUREMENT,19350.12,0.00
+C002059,,,,,NON_PROCUREMENT,12705.68,0.00
+C002060,Clinical Supplies,Consumables,Wound Care,,,119.23,119.23
+C002061,Professional Services,Legal,,,,6547.97,6547.97
+C002062,Pharmaceuticals,Generics,,,,90.00,90.00
+C002063,Facilities,Cleaning Services,,,,17232.96,17232.96
+C002064,Facilities,Maintenance,HVAC,,,12933.82,12933.82
+C002065,IT,Hardware,,,NOT_APPROVED,266.84,0.00
+C002066,Clinical Supplies,Consumables,Gloves and PPE,,,189.98,189.98
+C002067,Professional Services,Legal,,,CANCELLED,2756.21,0.00
+C002068,Facilities,Cleaning Services,,,,5368.87,5368.87
+C002069,,,,,NON_PROCUREMENT,12415.51,0.00
+C002070,IT,Hardware,,,,2749.47,2749.47
+C002071,Pharmaceuticals,Generics,,,,426.59,426.59
+C002072,Pharmaceuticals,Generics,,,,43.47,43.47
+C002073,Pharmaceuticals,Generics,,,CANCELLED,315.28,0.00
+C002074,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2959.60,2959.60
+C002075,IT,Hardware,,,NOT_APPROVED,1196.18,0.00
+C002076,Clinical Supplies,Consumables,Wound Care,,,206.66,206.66
+C002077,Clinical Supplies,Consumables,Gloves and PPE,,,1863.12,1863.12
+C002078,Professional Services,Consulting,Management Consulting,,,6453.05,6453.05
+C002079,Clinical Supplies,Consumables,Gloves and PPE,,,250.02,250.02
+C002080,IT,Hardware,,,,1454.40,1454.40
+C002081,Pharmaceuticals,Oncology,Chemotherapy Agents,,,1450.21,1450.21
+C002082,Clinical Supplies,Consumables,Wound Care,,,138.10,138.10
+C002083,Clinical Supplies,Consumables,Gloves and PPE,,,297.74,297.74
+C002084,Professional Services,Consulting,Management Consulting,,,6119.61,6119.61
+C002085,IT,Hardware,,,,903.53,903.53
+C002086,Food and Catering,,,,,1630.47,1630.47
+C002087,Pharmaceuticals,Oncology,Chemotherapy Agents,,CANCELLED,3990.89,0.00
+C002088,Clinical Supplies,Implants,Cardiac,Stents,,2462.61,2462.61
+C002089,Professional Services,Consulting,Management Consulting,,,25459.62,25459.62
+C002090,Clinical Supplies,Implants,Cardiac,Stents,,3518.64,3518.64
+C002091,Professional Services,Legal,,,,4166.67,4166.67
+C002092,Facilities,Cleaning Services,,,,2612.24,2612.24
+C002093,Facilities,Cleaning Services,,,,1804.66,1804.66
+C002094,Clinical Supplies,Consumables,Gloves and PPE,,NOT_APPROVED,1520.15,0.00
+C002095,Pharmaceuticals,Oncology,Chemotherapy Agents,,,7258.88,7258.88
+C002096,Professional Services,Consulting,Management Consulting,,,11275.58,11275.58
+C002097,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,19175.92,19175.92
+C002098,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,1179.51,1179.51
+C002099,Food and Catering,,,,,12316.67,12316.67
+C002100,Facilities,Maintenance,HVAC,,,275.09,275.09
+C002101,Pharmaceuticals,Oncology,Chemotherapy Agents,,,9986.67,9986.67
+C002102,Facilities,Maintenance,HVAC,,,4948.80,4948.80
+C002103,IT,Software,Licences,,,7205.26,7205.26
+C002104,Facilities,Maintenance,HVAC,,,2114.53,2114.53
+C002105,Food and Catering,,,,,161.60,161.60
+C002106,Pharmaceuticals,Generics,,,,134.27,134.27
+C002107,IT,Software,Licences,,,4708.76,4708.76
+C002108,Clinical Supplies,Consumables,Wound Care,,NOT_APPROVED,18.79,0.00
+C002109,Facilities,Maintenance,HVAC,,,14648.38,14648.38
+C002110,IT,Software,Licences,,,11708.76,11708.76
+C002111,IT,Software,Licences,,,39783.40,39783.40
+C002112,Facilities,Cleaning Services,,,,3026.59,3026.59
+C002113,Pharmaceuticals,Oncology,Chemotherapy Agents,,,21021.91,21021.91
+C002114,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,2871.39,2871.39
+C002115,Facilities,Maintenance,HVAC,,,4084.89,4084.89
+C002116,,,,,NON_PROCUREMENT,19976.94,0.00
+C002117,Facilities,Maintenance,HVAC,,,1334.26,1334.26
+C002118,Food and Catering,,,,,621.91,621.91
+C002119,Facilities,Cleaning Services,,,,4530.08,4530.08
+C002120,Facilities,Cleaning Services,,,,6892.62,6892.62
+C002121,Pharmaceuticals,Oncology,Chemotherapy Agents,,NOT_APPROVED,2459.05,0.00
+C002122,Clinical Supplies,Consumables,Wound Care,,,272.88,272.88
+C002123,,,,,NON_PROCUREMENT,2155.17,0.00
+C002124,Clinical Supplies,Implants,Cardiac,Stents,,2210.80,2210.80
+C002125,Clinical Supplies,Consumables,Wound Care,,,231.35,231.35
+C002126,Pharmaceuticals,Generics,,,,409.54,409.54
+C002127,Pharmaceuticals,Generics,,,,91.93,91.93
+C002128,Facilities,Maintenance,HVAC,,,6515.48,6515.48
+C002129,Facilities,Cleaning Services,,,,875.90,875.90
+C002130,IT,Software,Licences,,,1292.51,1292.51
+C002131,Facilities,Maintenance,HVAC,,,1623.95,1623.95
+C002132,IT,Software,Licences,,,7536.26,7536.26
+C002133,Facilities,Maintenance,HVAC,,,1569.36,1569.36
+C002134,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2428.00,2428.00
+C002135,Food and Catering,,,,CANCELLED,2064.41,0.00
+C002136,Professional Services,Legal,,,,4727.18,4727.18
+C002137,IT,Software,Licences,,,21817.99,21817.99
+C002138,Pharmaceuticals,Oncology,Chemotherapy Agents,,,4929.03,4929.03
+C002139,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,3649.82,3649.82
+C002140,Facilities,Cleaning Services,,,,2804.28,2804.28
+C002141,Pharmaceuticals,Generics,,,,1613.65,1613.65
+C002142,Pharmaceuticals,Generics,,,,892.70,892.70
+C002143,,,,,NON_PROCUREMENT,16832.98,0.00
+C002144,Clinical Supplies,Consumables,Wound Care,,,238.65,238.65
+C002145,Food and Catering,,,,,4084.54,4084.54
+C002146,IT,Hardware,,,CANCELLED,998.69,0.00
+C002147,Facilities,Cleaning Services,,,,4550.57,4550.57
+C002148,IT,Software,Licences,,,1811.36,1811.36
+C002149,,,,,NON_PROCUREMENT,1716.66,0.00
+C002150,IT,Software,Licences,,,3630.72,3630.72
+C002151,Pharmaceuticals,Oncology,Chemotherapy Agents,,,4299.86,4299.86
+C002152,Clinical Supplies,Consumables,Wound Care,,,150.68,150.68
+C002153,Professional Services,Consulting,Management Consulting,,,11013.28,11013.28
+C002154,Professional Services,Consulting,Management Consulting,,NOT_APPROVED,4301.72,0.00
+C002155,Clinical Supplies,Consumables,Wound Care,,,146.33,146.33
+C002156,Clinical Supplies,Implants,Cardiac,Stents,,1559.15,1559.15
+C002157,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,3188.74,3188.74
+C002158,Clinical Supplies,Consumables,Wound Care,,CANCELLED,952.37,0.00
+C002159,Professional Services,Consulting,Management Consulting,,CANCELLED,13649.11,0.00
+C002160,Professional Services,Consulting,Management Consulting,,,8217.00,8217.00
+C002161,Professional Services,Legal,,,,3655.35,3655.35
+C002162,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,7420.51,7420.51
+C002163,Pharmaceuticals,Oncology,Chemotherapy Agents,,NOT_APPROVED,2555.53,0.00
+C002164,IT,Software,Licences,,CANCELLED,2327.53,0.00
+C002165,Professional Services,Consulting,Management Consulting,,,13041.10,13041.10
+C002166,Facilities,Cleaning Services,,,,4351.14,4351.14
+C002167,Clinical Supplies,Consumables,Gloves and PPE,,CANCELLED,109.55,0.00
+C002168,Facilities,Maintenance,HVAC,,,2246.15,2246.15
+C002169,Pharmaceuticals,Oncology,Chemotherapy Agents,,,4154.75,4154.75
+C002170,Clinical Supplies,Consumables,Gloves and PPE,,,182.43,182.43
+C002171,Clinical Supplies,Consumables,Wound Care,,,325.61,325.61
+C002172,Facilities,Cleaning Services,,,,4290.15,4290.15
+C002173,IT,Software,Licences,,,1389.64,1389.64
+C002174,Clinical Supplies,Consumables,Wound Care,,,167.30,167.30
+C002175,Clinical Supplies,Consumables,Gloves and PPE,,,210.30,210.30
+C002176,Clinical Supplies,Implants,Cardiac,Stents,,4792.98,4792.98
+C002177,Professional Services,Consulting,Management Consulting,,,67572.43,67572.43
+C002178,IT,Software,Licences,,,8441.93,8441.93
+C002179,Pharmaceuticals,Oncology,Chemotherapy Agents,,,5669.65,5669.65
+C002180,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,1015.78,1015.78
+C002181,Pharmaceuticals,Generics,,,NOT_APPROVED,380.50,0.00
+C002182,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,8023.16,8023.16
+C002183,Facilities,Cleaning Services,,,,18078.72,18078.72
+C002184,Professional Services,Legal,,,,29400.89,29400.89
+C002185,Clinical Supplies,Consumables,Wound Care,,,206.17,206.17
+C002186,Food and Catering,,,,,1340.60,1340.60
+C002187,,,,,NON_PROCUREMENT,8981.93,0.00
+C002188,Clinical Supplies,Consumables,Gloves and PPE,,,277.26,277.26
+C002189,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,20007.48,20007.48
+C002190,Pharmaceuticals,Oncology,Chemotherapy Agents,,,22305.12,22305.12
+C002191,Facilities,Maintenance,HVAC,,,1017.98,1017.98
+C002192,Pharmaceuticals,Generics,,,,408.01,408.01
+C002193,Facilities,Maintenance,HVAC,,,2987.22,2987.22
+C002194,IT,Software,Licences,,,8390.41,8390.41
+C002195,Facilities,Cleaning Services,,,,1807.45,1807.45
+C002196,Clinical Supplies,Consumables,Wound Care,,,287.12,287.12
+C002197,IT,Hardware,,,,3264.49,3264.49
+C002198,Pharmaceuticals,Generics,,,,227.32,227.32
+C002199,IT,Hardware,,,,7563.10,7563.10
+C002200,Clinical Supplies,Consumables,Wound Care,,,558.77,558.77
+C002201,Food and Catering,,,,NOT_APPROVED,9813.66,0.00
+C002202,IT,Software,Licences,,,39324.27,39324.27
+C002203,Professional Services,Legal,,,,27014.04,27014.04
+C002204,Clinical Supplies,Consumables,Wound Care,,NOT_APPROVED,229.01,0.00
+C002205,Pharmaceuticals,Generics,,,CANCELLED,42.73,0.00
+C002206,,,,,NON_PROCUREMENT,7646.58,0.00
+C002207,IT,Hardware,,,,3040.02,3040.02
+C002208,Pharmaceuticals,Generics,,,,781.70,781.70
+C002209,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,3969.71,3969.71
+C002210,Clinical Supplies,Implants,Cardiac,Stents,,2104.83,2104.83
+C002211,Clinical Supplies,Consumables,Gloves and PPE,,,111.50,111.50
+C002212,Professional Services,Consulting,Management Consulting,,,13236.45,13236.45
+C002213,Clinical Supplies,Consumables,Gloves and PPE,,,300.98,300.98
+C002214,Facilities,Maintenance,HVAC,,,2322.29,2322.29
+C002215,IT,Hardware,,,,849.94,849.94
+C002216,Pharmaceuticals,Oncology,Chemotherapy Agents,,,814.63,814.63
+C002217,Food and Catering,,,,,1109.38,1109.38
+C002218,Pharmaceuticals,Generics,,,NOT_APPROVED,1575.59,0.00
+C002219,Pharmaceuticals,Generics,,,,685.24,685.24
+C002220,Facilities,Cleaning Services,,,,2362.92,2362.92
+C002221,IT,Hardware,,,,8348.89,8348.89
+C002222,Pharmaceuticals,Generics,,,,474.08,474.08
+C002223,Facilities,Cleaning Services,,,,2619.56,2619.56
+C002224,Pharmaceuticals,Generics,,,CANCELLED,1352.21,0.00
+C002225,Professional Services,Consulting,Management Consulting,,,5009.84,5009.84
+C002226,Pharmaceuticals,Generics,,,,979.46,979.46
+C002227,Pharmaceuticals,Generics,,,,610.84,610.84
+C002228,Facilities,Maintenance,HVAC,,CANCELLED,484.30,0.00
+C002229,Clinical Supplies,Consumables,Wound Care,,,394.51,394.51
+C002230,Professional Services,Consulting,Management Consulting,,,2581.60,2581.60
+C002231,Clinical Supplies,Implants,Cardiac,Stents,,5503.10,5503.10
+C002232,Pharmaceuticals,Generics,,,,1347.78,1347.78
+C002233,IT,Hardware,,,CANCELLED,2972.37,0.00
+C002234,Professional Services,Legal,,,,5876.59,5876.59
+C002235,Clinical Supplies,Implants,Cardiac,Stents,,3311.58,3311.58
+C002236,,,,,NON_PROCUREMENT,17951.50,0.00
+C002237,Facilities,Maintenance,HVAC,,,1715.45,1715.45
+C002238,Professional Services,Consulting,Management Consulting,,,8095.97,8095.97
+C002239,Facilities,Cleaning Services,,,,19491.35,19491.35
+C002240,Facilities,Maintenance,HVAC,,,1854.74,1854.74
+C002241,Food and Catering,,,,,1149.92,1149.92
+C002242,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,17481.37,17481.37
+C002243,IT,Hardware,,,CANCELLED,6330.03,0.00
+C002244,IT,Software,Licences,,NOT_APPROVED,6795.97,0.00
+C002245,IT,Hardware,,,,3072.36,3072.36
+C002246,Professional Services,Legal,,,,13548.96,13548.96
+C002247,Facilities,Maintenance,HVAC,,,1879.80,1879.80
+C002248,Pharmaceuticals,Generics,,,,820.17,820.17
+C002249,Pharmaceuticals,Generics,,,,151.78,151.78
+C002250,Professional Services,Consulting,Management Consulting,,,24124.13,24124.13
+C002251,Clinical Supplies,Consumables,Gloves and PPE,,,69.65,69.65
+C002252,,,,,NON_PROCUREMENT,11792.75,0.00
+C002253,Facilities,Cleaning Services,,,NOT_APPROVED,1843.05,0.00
+C002254,Clinical Supplies,Implants,Cardiac,Stents,,5497.74,5497.74
+C002255,Food and Catering,,,,,1650.12,1650.12
+C002256,Facilities,Maintenance,HVAC,,,2291.01,2291.01
+C002257,Professional Services,Consulting,Management Consulting,,,13830.81,13830.81
+C002258,Professional Services,Legal,,,NOT_APPROVED,27310.91,0.00
+C002259,Professional Services,Consulting,Management Consulting,,CANCELLED,13722.89,0.00
+C002260,Professional Services,Consulting,Management Consulting,,,16916.20,16916.20
+C002261,Professional Services,Consulting,Management Consulting,,,21549.70,21549.70
+C002262,Food and Catering,,,,,11117.16,11117.16
+C002263,IT,Hardware,,,,1016.22,1016.22
+C002264,Facilities,Maintenance,HVAC,,,10960.02,10960.02
+C002265,Food and Catering,,,,,405.70,405.70
+C002266,Pharmaceuticals,Generics,,,,361.75,361.75
+C002267,Professional Services,Consulting,Management Consulting,,,64081.01,64081.01
+C002268,IT,Hardware,,,,365.83,365.83
+C002269,Clinical Supplies,Consumables,Gloves and PPE,,,1668.10,1668.10
+C002270,Pharmaceuticals,Generics,,,,534.81,534.81
+C002271,IT,Hardware,,,NOT_APPROVED,2583.27,0.00
+C002272,Professional Services,Legal,,,,6672.89,6672.89
+C002273,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,4576.16,4576.16
+C002274,Pharmaceuticals,Generics,,,,180.25,180.25
+C002275,IT,Hardware,,,,3278.42,3278.42
+C002276,Pharmaceuticals,Generics,,,,495.90,495.90
+C002277,Facilities,Maintenance,HVAC,,,2218.68,2218.68
+C002278,Facilities,Maintenance,HVAC,,,8918.95,8918.95
+C002279,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,4570.87,4570.87
+C002280,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,9023.64,9023.64
+C002281,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2865.08,2865.08
+C002282,Food and Catering,,,,,1758.20,1758.20
+C002283,IT,Software,Licences,,NOT_APPROVED,8834.45,0.00
+C002284,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,1571.59,1571.59
+C002285,IT,Hardware,,,,2628.38,2628.38
+C002286,Pharmaceuticals,Generics,,,,1567.53,1567.53
+C002287,Clinical Supplies,Consumables,Gloves and PPE,,,155.11,155.11
+C002288,Clinical Supplies,Consumables,Wound Care,,,91.88,91.88
+C002289,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,9166.49,9166.49
+C002290,Pharmaceuticals,Oncology,Chemotherapy Agents,,,605.36,605.36
+C002291,Pharmaceuticals,Generics,,,,845.83,845.83
+C002292,Pharmaceuticals,Oncology,Chemotherapy Agents,,,3734.87,3734.87
+C002293,Professional Services,Consulting,Management Consulting,,,3880.99,3880.99
+C002294,Food and Catering,,,,,1162.32,1162.32
+C002295,Pharmaceuticals,Generics,,,,2817.48,2817.48
+C002296,Food and Catering,,,,CANCELLED,1601.22,0.00
+C002297,Professional Services,Consulting,Management Consulting,,,4277.18,4277.18
+C002298,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2426.84,2426.84
+C002299,Food and Catering,,,,,1180.09,1180.09
+C002300,IT,Hardware,,,,739.39,739.39
+C002301,IT,Hardware,,,,1152.65,1152.65
+C002302,IT,Hardware,,,CANCELLED,6846.48,0.00
+C002303,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,5007.47,5007.47
+C002304,,,,,NON_PROCUREMENT,4306.95,0.00
+C002305,Professional Services,Legal,,,,4070.03,4070.03
+C002306,Professional Services,Consulting,Management Consulting,,,12562.99,12562.99
+C002307,Facilities,Cleaning Services,,,,1889.05,1889.05
+C002308,Clinical Supplies,Implants,Cardiac,Stents,,1617.29,1617.29
+C002309,Pharmaceuticals,Oncology,Chemotherapy Agents,,,24061.23,24061.23
+C002310,Food and Catering,,,,,3627.50,3627.50
+C002311,Facilities,Cleaning Services,,,,2474.30,2474.30
+C002312,Professional Services,Consulting,Management Consulting,,,2407.36,2407.36
+C002313,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,1927.42,1927.42
+C002314,Facilities,Cleaning Services,,,,2020.41,2020.41
+C002315,IT,Software,Licences,,CANCELLED,8808.11,0.00
+C002316,Clinical Supplies,Consumables,Gloves and PPE,,,357.99,357.99
+C002317,Facilities,Cleaning Services,,,,10354.95,10354.95
+C002318,Clinical Supplies,Consumables,Gloves and PPE,,,144.12,144.12
+C002319,Professional Services,Legal,,,,704.55,704.55
+C002320,Professional Services,Consulting,Management Consulting,,,29591.82,29591.82
+C002321,Food and Catering,,,,,4668.10,4668.10
+C002322,Clinical Supplies,Implants,Cardiac,Stents,,712.55,712.55
+C002323,IT,Hardware,,,,19369.34,19369.34
+C002324,Clinical Supplies,Consumables,Gloves and PPE,,,185.85,185.85
+C002325,IT,Software,Licences,,,40110.03,40110.03
+C002326,Pharmaceuticals,Oncology,Chemotherapy Agents,,NOT_APPROVED,3885.99,0.00
+C002327,Food and Catering,,,,,5414.50,5414.50
+C002328,Professional Services,Consulting,Management Consulting,,,6754.97,6754.97
+C002329,Food and Catering,,,,,9872.54,9872.54
+C002330,Pharmaceuticals,Oncology,Chemotherapy Agents,,,4415.30,4415.30
+C002331,IT,Software,Licences,,,23544.49,23544.49
+C002332,Clinical Supplies,Consumables,Gloves and PPE,,,193.84,193.84
+C002333,Facilities,Cleaning Services,,,,4756.22,4756.22
+C002334,IT,Hardware,,,CANCELLED,4250.63,0.00
+C002335,Facilities,Cleaning Services,,,,1769.93,1769.93
+C002336,Professional Services,Consulting,Management Consulting,,,4315.21,4315.21
+C002337,Clinical Supplies,Consumables,Gloves and PPE,,,275.87,275.87
+C002338,IT,Hardware,,,,10800.89,10800.89
+C002339,Professional Services,Consulting,Management Consulting,,,26234.11,26234.11
+C002340,Facilities,Maintenance,HVAC,,NOT_APPROVED,1165.72,0.00
+C002341,Clinical Supplies,Consumables,Wound Care,,,226.34,226.34
+C002342,Facilities,Cleaning Services,,,NOT_APPROVED,1016.80,0.00
+C002343,Pharmaceuticals,Oncology,Chemotherapy Agents,,,23015.71,23015.71
+C002344,Clinical Supplies,Consumables,Wound Care,,,99.50,99.50
+C002345,Food and Catering,,,,,11057.54,11057.54
+C002346,Clinical Supplies,Consumables,Wound Care,,,20.94,20.94
+C002347,Professional Services,Consulting,Management Consulting,,,14074.37,14074.37
+C002348,Pharmaceuticals,Oncology,Chemotherapy Agents,,,5793.11,5793.11
+C002349,Pharmaceuticals,Generics,,,,203.14,203.14
+C002350,Professional Services,Legal,,,,7563.76,7563.76
+C002351,Pharmaceuticals,Oncology,Chemotherapy Agents,,,7157.14,7157.14
+C002352,Clinical Supplies,Implants,Cardiac,Stents,,1364.74,1364.74
+C002353,Facilities,Maintenance,HVAC,,,1902.71,1902.71
+C002354,Professional Services,Consulting,Management Consulting,,,12825.91,12825.91
+C002355,Clinical Supplies,Implants,Cardiac,Stents,,3046.42,3046.42
+C002356,IT,Software,Licences,,,12819.87,12819.87
+C002357,Pharmaceuticals,Oncology,Chemotherapy Agents,,,3550.34,3550.34
+C002358,IT,Hardware,,,,1184.72,1184.72
+C002359,Professional Services,Legal,,,,2912.76,2912.76
+C002360,Pharmaceuticals,Generics,,,NOT_APPROVED,229.59,0.00
+C002361,,,,,NON_PROCUREMENT,14478.03,0.00
+C002362,Facilities,Cleaning Services,,,,20713.77,20713.77
+C002363,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2682.10,2682.10
+C002364,Facilities,Maintenance,HVAC,,CANCELLED,2150.67,0.00
+C002365,Professional Services,Legal,,,,7930.36,7930.36
+C002366,Pharmaceuticals,Oncology,Chemotherapy Agents,,,6644.03,6644.03
+C002367,Pharmaceuticals,Generics,,,,146.65,146.65
+C002368,Clinical Supplies,Consumables,Gloves and PPE,,,313.36,313.36
+C002369,IT,Hardware,,,,2491.13,2491.13
+C002370,IT,Software,Licences,,,8790.10,8790.10
+C002371,Clinical Supplies,Implants,Orthopaedic,Hip Systems,NOT_APPROVED,5836.63,0.00
+C002372,Pharmaceuticals,Generics,,,,1925.15,1925.15
+C002373,Professional Services,Legal,,,,5018.87,5018.87
+C002374,Professional Services,Legal,,,,7267.07,7267.07
+C002375,Pharmaceuticals,Oncology,Chemotherapy Agents,,,1067.75,1067.75
+C002376,IT,Software,Licences,,,1297.90,1297.90
+C002377,,,,,NON_PROCUREMENT,4722.16,0.00
+C002378,Pharmaceuticals,Generics,,,,1989.68,1989.68
+C002379,,,,,NON_PROCUREMENT,1873.63,0.00
+C002380,Professional Services,Legal,,,,5136.26,5136.26
+C002381,Professional Services,Consulting,Management Consulting,,,7931.59,7931.59
+C002382,IT,Software,Licences,,,7602.48,7602.48
+C002383,Pharmaceuticals,Generics,,,,885.78,885.78
+C002384,Pharmaceuticals,Generics,,,CANCELLED,812.09,0.00
+C002385,Professional Services,Consulting,Management Consulting,,,4217.26,4217.26
+C002386,IT,Software,Licences,,,4911.71,4911.71
+C002387,Pharmaceuticals,Generics,,,,1124.76,1124.76
+C002388,,,,,NON_PROCUREMENT,9902.47,0.00
+C002389,IT,Hardware,,,,1958.82,1958.82
+C002390,Clinical Supplies,Consumables,Wound Care,,,1331.86,1331.86
+C002391,Pharmaceuticals,Generics,,,,2518.95,2518.95
+C002392,Clinical Supplies,Consumables,Gloves and PPE,,,311.74,311.74
+C002393,Clinical Supplies,Consumables,Wound Care,,,495.18,495.18
+C002394,Clinical Supplies,Consumables,Wound Care,,,223.26,223.26
+C002395,Professional Services,Consulting,Management Consulting,,,9344.89,9344.89
+C002396,IT,Hardware,,,,11533.89,11533.89
+C002397,Professional Services,Consulting,Management Consulting,,,29939.62,29939.62
+C002398,Professional Services,Consulting,Management Consulting,,,7894.21,7894.21
+C002399,Facilities,Cleaning Services,,,,3579.18,3579.18
+C002400,Clinical Supplies,Consumables,Wound Care,,,77.48,77.48
+C002401,Pharmaceuticals,Generics,,,NOT_APPROVED,745.22,0.00
+C002402,Clinical Supplies,Implants,Cardiac,Stents,,3421.13,3421.13
+C002403,Facilities,Cleaning Services,,,,2475.24,2475.24
+C002404,Pharmaceuticals,Oncology,Chemotherapy Agents,,NOT_APPROVED,4487.75,0.00
+C002405,Professional Services,Legal,,,NOT_APPROVED,3483.57,0.00
+C002406,Clinical Supplies,Consumables,Wound Care,,CANCELLED,985.76,0.00
+C002407,IT,Software,Licences,,,8849.68,8849.68
+C002408,Professional Services,Legal,,,,4318.56,4318.56
+C002409,Clinical Supplies,Consumables,Wound Care,,,213.60,213.60
+C002410,Pharmaceuticals,Generics,,,CANCELLED,855.90,0.00
+C002411,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,3387.16,3387.16
+C002412,Food and Catering,,,,,1312.15,1312.15
+C002413,Clinical Supplies,Implants,Cardiac,Stents,NOT_APPROVED,7577.14,0.00
+C002414,IT,Hardware,,,,14375.84,14375.84
+C002415,Food and Catering,,,,,1228.67,1228.67
+C002416,Clinical Supplies,Consumables,Gloves and PPE,,,299.50,299.50
+C002417,Clinical Supplies,Consumables,Wound Care,,,386.34,386.34
+C002418,Clinical Supplies,Consumables,Gloves and PPE,,,31.74,31.74
+C002419,Clinical Supplies,Consumables,Wound Care,,,1088.11,1088.11
+C002420,Facilities,Cleaning Services,,,CANCELLED,6996.54,0.00
+C002421,Clinical Supplies,Consumables,Gloves and PPE,,,968.60,968.60
+C002422,Clinical Supplies,Consumables,Wound Care,,,295.61,295.61
+C002423,Food and Catering,,,,,1601.72,1601.72
+C002424,Clinical Supplies,Consumables,Wound Care,,,406.08,406.08
+C002425,IT,Software,Licences,,,5124.07,5124.07
+C002426,Pharmaceuticals,Generics,,,NOT_APPROVED,592.95,0.00
+C002427,Clinical Supplies,Consumables,Gloves and PPE,,,368.30,368.30
+C002428,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,14224.48,14224.48
+C002429,Professional Services,Legal,,,,7520.42,7520.42
+C002430,Facilities,Cleaning Services,,,,2607.71,2607.71
+C002431,Food and Catering,,,,,1381.05,1381.05
+C002432,Clinical Supplies,Consumables,Gloves and PPE,,,458.11,458.11
+C002433,Clinical Supplies,Consumables,Gloves and PPE,,CANCELLED,80.68,0.00
+C002434,Clinical Supplies,Consumables,Gloves and PPE,,,572.59,572.59
+C002435,Clinical Supplies,Implants,Cardiac,Stents,,4612.72,4612.72
+C002436,Food and Catering,,,,CANCELLED,902.14,0.00
+C002437,Pharmaceuticals,Oncology,Chemotherapy Agents,,,793.71,793.71
+C002438,Professional Services,Legal,,,,4051.48,4051.48
+C002439,Facilities,Maintenance,HVAC,,,2994.40,2994.40
+C002440,IT,Software,Licences,,,13923.01,13923.01
+C002441,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,3464.75,3464.75
+C002442,IT,Hardware,,,,4192.26,4192.26
+C002443,IT,Software,Licences,,,6203.44,6203.44
+C002444,Pharmaceuticals,Generics,,,,404.37,404.37
+C002445,Facilities,Maintenance,HVAC,,,4849.26,4849.26
+C002446,Pharmaceuticals,Generics,,,,324.09,324.09
+C002447,Pharmaceuticals,Oncology,Chemotherapy Agents,,,531.37,531.37
+C002448,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,15413.36,15413.36
+C002449,Clinical Supplies,Implants,Orthopaedic,Hip Systems,CANCELLED,3605.58,0.00
+C002450,Facilities,Cleaning Services,,,,8829.55,8829.55
+C002451,Food and Catering,,,,,4683.50,4683.50
+C002452,Facilities,Cleaning Services,,,,4229.74,4229.74
+C002453,Professional Services,Consulting,Management Consulting,,,1287.72,1287.72
+C002454,Facilities,Cleaning Services,,,,2052.62,2052.62
+C002455,Pharmaceuticals,Generics,,,,261.57,261.57
+C002456,IT,Hardware,,,,2804.88,2804.88
+C002457,Professional Services,Consulting,Management Consulting,,,1125.62,1125.62
+C002458,Clinical Supplies,Consumables,Wound Care,,,253.71,253.71
+C002459,Facilities,Cleaning Services,,,,4511.43,4511.43
+C002460,Clinical Supplies,Consumables,Gloves and PPE,,,46.99,46.99
+C002461,IT,Software,Licences,,,4832.30,4832.30
+C002462,Facilities,Cleaning Services,,,,3282.64,3282.64
+C002463,Clinical Supplies,Consumables,Gloves and PPE,,,325.74,325.74
+C002464,Pharmaceuticals,Oncology,Chemotherapy Agents,,,3801.29,3801.29
+C002465,Facilities,Cleaning Services,,,,8889.41,8889.41
+C002466,Professional Services,Legal,,,,1860.43,1860.43
+C002467,Facilities,Cleaning Services,,,,4250.91,4250.91
+C002468,Facilities,Cleaning Services,,,,4071.41,4071.41
+C002469,IT,Hardware,,,,1346.57,1346.57
+C002470,IT,Software,Licences,,,7410.90,7410.90
+C002471,Food and Catering,,,,NOT_APPROVED,7123.25,0.00
+C002472,Pharmaceuticals,Oncology,Chemotherapy Agents,,,3003.54,3003.54
+C002473,Facilities,Maintenance,HVAC,,,4545.07,4545.07
+C002474,Pharmaceuticals,Generics,,,,885.80,885.80
+C002475,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2278.00,2278.00
+C002476,,,,,NON_PROCUREMENT,2231.59,0.00
+C002477,Clinical Supplies,Consumables,Gloves and PPE,,,347.87,347.87
+C002478,Professional Services,Consulting,Management Consulting,,,14030.94,14030.94
+C002479,Pharmaceuticals,Generics,,,CANCELLED,293.02,0.00
+C002480,Clinical Supplies,Consumables,Gloves and PPE,,NOT_APPROVED,99.12,0.00
+C002481,Professional Services,Legal,,,,2013.12,2013.12
+C002482,Facilities,Cleaning Services,,,,1817.62,1817.62
+C002483,Food and Catering,,,,,644.68,644.68
+C002484,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,25060.23,25060.23
+C002485,IT,Software,Licences,,,7565.86,7565.86
+C002486,IT,Hardware,,,,2551.62,2551.62
+C002487,Clinical Supplies,Consumables,Wound Care,,,228.00,228.00
+C002488,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,3474.23,3474.23
+C002489,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2257.84,2257.84
+C002490,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2970.14,2970.14
+C002491,IT,Hardware,,,,440.70,440.70
+C002492,Professional Services,Legal,,,,3750.74,3750.74
+C002493,Food and Catering,,,,,463.40,463.40
+C002494,Clinical Supplies,Consumables,Gloves and PPE,,,260.72,260.72
+C002495,Clinical Supplies,Implants,Cardiac,Stents,,2692.84,2692.84
+C002496,Pharmaceuticals,Generics,,,,78.49,78.49
+C002497,IT,Hardware,,,,1735.65,1735.65
+C002498,Food and Catering,,,,,2047.85,2047.85
+C002499,Food and Catering,,,,,10385.10,10385.10
+C002500,Clinical Supplies,Consumables,Gloves and PPE,,,1674.58,1674.58
+C002501,Clinical Supplies,Consumables,Wound Care,,,138.65,138.65
+C002502,IT,Software,Licences,,NOT_APPROVED,1195.30,0.00
+C002503,Food and Catering,,,,,377.75,377.75
+C002504,Clinical Supplies,Consumables,Gloves and PPE,,,252.60,252.60
+C002505,IT,Software,Licences,,,8354.63,8354.63
+C002506,Pharmaceuticals,Generics,,,CANCELLED,1035.74,0.00
+C002507,Professional Services,Legal,,,,4751.48,4751.48
+C002508,Professional Services,Consulting,Management Consulting,,,13012.95,13012.95
+C002509,Pharmaceuticals,Generics,,,,619.88,619.88
+C002510,IT,Hardware,,,CANCELLED,3460.68,0.00
+C002511,Food and Catering,,,,,7350.73,7350.73
+C002512,Pharmaceuticals,Oncology,Chemotherapy Agents,,CANCELLED,552.17,0.00
+C002513,IT,Software,Licences,,,7207.60,7207.60
+C002514,Professional Services,Legal,,,NOT_APPROVED,3238.04,0.00
+C002515,Facilities,Cleaning Services,,,,1038.55,1038.55
+C002516,Food and Catering,,,,,555.50,555.50
+C002517,Facilities,Maintenance,HVAC,,,14552.05,14552.05
+C002518,Food and Catering,,,,,509.07,509.07
+C002519,IT,Hardware,,,,430.39,430.39
+C002520,Food and Catering,,,,,2283.82,2283.82
+C002521,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,3368.20,3368.20
+C002522,Facilities,Maintenance,HVAC,,,11330.93,11330.93
+C002523,IT,Software,Licences,,NOT_APPROVED,7112.74,0.00
+C002524,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,3301.88,3301.88
+C002525,Clinical Supplies,Consumables,Wound Care,,,214.26,214.26
+C002526,Pharmaceuticals,Oncology,Chemotherapy Agents,,NOT_APPROVED,1912.94,0.00
+C002527,Professional Services,Legal,,,,5736.68,5736.68
+C002528,Clinical Supplies,Consumables,Gloves and PPE,,,312.82,312.82
+C002529,,,,,NON_PROCUREMENT,1738.77,0.00
+C002530,Clinical Supplies,Implants,Cardiac,Stents,,1360.24,1360.24
+C002531,Food and Catering,,,,,474.90,474.90
+C002532,IT,Hardware,,,,332.30,332.30
+C002533,,,,,NON_PROCUREMENT,12550.83,0.00
+C002534,Facilities,Cleaning Services,,,,468.25,468.25
+C002535,Facilities,Maintenance,HVAC,,,1793.42,1793.42
+C002536,Clinical Supplies,Consumables,Gloves and PPE,,,220.59,220.59
+C002537,Clinical Supplies,Implants,Cardiac,Stents,,3629.35,3629.35
+C002538,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,2395.02,2395.02
+C002539,Pharmaceuticals,Oncology,Chemotherapy Agents,,,3729.04,3729.04
+C002540,IT,Hardware,,,,2277.97,2277.97
+C002541,Professional Services,Legal,,,,7781.28,7781.28
+C002542,Facilities,Cleaning Services,,,,472.10,472.10
+C002543,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,10971.10,10971.10
+C002544,Professional Services,Legal,,,,4023.43,4023.43
+C002545,Facilities,Cleaning Services,,,,1447.65,1447.65
+C002546,IT,Hardware,,,,10047.07,10047.07
+C002547,IT,Hardware,,,,1105.59,1105.59
+C002548,Food and Catering,,,,,1111.13,1111.13
+C002549,,,,,NON_PROCUREMENT,7581.58,0.00
+C002550,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,11520.23,11520.23
+C002551,Clinical Supplies,Consumables,Wound Care,,,268.38,268.38
+C002552,Clinical Supplies,Consumables,Gloves and PPE,,,186.16,186.16
+C002553,IT,Software,Licences,,,3492.73,3492.73
+C002554,Clinical Supplies,Implants,Cardiac,Stents,,3929.74,3929.74
+C002555,Pharmaceuticals,Oncology,Chemotherapy Agents,,NOT_APPROVED,21444.37,0.00
+C002556,Professional Services,Legal,,,,5946.49,5946.49
+C002557,Facilities,Cleaning Services,,,NOT_APPROVED,8010.47,0.00
+C002558,Food and Catering,,,,NOT_APPROVED,2915.93,0.00
+C002559,Professional Services,Legal,,,,2145.31,2145.31
+C002560,Clinical Supplies,Consumables,Wound Care,,,139.02,139.02
+C002561,Clinical Supplies,Consumables,Wound Care,,,188.63,188.63
+C002562,Pharmaceuticals,Oncology,Chemotherapy Agents,,CANCELLED,1911.27,0.00
+C002563,Pharmaceuticals,Oncology,Chemotherapy Agents,,,767.62,767.62
+C002564,Facilities,Cleaning Services,,,,1184.14,1184.14
+C002565,Professional Services,Legal,,,,38963.41,38963.41
+C002566,IT,Software,Licences,,,6096.77,6096.77
+C002567,Facilities,Cleaning Services,,,,2943.26,2943.26
+C002568,Facilities,Cleaning Services,,,,1685.78,1685.78
+C002569,Clinical Supplies,Implants,Cardiac,Stents,,2054.95,2054.95
+C002570,Clinical Supplies,Consumables,Wound Care,,,91.47,91.47
+C002571,IT,Hardware,,,,2896.75,2896.75
+C002572,Clinical Supplies,Consumables,Gloves and PPE,,,256.70,256.70
+C002573,Pharmaceuticals,Generics,,,,135.71,135.71
+C002574,Food and Catering,,,,,9819.93,9819.93
+C002575,Food and Catering,,,,CANCELLED,4287.00,0.00
+C002576,Professional Services,Legal,,,,3543.49,3543.49
+C002577,Facilities,Maintenance,HVAC,,,2139.20,2139.20
+C002578,Food and Catering,,,,,1672.55,1672.55
+C002579,Professional Services,Consulting,Management Consulting,,,8582.37,8582.37
+C002580,Food and Catering,,,,NOT_APPROVED,11552.95,0.00
+C002581,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,5106.87,5106.87
+C002582,Clinical Supplies,Implants,Cardiac,Stents,,5400.22,5400.22
+C002583,Facilities,Cleaning Services,,,,3313.93,3313.93
+C002584,Facilities,Cleaning Services,,,,13014.11,13014.11
+C002585,Clinical Supplies,Consumables,Gloves and PPE,,,764.22,764.22
+C002586,Facilities,Maintenance,HVAC,,,1885.60,1885.60
+C002587,IT,Hardware,,,NOT_APPROVED,2275.91,0.00
+C002588,,,,,NON_PROCUREMENT,15204.79,0.00
+C002589,Pharmaceuticals,Oncology,Chemotherapy Agents,,,21646.53,21646.53
+C002590,Clinical Supplies,Consumables,Gloves and PPE,,,66.39,66.39
+C002591,IT,Software,Licences,,,8028.30,8028.30
+C002592,Facilities,Maintenance,HVAC,,NOT_APPROVED,574.47,0.00
+C002593,Pharmaceuticals,Generics,,,,287.68,287.68
+C002594,Professional Services,Legal,,,,38113.68,38113.68
+C002595,Facilities,Maintenance,HVAC,,,2769.48,2769.48
+C002596,Professional Services,Legal,,,,5037.89,5037.89
+C002597,Clinical Supplies,Implants,Cardiac,Stents,,5670.77,5670.77
+C002598,Facilities,Cleaning Services,,,,16808.72,16808.72
+C002599,IT,Software,Licences,,,11766.23,11766.23
+C002600,Clinical Supplies,Consumables,Wound Care,,,286.49,286.49
+C002601,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,9759.68,9759.68
+C002602,IT,Software,Licences,,NOT_APPROVED,36001.30,0.00
+C002603,Facilities,Maintenance,HVAC,,,1267.40,1267.40
+C002604,Pharmaceuticals,Generics,,,,561.82,561.82
+C002605,Pharmaceuticals,Generics,,,,227.17,227.17
+C002606,,,,,NON_PROCUREMENT,3102.27,0.00
+C002607,Clinical Supplies,Implants,Cardiac,Stents,CANCELLED,12763.73,0.00
+C002608,Professional Services,Consulting,Management Consulting,,,60835.12,60835.12
+C002609,IT,Hardware,,,,1749.61,1749.61
+C002610,Facilities,Cleaning Services,,,NOT_APPROVED,1978.28,0.00
+C002611,Pharmaceuticals,Generics,,,,554.87,554.87
+C002612,Clinical Supplies,Implants,Cardiac,Stents,,1064.04,1064.04
+C002613,IT,Software,Licences,,CANCELLED,3307.52,0.00
+C002614,Clinical Supplies,Implants,Cardiac,Stents,,6719.93,6719.93
+C002615,Professional Services,Consulting,Management Consulting,,,16636.26,16636.26
+C002616,Pharmaceuticals,Oncology,Chemotherapy Agents,,,303.32,303.32
+C002617,Clinical Supplies,Implants,Orthopaedic,Hip Systems,CANCELLED,2997.73,0.00
+C002618,Facilities,Maintenance,HVAC,,,2737.83,2737.83
+C002619,Professional Services,Consulting,Management Consulting,,,9421.99,9421.99
+C002620,Clinical Supplies,Consumables,Wound Care,,,162.59,162.59
+C002621,Professional Services,Legal,,,,2667.27,2667.27
+C002622,IT,Hardware,,,,2382.18,2382.18
+C002623,Pharmaceuticals,Generics,,,,509.14,509.14
+C002624,Professional Services,Legal,,,,7776.58,7776.58
+C002625,Facilities,Cleaning Services,,,,4920.43,4920.43
+C002626,Pharmaceuticals,Generics,,,,777.26,777.26
+C002627,Pharmaceuticals,Generics,,,,442.38,442.38
+C002628,Facilities,Maintenance,HVAC,,,296.86,296.86
+C002629,IT,Hardware,,,,2999.32,2999.32
+C002630,IT,Software,Licences,,,1187.22,1187.22
+C002631,Clinical Supplies,Consumables,Wound Care,,CANCELLED,202.66,0.00
+C002632,Facilities,Cleaning Services,,,NOT_APPROVED,14034.55,0.00
+C002633,Professional Services,Legal,,,,2274.84,2274.84
+C002634,Clinical Supplies,Consumables,Wound Care,,,584.36,584.36
+C002635,Clinical Supplies,Consumables,Gloves and PPE,,,648.73,648.73
+C002636,Pharmaceuticals,Generics,,,,71.38,71.38
+C002637,IT,Hardware,,,,519.73,519.73
+C002638,IT,Hardware,,,,1340.11,1340.11
+C002639,Pharmaceuticals,Oncology,Chemotherapy Agents,,,4675.90,4675.90
+C002640,Pharmaceuticals,Generics,,,NOT_APPROVED,3035.84,0.00
+C002641,Clinical Supplies,Implants,Cardiac,Stents,,1368.41,1368.41
+C002642,IT,Software,Licences,,,39782.00,39782.00
+C002643,Facilities,Maintenance,HVAC,,,1255.87,1255.87
+C002644,Food and Catering,,,,,6823.04,6823.04
+C002645,Facilities,Cleaning Services,,,NOT_APPROVED,3453.53,0.00
+C002646,Clinical Supplies,Consumables,Wound Care,,,241.93,241.93
+C002647,IT,Software,Licences,,,15649.52,15649.52
+C002648,IT,Hardware,,,,2390.63,2390.63
+C002649,IT,Hardware,,,,2343.61,2343.61
+C002650,IT,Hardware,,,,2086.35,2086.35
+C002651,,,,,NON_PROCUREMENT,2694.98,0.00
+C002652,Pharmaceuticals,Oncology,Chemotherapy Agents,,NOT_APPROVED,4290.20,0.00
+C002653,Clinical Supplies,Implants,Cardiac,Stents,,1884.89,1884.89
+C002654,Facilities,Maintenance,HVAC,,,2133.43,2133.43
+C002655,Facilities,Maintenance,HVAC,,,661.55,661.55
+C002656,IT,Hardware,,,,1595.67,1595.67
+C002657,Pharmaceuticals,Generics,,,,4333.27,4333.27
+C002658,Clinical Supplies,Consumables,Wound Care,,,129.09,129.09
+C002659,Food and Catering,,,,,1859.45,1859.45
+C002660,Clinical Supplies,Consumables,Wound Care,,,137.23,137.23
+C002661,IT,Software,Licences,,,6579.60,6579.60
+C002662,Food and Catering,,,,,8368.07,8368.07
+C002663,Food and Catering,,,,,1681.27,1681.27
+C002664,Food and Catering,,,,,11030.37,11030.37
+C002665,Clinical Supplies,Consumables,Gloves and PPE,,CANCELLED,360.05,0.00
+C002666,IT,Software,Licences,,,27513.66,27513.66
+C002667,Professional Services,Legal,,,,2621.32,2621.32
+C002668,Food and Catering,,,,,997.65,997.65
+C002669,IT,Hardware,,,,1139.73,1139.73
+C002670,Facilities,Maintenance,HVAC,,NOT_APPROVED,4228.09,0.00
+C002671,Food and Catering,,,,,2072.49,2072.49
+C002672,Clinical Supplies,Consumables,Wound Care,,,114.47,114.47
+C002673,Pharmaceuticals,Generics,,,,1228.56,1228.56
+C002674,Facilities,Cleaning Services,,,,6326.60,6326.60
+C002675,Pharmaceuticals,Generics,,,,453.84,453.84
+C002676,Clinical Supplies,Consumables,Gloves and PPE,,,1412.93,1412.93
+C002677,Clinical Supplies,Consumables,Gloves and PPE,,,297.37,297.37
+C002678,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,2228.45,2228.45
+C002679,Facilities,Cleaning Services,,,,340.01,340.01
+C002680,Clinical Supplies,Consumables,Gloves and PPE,,CANCELLED,292.81,0.00
+C002681,Facilities,Cleaning Services,,,,6552.44,6552.44
+C002682,Food and Catering,,,,,606.80,606.80
+C002683,,,,,NON_PROCUREMENT,18400.97,0.00
+C002684,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,4230.13,4230.13
+C002685,Facilities,Cleaning Services,,,,6640.78,6640.78
+C002686,Professional Services,Consulting,Management Consulting,,,3164.37,3164.37
+C002687,Facilities,Cleaning Services,,,,3762.91,3762.91
+C002688,IT,Hardware,,,,2119.39,2119.39
+C002689,IT,Hardware,,,,1427.40,1427.40
+C002690,Clinical Supplies,Consumables,Gloves and PPE,,NOT_APPROVED,177.20,0.00
+C002691,Clinical Supplies,Consumables,Gloves and PPE,,,519.38,519.38
+C002692,Facilities,Maintenance,HVAC,,,1657.11,1657.11
+C002693,Food and Catering,,,,,4371.54,4371.54
+C002694,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,9933.19,9933.19
+C002695,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,5785.98,5785.98
+C002696,Facilities,Cleaning Services,,,NOT_APPROVED,3297.68,0.00
+C002697,Pharmaceuticals,Generics,,,,3911.85,3911.85
+C002698,Clinical Supplies,Consumables,Gloves and PPE,,,108.14,108.14
+C002699,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,3101.10,3101.10
+C002700,Food and Catering,,,,,1634.12,1634.12
+C002701,Clinical Supplies,Consumables,Wound Care,,NOT_APPROVED,298.45,0.00
+C002702,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,3921.72,3921.72
+C002703,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,5203.54,5203.54
+C002704,Professional Services,Legal,,,CANCELLED,3170.41,0.00
+C002705,Pharmaceuticals,Generics,,,,1624.40,1624.40
+C002706,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,2123.78,2123.78
+C002707,Pharmaceuticals,Oncology,Chemotherapy Agents,,,659.04,659.04
+C002708,Clinical Supplies,Consumables,Wound Care,,,117.63,117.63
+C002709,Professional Services,Legal,,,,1063.43,1063.43
+C002710,Clinical Supplies,Consumables,Wound Care,,,353.67,353.67
+C002711,Clinical Supplies,Implants,Cardiac,Stents,,9435.47,9435.47
+C002712,Clinical Supplies,Consumables,Gloves and PPE,,NOT_APPROVED,82.89,0.00
+C002713,IT,Hardware,,,,3960.37,3960.37
+C002714,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,8549.97,8549.97
+C002715,IT,Software,Licences,,,6479.99,6479.99
+C002716,IT,Software,Licences,,NOT_APPROVED,2180.39,0.00
+C002717,,,,,NON_PROCUREMENT,2703.23,0.00
+C002718,Professional Services,Legal,,,,2806.22,2806.22
+C002719,Clinical Supplies,Consumables,Wound Care,,NOT_APPROVED,16.24,0.00
+C002720,IT,Software,Licences,,,8546.20,8546.20
+C002721,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,4217.30,4217.30
+C002722,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,1432.04,1432.04
+C002723,Pharmaceuticals,Generics,,,,195.86,195.86
+C002724,Clinical Supplies,Implants,Cardiac,Stents,,7348.17,7348.17
+C002725,IT,Software,Licences,,,8236.45,8236.45
+C002726,Food and Catering,,,,,4933.66,4933.66
+C002727,Clinical Supplies,Consumables,Wound Care,,NOT_APPROVED,419.84,0.00
+C002728,Facilities,Maintenance,HVAC,,,2359.51,2359.51
+C002729,,,,,NON_PROCUREMENT,10047.75,0.00
+C002730,,,,,NON_PROCUREMENT,3900.33,0.00
+C002731,IT,Hardware,,,,1887.91,1887.91
+C002732,Facilities,Maintenance,HVAC,,,9261.74,9261.74
+C002733,IT,Software,Licences,,,1235.15,1235.15
+C002734,Facilities,Maintenance,HVAC,,,3292.66,3292.66
+C002735,Clinical Supplies,Implants,Cardiac,Stents,,3993.71,3993.71
+C002736,Pharmaceuticals,Generics,,,,1638.87,1638.87
+C002737,Professional Services,Consulting,Management Consulting,,CANCELLED,1685.28,0.00
+C002738,Professional Services,Consulting,Management Consulting,,,8748.45,8748.45
+C002739,Pharmaceuticals,Oncology,Chemotherapy Agents,,,1491.26,1491.26
+C002740,Professional Services,Legal,,,,27531.12,27531.12
+C002741,Clinical Supplies,Consumables,Wound Care,,,204.32,204.32
+C002742,Pharmaceuticals,Generics,,,,702.20,702.20
+C002743,Professional Services,Consulting,Management Consulting,,,9427.17,9427.17
+C002744,Professional Services,Consulting,Management Consulting,,,9757.29,9757.29
+C002745,IT,Software,Licences,,,8356.49,8356.49
+C002746,Facilities,Maintenance,HVAC,,,3027.86,3027.86
+C002747,Pharmaceuticals,Oncology,Chemotherapy Agents,,,1068.04,1068.04
+C002748,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2347.82,2347.82
+C002749,Clinical Supplies,Consumables,Wound Care,,,180.92,180.92
+C002750,Professional Services,Consulting,Management Consulting,,,3588.40,3588.40
+C002751,Professional Services,Consulting,Management Consulting,,,3225.95,3225.95
+C002752,IT,Software,Licences,,,6949.79,6949.79
+C002753,Professional Services,Consulting,Management Consulting,,,2119.82,2119.82
+C002754,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,5933.36,5933.36
+C002755,,,,,NON_PROCUREMENT,15457.12,0.00
+C002756,Facilities,Cleaning Services,,,,3230.48,3230.48
+C002757,Facilities,Maintenance,HVAC,,,1049.05,1049.05
+C002758,,,,,NON_PROCUREMENT,13091.19,0.00
+C002759,,,,,NON_PROCUREMENT,4536.77,0.00
+C002760,Professional Services,Consulting,Management Consulting,,NOT_APPROVED,4789.05,0.00
+C002761,Pharmaceuticals,Generics,,,,4210.10,4210.10
+C002762,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,5037.74,5037.74
+C002763,Pharmaceuticals,Oncology,Chemotherapy Agents,,,17394.72,17394.72
+C002764,Professional Services,Legal,,,,26693.32,26693.32
+C002765,IT,Hardware,,,,3333.29,3333.29
+C002766,Pharmaceuticals,Generics,,,,1338.48,1338.48
+C002767,Food and Catering,,,,CANCELLED,532.05,0.00
+C002768,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2615.70,2615.70
+C002769,Clinical Supplies,Consumables,Gloves and PPE,,,135.17,135.17
+C002770,Pharmaceuticals,Generics,,,,246.28,246.28
+C002771,IT,Software,Licences,,,6112.39,6112.39
+C002772,Clinical Supplies,Consumables,Wound Care,,,209.46,209.46
+C002773,IT,Software,Licences,,,32411.23,32411.23
+C002774,IT,Software,Licences,,,29077.75,29077.75
+C002775,Pharmaceuticals,Generics,,,,459.76,459.76
+C002776,Professional Services,Consulting,Management Consulting,,,12640.20,12640.20
+C002777,Professional Services,Legal,,,CANCELLED,520.77,0.00
+C002778,Clinical Supplies,Implants,Cardiac,Stents,,939.34,939.34
+C002779,Clinical Supplies,Consumables,Gloves and PPE,,,1402.52,1402.52
+C002780,Facilities,Maintenance,HVAC,,,395.09,395.09
+C002781,Clinical Supplies,Consumables,Wound Care,,,68.30,68.30
+C002782,IT,Software,Licences,,,33609.73,33609.73
+C002783,Clinical Supplies,Implants,Orthopaedic,Hip Systems,NOT_APPROVED,3037.39,0.00
+C002784,IT,Software,Licences,,,8838.78,8838.78
+C002785,Professional Services,Legal,,,,15124.64,15124.64
+C002786,Clinical Supplies,Consumables,Gloves and PPE,,,311.84,311.84
+C002787,IT,Software,Licences,,,1409.40,1409.40
+C002788,Professional Services,Consulting,Management Consulting,,,11927.04,11927.04
+C002789,Facilities,Cleaning Services,,,,1696.08,1696.08
+C002790,Facilities,Maintenance,HVAC,,,5512.14,5512.14
+C002791,Professional Services,Legal,,,,20078.99,20078.99
+C002792,Facilities,Cleaning Services,,,,4692.78,4692.78
+C002793,IT,Hardware,,,,5858.75,5858.75
+C002794,Clinical Supplies,Consumables,Wound Care,,NOT_APPROVED,247.73,0.00
+C002795,Professional Services,Consulting,Management Consulting,,,10319.81,10319.81
+C002796,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,3757.84,3757.84
+C002797,Pharmaceuticals,Oncology,Chemotherapy Agents,,CANCELLED,2725.66,0.00
+C002798,IT,Software,Licences,,NOT_APPROVED,3640.59,0.00
+C002799,Clinical Supplies,Consumables,Wound Care,,,77.73,77.73
+C002800,Pharmaceuticals,Generics,,,,109.50,109.50
+C002801,Professional Services,Legal,,,,4475.50,4475.50
+C002802,IT,Software,Licences,,,26186.38,26186.38
+C002803,Clinical Supplies,Consumables,Wound Care,,NOT_APPROVED,455.25,0.00
+C002804,Facilities,Maintenance,HVAC,,NOT_APPROVED,2577.01,0.00
+C002805,Food and Catering,,,,NOT_APPROVED,1926.75,0.00
+C002806,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,4139.71,4139.71
+C002807,IT,Software,Licences,,,8916.20,8916.20
+C002808,Clinical Supplies,Implants,Cardiac,Stents,,2446.88,2446.88
+C002809,IT,Hardware,,,,3064.65,3064.65
+C002810,Professional Services,Consulting,Management Consulting,,,10276.65,10276.65
+C002811,Pharmaceuticals,Generics,,,CANCELLED,346.24,0.00
+C002812,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,3850.34,3850.34
+C002813,Facilities,Cleaning Services,,,,849.20,849.20
+C002814,Pharmaceuticals,Oncology,Chemotherapy Agents,,,1473.97,1473.97
+C002815,Facilities,Cleaning Services,,,,3323.61,3323.61
+C002816,Clinical Supplies,Consumables,Gloves and PPE,,,30.52,30.52
+C002817,Facilities,Maintenance,HVAC,,,524.03,524.03
+C002818,Pharmaceuticals,Oncology,Chemotherapy Agents,,,8127.08,8127.08
+C002819,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2578.25,2578.25
+C002820,Food and Catering,,,,,3040.11,3040.11
+C002821,Facilities,Cleaning Services,,,,457.26,457.26
+C002822,Clinical Supplies,Consumables,Wound Care,,,588.34,588.34
+C002823,Clinical Supplies,Implants,Cardiac,Stents,,3420.02,3420.02
+C002824,Professional Services,Consulting,Management Consulting,,,12817.05,12817.05
+C002825,Professional Services,Consulting,Management Consulting,,CANCELLED,29251.99,0.00
+C002826,,,,,NON_PROCUREMENT,842.17,0.00
+C002827,Clinical Supplies,Consumables,Wound Care,,,193.47,193.47
+C002828,Clinical Supplies,Consumables,Gloves and PPE,,,256.14,256.14
+C002829,IT,Hardware,,,,2701.83,2701.83
+C002830,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,18626.03,18626.03
+C002831,Professional Services,Consulting,Management Consulting,,,8072.41,8072.41
+C002832,Pharmaceuticals,Generics,,,,426.74,426.74
+C002833,Clinical Supplies,Implants,Cardiac,Stents,,1089.74,1089.74
+C002834,Professional Services,Consulting,Management Consulting,,,6859.45,6859.45
+C002835,Facilities,Cleaning Services,,,,956.50,956.50
+C002836,Facilities,Cleaning Services,,,,7575.73,7575.73
+C002837,Clinical Supplies,Consumables,Wound Care,,,588.25,588.25
+C002838,Pharmaceuticals,Generics,,,,669.73,669.73
+C002839,Facilities,Cleaning Services,,,,2130.88,2130.88
+C002840,Pharmaceuticals,Oncology,Chemotherapy Agents,,,7246.85,7246.85
+C002841,Facilities,Cleaning Services,,,,1413.21,1413.21
+C002842,Clinical Supplies,Implants,Cardiac,Stents,NOT_APPROVED,7868.90,0.00
+C002843,Facilities,Cleaning Services,,,,4066.04,4066.04
+C002844,Professional Services,Legal,,,,6456.95,6456.95
+C002845,IT,Hardware,,,,15053.47,15053.47
+C002846,Facilities,Cleaning Services,,,,1095.13,1095.13
+C002847,Clinical Supplies,Consumables,Gloves and PPE,,,505.58,505.58
+C002848,Pharmaceuticals,Generics,,,,652.75,652.75
+C002849,Pharmaceuticals,Oncology,Chemotherapy Agents,,,4907.96,4907.96
+C002850,Professional Services,Legal,,,,13745.40,13745.40
+C002851,Facilities,Maintenance,HVAC,,,5418.42,5418.42
+C002852,Professional Services,Consulting,Management Consulting,,,11104.32,11104.32
+C002853,Food and Catering,,,,,3700.58,3700.58
+C002854,Clinical Supplies,Consumables,Gloves and PPE,,,44.33,44.33
+C002855,Pharmaceuticals,Oncology,Chemotherapy Agents,,,754.22,754.22
+C002856,Clinical Supplies,Consumables,Wound Care,,NOT_APPROVED,1209.15,0.00
+C002857,Clinical Supplies,Implants,Cardiac,Stents,,1637.31,1637.31
+C002858,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2262.42,2262.42
+C002859,Facilities,Maintenance,HVAC,,,13260.32,13260.32
+C002860,IT,Hardware,,,,3839.64,3839.64
+C002861,Professional Services,Consulting,Management Consulting,,,69635.55,69635.55
+C002862,Facilities,Maintenance,HVAC,,,2978.86,2978.86
+C002863,Facilities,Maintenance,HVAC,,,1535.15,1535.15
+C002864,,,,,NON_PROCUREMENT,10921.70,0.00
+C002865,Clinical Supplies,Consumables,Gloves and PPE,,,88.34,88.34
+C002866,Pharmaceuticals,Generics,,,,3590.82,3590.82
+C002867,Professional Services,Legal,,,,23262.59,23262.59
+C002868,Pharmaceuticals,Generics,,,,3134.59,3134.59
+C002869,IT,Hardware,,,,382.93,382.93
+C002870,Pharmaceuticals,Generics,,,,673.54,673.54
+C002871,Pharmaceuticals,Generics,,,,740.73,740.73
+C002872,IT,Software,Licences,,NOT_APPROVED,31599.29,0.00
+C002873,Facilities,Cleaning Services,,,,4431.61,4431.61
+C002874,Clinical Supplies,Consumables,Gloves and PPE,,,862.00,862.00
+C002875,Pharmaceuticals,Generics,,,,1724.57,1724.57
+C002876,Professional Services,Legal,,,,15074.20,15074.20
+C002877,Clinical Supplies,Consumables,Gloves and PPE,,,107.86,107.86
+C002878,Professional Services,Consulting,Management Consulting,,,7981.49,7981.49
+C002879,Professional Services,Consulting,Management Consulting,,NOT_APPROVED,51753.90,0.00
+C002880,Facilities,Maintenance,HVAC,,,2217.01,2217.01
+C002881,Professional Services,Consulting,Management Consulting,,,46671.04,46671.04
+C002882,Food and Catering,,,,,1750.29,1750.29
+C002883,Professional Services,Legal,,,,6824.52,6824.52
+C002884,Professional Services,Legal,,,,7455.87,7455.87
+C002885,,,,,NON_PROCUREMENT,9400.02,0.00
+C002886,Professional Services,Legal,,,,514.56,514.56
+C002887,Professional Services,Legal,,,,37744.87,37744.87
+C002888,Facilities,Cleaning Services,,,CANCELLED,3137.45,0.00
+C002889,Professional Services,Consulting,Management Consulting,,,17726.24,17726.24
+C002890,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2612.44,2612.44
+C002891,Facilities,Cleaning Services,,,,4960.57,4960.57
+C002892,Facilities,Maintenance,HVAC,,,1972.74,1972.74
+C002893,IT,Hardware,,,,3658.90,3658.90
+C002894,Pharmaceuticals,Oncology,Chemotherapy Agents,,,1495.28,1495.28
+C002895,Pharmaceuticals,Generics,,,,159.17,159.17
+C002896,IT,Hardware,,,,3821.46,3821.46
+C002897,Professional Services,Consulting,Management Consulting,,,14131.27,14131.27
+C002898,,,,,NON_PROCUREMENT,14859.41,0.00
+C002899,Facilities,Maintenance,HVAC,,,2930.47,2930.47
+C002900,IT,Software,Licences,,,7401.30,7401.30
+C002901,IT,Hardware,,,,6496.97,6496.97
+C002902,Pharmaceuticals,Generics,,,,647.74,647.74
+C002903,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,10909.61,10909.61
+C002904,Clinical Supplies,Consumables,Wound Care,,,274.08,274.08
+C002905,IT,Software,Licences,,,7565.73,7565.73
+C002906,Clinical Supplies,Implants,Cardiac,Stents,,3201.71,3201.71
+C002907,Clinical Supplies,Consumables,Gloves and PPE,,,298.85,298.85
+C002908,Professional Services,Consulting,Management Consulting,,,14367.63,14367.63
+C002909,Professional Services,Consulting,Management Consulting,,,13536.46,13536.46
+C002910,Facilities,Maintenance,HVAC,,,1856.71,1856.71
+C002911,Facilities,Cleaning Services,,,,1253.54,1253.54
+C002912,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2631.03,2631.03
+C002913,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,4605.32,4605.32
+C002914,Clinical Supplies,Implants,Cardiac,Stents,,1864.10,1864.10
+C002915,Clinical Supplies,Consumables,Gloves and PPE,,,44.09,44.09
+C002916,Clinical Supplies,Implants,Cardiac,Stents,,3293.34,3293.34
+C002917,Facilities,Cleaning Services,,,,3590.79,3590.79
+C002918,Professional Services,Consulting,Management Consulting,,,28571.22,28571.22
+C002919,IT,Hardware,,,,2503.79,2503.79
+C002920,Facilities,Cleaning Services,,,,4670.74,4670.74
+C002921,IT,Software,Licences,,,12254.32,12254.32
+C002922,Facilities,Maintenance,HVAC,,,387.84,387.84
+C002923,Facilities,Maintenance,HVAC,,NOT_APPROVED,1668.98,0.00
+C002924,Clinical Supplies,Implants,Cardiac,Stents,,6154.58,6154.58
+C002925,IT,Hardware,,,,5439.27,5439.27
+C002926,Pharmaceuticals,Oncology,Chemotherapy Agents,,,9877.04,9877.04
+C002927,Clinical Supplies,Consumables,Gloves and PPE,,,302.53,302.53
+C002928,Pharmaceuticals,Oncology,Chemotherapy Agents,,NOT_APPROVED,2360.05,0.00
+C002929,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,2111.74,2111.74
+C002930,IT,Software,Licences,,,36200.10,36200.10
+C002931,Professional Services,Consulting,Management Consulting,,NOT_APPROVED,8408.10,0.00
+C002932,Food and Catering,,,,,1230.64,1230.64
+C002933,,,,,NON_PROCUREMENT,15396.90,0.00
+C002934,Clinical Supplies,Implants,Cardiac,Stents,,3358.50,3358.50
+C002935,Clinical Supplies,Implants,Cardiac,Stents,,3381.60,3381.60
+C002936,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,4361.04,4361.04
+C002937,Facilities,Maintenance,HVAC,,,649.74,649.74
+C002938,Food and Catering,,,,,468.03,468.03
+C002939,Facilities,Cleaning Services,,,,6911.80,6911.80
+C002940,Facilities,Cleaning Services,,,,1058.33,1058.33
+C002941,Clinical Supplies,Consumables,Wound Care,,,981.59,981.59
+C002942,Professional Services,Legal,,,,7595.91,7595.91
+C002943,,,,,NON_PROCUREMENT,10607.27,0.00
+C002944,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,4585.27,4585.27
+C002945,Facilities,Maintenance,HVAC,,,7410.09,7410.09
+C002946,Pharmaceuticals,Generics,,,,424.62,424.62
+C002947,Clinical Supplies,Consumables,Gloves and PPE,,,760.61,760.61
+C002948,Pharmaceuticals,Oncology,Chemotherapy Agents,,,8483.72,8483.72
+C002949,Facilities,Cleaning Services,,,,16298.47,16298.47
+C002950,Facilities,Cleaning Services,,,,656.04,656.04
+C002951,Food and Catering,,,,,1882.78,1882.78
+C002952,Clinical Supplies,Consumables,Wound Care,,,19.75,19.75
+C002953,Food and Catering,,,,,226.04,226.04
+C002954,Facilities,Cleaning Services,,,,7650.20,7650.20
+C002955,,,,,NON_PROCUREMENT,5445.89,0.00
+C002956,Facilities,Cleaning Services,,,,11995.06,11995.06
+C002957,Facilities,Maintenance,HVAC,,,1897.87,1897.87
+C002958,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,3432.16,3432.16
+C002959,Facilities,Cleaning Services,,,,3824.60,3824.60
+C002960,Pharmaceuticals,Generics,,,,498.96,498.96
+C002961,Pharmaceuticals,Oncology,Chemotherapy Agents,,,3610.56,3610.56
+C002962,Professional Services,Consulting,Management Consulting,,,14977.74,14977.74
+C002963,Professional Services,Legal,,,,7433.17,7433.17
+C002964,Food and Catering,,,,,540.01,540.01
+C002965,Clinical Supplies,Consumables,Wound Care,,,229.28,229.28
+C002966,Food and Catering,,,,,1264.04,1264.04
+C002967,Facilities,Maintenance,HVAC,,,2010.77,2010.77
+C002968,Clinical Supplies,Consumables,Gloves and PPE,,,380.49,380.49
+C002969,Professional Services,Legal,,,,7811.83,7811.83
+C002970,Clinical Supplies,Consumables,Wound Care,,,15.18,15.18
+C002971,Pharmaceuticals,Oncology,Chemotherapy Agents,,,2871.74,2871.74
+C002972,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,9237.52,9237.52
+C002973,,,,,NON_PROCUREMENT,5015.52,0.00
+C002974,Clinical Supplies,Implants,Cardiac,Stents,,15109.65,15109.65
+C002975,Facilities,Maintenance,HVAC,,,2320.23,2320.23
+C002976,Professional Services,Legal,,,,7912.83,7912.83
+C002977,IT,Software,Licences,,,7168.95,7168.95
+C002978,Professional Services,Legal,,,,8044.30,8044.30
+C002979,Facilities,Cleaning Services,,,,2115.27,2115.27
+C002980,Facilities,Maintenance,HVAC,,,805.97,805.97
+C002981,Clinical Supplies,Consumables,Wound Care,,CANCELLED,1402.76,0.00
+C002982,Professional Services,Consulting,Management Consulting,,,10203.77,10203.77
+C002983,Pharmaceuticals,Oncology,Chemotherapy Agents,,,8034.72,8034.72
+C002984,Professional Services,Consulting,Management Consulting,,,7473.58,7473.58
+C002985,IT,Software,Licences,,NOT_APPROVED,43906.71,0.00
+C002986,Pharmaceuticals,Oncology,Chemotherapy Agents,,,12313.22,12313.22
+C002987,Pharmaceuticals,Oncology,Chemotherapy Agents,,,4417.58,4417.58
+C002988,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,5924.96,5924.96
+C002989,Professional Services,Consulting,Management Consulting,,,10088.67,10088.67
+C002990,Pharmaceuticals,Generics,,,,915.65,915.65
+C002991,Clinical Supplies,Implants,Orthopaedic,Hip Systems,,5982.98,5982.98
+C002992,Pharmaceuticals,Oncology,Chemotherapy Agents,,,6753.60,6753.60
+C002993,,,,,NON_PROCUREMENT,12418.39,0.00
+C002994,Facilities,Maintenance,HVAC,,,13350.77,13350.77
+C002995,IT,Software,Licences,,,5565.16,5565.16
+C002996,Food and Catering,,,,NOT_APPROVED,4040.52,0.00
+C002997,Facilities,Maintenance,HVAC,,,865.41,865.41
+C002998,Facilities,Cleaning Services,,,,5532.57,5532.57
+C002999,Clinical Supplies,Implants,Orthopaedic,Hip Systems,NOT_APPROVED,11995.72,0.00
+C003000,Facilities,Cleaning Services,,,CANCELLED,18787.18,0.00

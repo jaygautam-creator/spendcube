@@ -1,0 +1,143 @@
+# =====================================================================================================
+# C.example.yaml : annotated template for an UNSEEN company (blind test). Copy to submission/C.yaml.
+#
+# 15-MINUTE RECIPE (blind day)
+#   1. python -m spendcube profile --file blind/C/<lines file> --taxonomy blind/C/<tree file> \
+#          --draft-config submission/C.yaml          # prints the report; writes a draft of THIS file
+#   2. Read the report top to bottom (2 min): column roles, status values, amount basis, date format, currencies,
+#      candidate non-procurement values, tree summary ("sample paths" must look like real categories!).
+#   3. Fix every "TODO" in submission/C.yaml (5 min). The usual ones, in order of damage if wrong:
+#        a. taxonomy parse       -> sample paths in the report must be real names (not codes / not one big root)
+#        b. amount_basis         -> gross amounts need a tax rate column, or default_tax_rate
+#        c. status_map           -> every status value in the report must sit in a list (unknown -> `default`)
+#        d. fx.static_rates      -> every non-reporting currency without a rate column or a rate table
+#        e. exclusion_rules      -> uncomment/add intercompany, tax postings, payroll, interest, royalties ...
+#        f. industry_hint        -> one honest sentence (the LLM reads it)
+#   4. SMOKE (1 min):  python -m spendcube run --config submission/C.yaml --no-llm --limit 2000 --out /tmp/smoke
+#      then check the printed validation line and runs/<ts>_C/report.md (exclusion rates, fx methods, flags).
+#      Sanity: > 30% rows excluded by status, or spend total 0, or lots of FX_MISSING = config problem.
+#   5. FULL RUN:       python -m spendcube run --config submission/C.yaml --out submission
+#
+# CONVENTIONS
+#   * "{input_dir}" is replaced by the --input-dir CLI flag or by `input_dir:` below; "{kit_dir}" defaults to it.
+#   * ${ENV_VAR:-default} is expanded from the environment.  Globs (*) are allowed in file names.
+#   * Everything is read as TEXT (no type guessing). Column names are matched exactly as in the file header.
+#   * Frame column names used by rules (`field:`) are the CANONICAL ones, listed in the exclusion_rules section.
+#   * Unknown keys are tolerated; a mapped column that is not in the file is a hard error (fix the name).
+# =====================================================================================================
+
+include: ["_llm.yaml"]            # Gemini/Groq/Ollama chain + roles (same file as A/B). Do not edit at blind time.
+
+company: C
+candidate_name: jaygautam         # output file = <candidate_name>__<output_suffix or company>.csv -> jaygautam__C.csv
+# output_suffix: C                # override the suffix (A2 -> jaygautam__A2.csv); normally the CLI --suffix does this
+reporting_currency: USD           # brief: C reports in USD
+industry_hint: "Regional hospital group: clinical consumables, implants, pharmaceuticals, facilities, IT, services"   # TODO
+input_dir: blind/C                # where the lines + tree files live (CLI --input-dir overrides)
+
+# ----------------------------------------------------------------------------------------------------- TREE
+taxonomy:
+  file: "{input_dir}/taxonomy*.csv"      # glob ok; .xlsx also ok (then set `sheet`)
+  format: auto                           # wide (one column per level) | path ("A > B > C" in one column)
+                                         # | adjacency (id,parent,name) | auto. Check the profile's sample paths!
+  path_separator: " > "                  # only used by format=path (other separators are auto-detected)
+  # sheet: 0                             # Excel sheet name/index
+  # read: {delimiter: auto, encoding: auto}
+  # Up to 4 levels. Leaves may be at different depths (ragged). Names are written to the output EXACTLY as in the file.
+
+# --------------------------------------------------------------------------------------------------- SOURCES
+sources:
+  - name: lines
+    role: primary                        # primary (emitted) | secondary (emitted, may duplicate primary) | reference
+    file: "{input_dir}/*lines*.csv"      # or a list of files (concatenated)
+    required: true
+    read: {delimiter: auto, encoding: auto, sheet: null}     # delimiter: "," ";" "|" "\t" or auto
+    record_id: {column: line_id, prefix: ""}                 # column null -> row numbers. Output record_id = prefix + value
+    # number_format: auto                # auto-detects 1,234.56 vs 1.234,56 per column. Force: {decimal: ","}
+    columns:                             # canonical key: file column(s). Omit keys that do not exist.
+      supplier_name: supplier            # real name text (any spelling; legal forms/spacing/case are normalised)
+      vendor_id: vendor_no               # id column; rows sharing an id are joined to one supplier
+      description: [item_description]    # one or MANY columns (concatenated with a space, blanks skipped)
+      material_id: item_code             # item master code (generic placeholder codes are detected automatically)
+      quantity: qty
+      uom: unit
+      amount: amount
+      amount_basis: net                  # net | gross.  gross => tax is removed below
+      tax_rate: vat_pct                  # 15 | 0.15 | 15% | blank(-> default_tax_rate). "0" is a real 0% rate
+      default_tax_rate: 0.15             # used when basis=gross and the rate cell is blank
+      # tax_amount: tax                  # alternative: a tax AMOUNT column (net = gross - tax_amount, wins over rate)
+      currency: curr                     # per-line ISO code ...
+      # currency_constant: USD           # ... or one currency for the whole file (also the fallback for blank cells)
+      # fx_rate: rate                    # per-line rate, used only when plausible vs the fx table (see fx section)
+      # fx_rate_convention: units_per_reporting   # units of line currency per 1 reporting unit (default) | reporting_per_unit
+      invoice_date: {column: inv_date, dayfirst: true}   # dayfirst true = dd/mm, false = mm/dd; omit to auto-detect
+      # posting_date: {column: post_date}                # FX uses invoice month, then posting month, then nearest
+      status: status
+      # po_reference: po
+      # po_regex: '(45\d{8})'            # regex whose 1st group is the PO number (default: strip PO/PO# prefixes)
+      invoice_number: invoice_no
+      gl_account: gl
+      gl_description: gl_text            # very useful for non-procurement rules and for the LLM
+      cost_centre: cc
+      context: [plant, doc_type]         # extra low-cardinality columns (features for the supervised model)
+      llm_context: [doc_type]            # subset shown to the LLM as key=value (keep it small; default = context)
+    status_map:                          # matched case-insensitively after trim; any language
+      INCLUDE: [paid, approved, posted]
+      CANCELLED: [cancelled, canceled, void, reversed]
+      NOT_APPROVED: [rejected, "on hold", submitted, disputed, draft, pending]
+      default: INCLUDE                   # for values in none of the lists: INCLUDE | NOT_APPROVED (counted in the report)
+    intra_source_dedup: {enabled: false} # true only if the profile shows consecutive-id exact re-exports (D-14)
+    # limit: 2000                        # read only the first N rows (the CLI --limit does the same for smoke runs)
+
+# one-system company: no `reconciliation:` block. (Two systems? add a `secondary` source and see configs/A.yaml.)
+reconciliation: null
+
+# ------------------------------------------------------------------------------------------------------- FX
+fx:
+  files: []                              # e.g. ["{input_dir}/fx*.csv"]; layout below
+  currency_col: currency                 # columns of the rate table: currency | month (YYYY-MM) | rate
+  month_col: month
+  rate_col: units_per_usd                # units of currency per 1 reporting unit
+  plausibility_band: [0.5, 2.0]          # a line rate outside [0.5x, 2x] of the table rate is ignored (flag FX_RATE_IMPLAUSIBLE)
+  static_rates: {}                       # REQUIRED for any non-reporting currency with no rate column and no table:
+                                         #   {EUR: 0.92, CHF: 0.88}   (units of currency per 1 reporting unit)
+                                         # Missing rate => spend 0 + flag FX_MISSING. Never silently converted at 1.
+  # Lines already in the reporting currency always use rate 1 and ignore any line rate.
+
+# ------------------------------------------------------------------------------------------- NON-PROCUREMENT
+# Ordered; the first hit wins. Codes: NON_PROCUREMENT (taxes, intercompany, payroll, interest, royalties, revenue,
+# partner billings, financing costs ...). CANCELLED / NOT_APPROVED normally come from status_map, not from here.
+# `field` = canonical frame column: gl_desc | gl_account | desc_raw | desc_norm | supplier_raw | vendor_id |
+#           material_id | cost_centre | invoice_no_raw | currency | status_raw | context (and ctx__<column>).
+# Matchers: regex | equals: [..] | in: [..] | prefix.  `action: include` PROTECTS rows from later exclusion
+# (and from the LLM spend verdict): use it to keep e.g. "tax consulting" lines that a broader rule would catch.
+exclusion_rules:
+  # - {code: NON_PROCUREMENT, field: gl_desc, regex: '(?i)^(IC\d+|intercompany|inter-company)'}
+  # - {code: NON_PROCUREMENT, field: gl_desc, equals: ["Sales Tax", "VAT Payable"]}
+  # - {code: NON_PROCUREMENT, field: desc_raw, regex: '(?i)^\s*(sales|state)\s+tax\b'}
+  # - {code: NON_PROCUREMENT, field: supplier_raw, regex: '(?i)\b(revenue service|tax authority)\b'}
+  # - {code: NON_PROCUREMENT, field: desc_raw, regex: '(?i)\btax\s+(consult|advis|service)', action: include}
+  []
+vendor_propagation: {enabled: true, min_share: 0.9, min_rows: 3, codes: [NON_PROCUREMENT]}   # a vendor >=90% excluded -> all rows excluded
+learned_rules: {enabled: true}           # only active when labels exist (not in C)
+labels: null                             # no labels for a new company
+
+null_description_tokens: []              # extra "no real description" words, e.g. ["PRODUCT", "PARTS", "MISC"]
+# valid_years: [2023, 2025]              # force the plausible date window (default: from the column's 2nd/98th percentile)
+
+# ------------------------------------------------------------------------------------------ CLASSIFICATION
+classification:
+  llm:
+    enabled: true                        # false = offline fallback only (clearly logged, much lower accuracy)
+    # Optional overrides of the shared chain (defaults come from _llm.yaml). All have safe defaults.
+    # anchor_spend_coverage: 1.0         # label units in spend order until this share of spend is covered
+    # max_anchor_units: 20000
+    # diversity_units: 300               # tail units sampled so the distilled model sees the vocabulary
+    # tail_llm_threshold: 0.45           # distilled confidence below this goes back to the LLM if quota remains
+    # self_consistency_top_n: 300        # second opinion (other model) on the biggest units
+    # batch: {min: 15, max: 60, arbiter: 40}
+    # max_desc_chars: 160
+    # deadline_minutes: 60               # after this: stop calling the LLM, fill the rest locally
+    # llm_spend_verdict: true            # LLM may flag NON_PROCUREMENT at confidence >= 0.85 (never against `include` rules)
+
+output: {float_decimals: 2}

@@ -1,0 +1,15 @@
+#!/bin/sh
+# Blocks a push if any tracked file (outside outputs/, submission/, tests/fixtures/) contains task-data strings,
+# if a data file is tracked outside the allowed folders, or if an API key pattern appears.
+# Skips the data scan (with a warning) when the task kit is absent, e.g. on a fresh clone.
+ROOT="$(git rev-parse --show-toplevel)"
+cd "$ROOT" || exit 1
+PY="$ROOT/.venv/bin/python"; [ -x "$PY" ] || PY=python3
+bad=$(git ls-files | grep -Ei '\.(csv|xlsx|xls|parquet|jsonl|zip|pkl|joblib|sqlite|db|pdf)$' | grep -Ev '^(outputs|submission|tests/fixtures)/')
+[ -n "$bad" ] && { echo "pre-push: data file tracked outside allowed folders:"; echo "$bad"; exit 1; }
+git ls-files | grep -Eiq '(^|/)(Cantill_DataML_Task_Kit|\.env$)' && { echo "pre-push: kit or .env tracked"; exit 1; }
+if git ls-files -z | xargs -0 grep -IlE '(AIza[0-9A-Za-z_-]{30,}|gsk_[0-9A-Za-z]{20,}|sk-[0-9A-Za-z]{20,})' 2>/dev/null | grep -v '^\.env\.example$' | grep -q .; then
+  echo "pre-push: API key pattern found in tracked files"; exit 1; fi
+"$PY" -m pytest -q -p no:cacheprovider tests/test_no_data_in_docs.py tests/test_guards.py >/tmp/spendcube_prepush.log 2>&1 \
+  || { echo "pre-push: leak/guard tests failed (see /tmp/spendcube_prepush.log)"; exit 1; }
+echo "pre-push: clean"

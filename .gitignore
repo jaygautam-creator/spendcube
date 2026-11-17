@@ -1,0 +1,47 @@
+# ---- Confidential task data: NEVER commit ----
+Cantill_DataML_Task_Kit/
+*.zip
+data/
+blind/
+# any raw csv/xlsx anywhere, except our own output files (whitelisted below)
+*.csv
+*.xlsx
+*.xls
+*.parquet
+*.jsonl
+!outputs/*.csv
+!submission/*.csv
+# taxonomy / label files must never be committed, even if copied
+**/taxonomy_*.csv
+**/labels_*.csv
+**/seed_labels*.csv
+**/fx_rates*.csv
+# test fixtures are synthetic and explicitly whitelisted
+!tests/fixtures/**/*.csv
+
+# ---- Derived artefacts that embed data (descriptions, vocabularies) ----
+.cache/
+runs/
+models/
+*.pkl
+*.joblib
+*.sqlite
+*.db
+
+# ---- Secrets ----
+.env
+.env.*
+!.env.example
+
+# ---- Python / OS ----
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.DS_Store
+SONNET_IMPLEMENTATION_PROMPT.md
+.claude/

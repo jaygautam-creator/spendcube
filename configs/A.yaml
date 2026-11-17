@@ -1,0 +1,108 @@
+# Company A: SAP goods receipts (ERP, primary) + AP invoice tool (secondary, may duplicate ERP).
+# Run:  python -m spendcube run --config configs/A.yaml
+# A2 :  python -m spendcube run --config configs/A.yaml --input-dir blind/A2 --suffix A2 --out submission/
+include: [_llm.yaml]
+company: A
+candidate_name: jaygautam
+reporting_currency: ZAR
+industry_hint: "Mining operations of a chemicals group: underground mining equipment, consumables, services, maintenance"
+input_dir: Cantill_DataML_Task_Kit/company_A     # CLI --input-dir overrides (A2)
+kit_dir: Cantill_DataML_Task_Kit/company_A       # labels/taxonomy/history always come from here
+
+taxonomy:
+  file: "{kit_dir}/taxonomy_A*.csv"
+  format: auto
+
+sources:
+  - name: erp
+    role: primary
+    file: "{input_dir}/erp_goods_receipts*.csv"
+    record_id: {column: line_id, prefix: "ERP:"}
+    columns:
+      supplier_name: supplier_name
+      vendor_id: vendor_id
+      description: [material_short_text, service_short_text]
+      material_id: material_number
+      quantity: quantity
+      uom: uom
+      amount: value_zar
+      amount_basis: net
+      currency_constant: ZAR
+      posting_date: {column: posting_date}
+      po_reference: po_number
+      po_regex: '(45\d{8})'
+      po_item: po_item
+      cost_centre: cost_centre
+      context: [spend_type, material_type, contract_number, contract_status, opex_capex, site_name]
+      llm_context: [spend_type, material_type, opex_capex, contract_status]
+  - name: tool
+    role: secondary
+    file: "{input_dir}/invoice_tool_export*.csv"
+    record_id: {column: tool_record_id, prefix: "TOOL:"}
+    columns:
+      supplier_name: supplier_name_as_captured
+      description: line_text
+      quantity: quantity
+      amount: gross_amount
+      amount_basis: gross
+      tax_rate: vat_rate
+      default_tax_rate: 0.15
+      currency: currency
+      invoice_date: {column: invoice_date, dayfirst: true}
+      status: status
+      po_reference: po_reference
+      po_regex: '(45\d{8})'            # PO also appears as "PO 4510..", "PO#4510..", "4510../10.0"
+      po_item_regex: '/\s*(\d+)(?:\.\d+)?\s*$'
+      invoice_number: invoice_number
+    status_map:                         # brief: only approved or paid count
+      INCLUDE: [paid, approved]
+      CANCELLED: [cancelled, canceled, void, voided]
+      NOT_APPROVED: ["on hold", rejected, submitted, disputed, draft, pending]
+      default: NOT_APPROVED
+
+labels:
+  file: "{kit_dir}/labels_A.csv"
+  join_on: record_id
+  columns: {l1: category_l1, l2: category_l2, l3: category_l3, supplier_key: supplier_key, item_key: item_key}
+
+# Reconciliation (stage 4): invoice tool -> ERP receipts, re-exports inside the tool, history during A2.
+# Every threshold here is tunable without code (MASTER_ARCHITECTURE section 6; D-02, D-19, D-21).
+reconciliation:
+  enabled: true
+  primary_sources: [erp]            # receipt-like (net amounts)
+  secondary_sources: [tool]         # invoice-like (gross + VAT); may duplicate primary
+  po_regex: '45\d{8}'               # PO number inside tool po_reference; '/10.0' = PO item
+  tolerance: {abs: 0.02, rel: 0.001}
+  near_pct: 0.01                    # amount within 1% on the same PO still scores (weighbridge variance)
+  min_score: 5.5
+  # supplier+amount route WITHOUT PO evidence (D-19, re-tested 2026-11-17 on DUPLICATE STATUS, the scored quantity):
+  # PO blanked on 18% of PO-bearing tool rows, 3 seeds: duplicate-status precision ~0.90, recall ~0.97 (off: 0.13);
+  # more correct rows and ZAR than off -> ON. Guards: runs only on claimants the PO route could not place and only
+  # on ERP lines it left unclaimed (one-to-one), |net|<=min_abs ignored, dates within max_days when both known.
+  core_route: {enabled: true, when: no_po, max_days: 120, min_abs: 0.01}
+  # D-22 capacity match for partial-quantity invoices (same PO + supplier core, unit price within 0.5%,
+  # cumulative tool qty <= receipt qty). ON (2026-11-17): changes no existing flag, adds 184 real-A rows (ZAR 11.8m),
+  # synthetic incremental precision ~0.98; hidden-receipt hold-out adds ~3.7% false flags on partner-less rows.
+  partial_capacity: {enabled: true, price_tol: 0.005}
+  reexport: {desc_sim: 0.85, date_days: 45, block_cap: 400, link_without_invoice: false}
+  rescue: {enabled: true, desc_sim: 0.80}
+  aggregate: {enabled: false, max_items: 3, max_candidates: 30, tol_abs: 0.02}   # D-22: adds ~15 rows on A
+  # History (D-02): in an A2 run (--input-dir blind/A2) the ORIGINAL A files from {kit_dir} are loaded as
+  # reference rows (never emitted) so A2 tool rows can match A receipts / A tool rows. "auto" switches itself
+  # off in build runs (the history files equal the run's own files). Set enabled: false to disable (R-12).
+  history:
+    enabled: auto
+    files:
+      erp: "{kit_dir}/erp_goods_receipts*.csv"
+      tool: "{kit_dir}/invoice_tool_export*.csv"
+
+entities:
+  use_labels: true            # label alias maps + golden keys (D-01); off for unsupervised/C-like runs
+  alias_purity: 0.9
+  suppliers: {mode: auto, fuzzy: true, jw_min: 0.95, ratio_min: 92, max_len_diff: 3, min_len: 5, block_cap: 300, vendor_union: true, vendor_min_sim: 50}
+  items: {generic_min_texts: 8, generic_min_ratio: 0.2, fuzzy: true, fuzzy_ratio: 93, fuzzy_min_len: 10, block_cap: 300, link_share: 0.6, merge_materials_by_text: false}
+
+# Blank-description tier (classify/blank.py): key voting then a context-only model, learned from the run itself
+classification:
+  llm: {budget: {share: 1.0, reserve: 0, max_requests: 10}}     # D-50: B2 knee ~25-60 requests, A2 flat (curves in EVAL_LOG); C takes the rest
+  blank: {enabled: true, mode: vote_first, vote_min_share: 0.6, cap: 0.6, min_known: 30}

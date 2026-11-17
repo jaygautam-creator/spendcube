@@ -1,0 +1,49 @@
+# Shared LLM provider chain. Included by company configs via `include: [_llm.yaml]`.
+# Model ids resolved with `spendcube doctor` (google-genai models.list) on 2026-11-17.
+# rpm/tpm/rpd are seeds from the AI Studio free-tier page; live 429s/headers win.
+# key_env GEMINI_API_KEY is remapped to GEMINI_API_KEY_DEV unless --llm-mode blind.
+classification:
+  llm:
+    enabled: true
+    # D-42/D-50: per-job request budget (enforced in the router). Pool = the two Flash-Lites, capped at util_cap x RPD.
+    # job budget = min(max_requests, share x (remaining pool quota - reserve)). Blind-day order C -> B2 -> A2:
+    # C (this default) takes everything except the reserve kept for B2 and A2; B and A override in their configs.
+    # When spent, classification roles stop (supervised / propagation / offline take over); compile+arbiter are exempt.
+    budget:
+      enabled: true
+      share: 1.0
+      reserve: 70                  # requests kept back for the later jobs (B2 60 + A2 10)
+      util_cap: 0.7
+      pool: [gemini_flash_lite_35, gemini_flash_lite_31]
+      exempt_roles: [compile, arbiter]
+      # shown by `doctor`; mirrors the per-company overrides (B: max 60 reserve 10; A: max 10)
+      blind_plan: {C: {share: 1.0, reserve: 70}, B2: {share: 1.0, reserve: 10, max: 60}, A2: {share: 1.0, reserve: 0, max: 10}}
+    # D-47: confidence ceiling per answering entry (failover models measured far weaker: Groq gpt-oss 8% vs 30% for
+    # Flash-Lite 3.1 on the same 60 units), so their labels never present as confident
+    entry_conf_cap: {groq_gptoss120b: 0.5, ollama_local: 0.4, gemma4_31b: 0.7}
+    allow_training_use: true       # user decision D-35(a): Gemini free tier, unpaid-tier data terms accepted
+    roles:                          # D-49: only models shown to beat the non-LLM tiers classify (Flash family)
+      compile:        [gemini_flash_38, gemini_4_hydrogen, gemini_flash_36, gemini_flash_lite_35]
+      top_spend:      [gemini_flash_lite_35, gemini_flash_lite_31, gemini_flash_36, gemini_4_hydrogen]
+      bulk:           [gemini_flash_lite_35, gemini_flash_lite_31, gemini_flash_36, gemini_4_hydrogen]
+      second_opinion: [gemini_flash_lite_31, gemini_flash_lite_35]
+      arbiter:        [gemini_flash_38, gemini_4_hydrogen, gemini_flash_36, gemini_flash_lite_31]
+    # D-49: outage-only models, appended to a role's chain ONLY when allow_outage_models is true. Measured: Groq gpt-oss-120b
+    # collapses onto one catch-all leaf (L3 8-23% on 120 units, 7-23% agreement with Flash-Lite); Gemma 4 answers 28% of
+    # calls (503 high demand) and is unmeasured for accuracy; local qwen3:4b scored 15-37% L3. None beat supervised/propagation.
+    allow_outage_models: false
+    outage_chain: [gemma4_31b, groq_gptoss120b, ollama_local]
+    thinking: {compile: low, top_spend: minimal, bulk: minimal, second_opinion: minimal, arbiter: low}
+    batch: {min: 15, max: 60, arbiter: 40}
+    timeout_s: 120
+    cache_file: .cache/llm_cache.sqlite
+    ledger_file: .cache/llm_ledger.sqlite
+    chain:
+      - {id: gemini_flash_38,      provider: gemini, model: gemini-3.8-flash,       rpm: 5,  tpm: 250000, rpd: 20,    key_env: GEMINI_API_KEY}
+      - {id: gemini_4_hydrogen,    provider: gemini, model: gemini-4-hydrogen,      rpm: 5,  tpm: 250000, rpd: 20,    key_env: GEMINI_API_KEY}
+      - {id: gemini_flash_36,      provider: gemini, model: gemini-3.6-flash,       rpm: 5,  tpm: 250000, rpd: 20,    key_env: GEMINI_API_KEY}
+      - {id: gemini_flash_lite_35, provider: gemini, model: gemini-3.5-flash-lite,  rpm: 15, tpm: 250000, rpd: 500,   key_env: GEMINI_API_KEY}
+      - {id: gemini_flash_lite_31, provider: gemini, model: gemini-3.1-flash-lite,  rpm: 15, tpm: 250000, rpd: 500,   key_env: GEMINI_API_KEY}
+      - {id: gemma4_31b,           provider: gemini, model: gemma-4-31b-it,         rpm: 30, tpm: 16000,  rpd: 14400, key_env: GEMINI_API_KEY}
+      - {id: groq_gptoss120b,      provider: groq,   model: openai/gpt-oss-120b,    optional: true, key_env: GROQ_API_KEY}
+      - {id: ollama_local,         provider: ollama, model: "qwen3:4b", base_url: "http://localhost:11434", optional: true}

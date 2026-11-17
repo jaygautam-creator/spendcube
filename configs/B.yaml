@@ -1,0 +1,63 @@
+# Company B: 8 ERPs, 25 currencies, AP invoice lines, no supplier names.
+include: [_llm.yaml]
+company: B
+candidate_name: jaygautam
+reporting_currency: USD
+industry_hint: "Metal packaging manufacturer: aluminium and steel can stock, coatings, MRO spares, logistics, services"
+input_dir: Cantill_DataML_Task_Kit/company_B
+kit_dir: Cantill_DataML_Task_Kit/company_B
+
+taxonomy:
+  file: "{kit_dir}/taxonomy_B*.csv"
+  format: auto
+
+sources:
+  - name: lines
+    role: primary
+    file: "{input_dir}/invoice_lines*.csv"
+    record_id: {column: line_id, prefix: ""}
+    columns:
+      vendor_id: vendor_id
+      description: line_description
+      material_id: material_number
+      quantity: quantity
+      amount: line_amount
+      amount_basis: net
+      currency: currency
+      fx_rate: currency_rate
+      invoice_date: {column: invoice_date}
+      posting_date: {column: posting_date}
+      invoice_number: invoice_number
+      po_reference: po_number
+      gl_account: gl_account
+      gl_description: gl_account_description
+      cost_centre: cost_centre
+      context: [source_system, document_type, po_type, supplier_type, plant, company_code]
+      llm_context: [document_type, po_type, supplier_type]
+
+fx:
+  files: ["{input_dir}/fx_rates*.csv", "{kit_dir}/fx_rates*.csv"]
+  plausibility_band: [0.5, 2.0]
+
+# Non-procurement rules (D-12 intercompany GL descriptions, D-13 tax-posting descriptions). First hit wins.
+# Anchored so professional services that merely mention tax ("Acme Tax Consultant") stay included.
+exclusion_rules:
+  - {code: NON_PROCUREMENT, field: gl_desc, regex: '(?i)^\s*(IC\s?\d+|I/C\b.*|IC\s+Payables?\b.*)\s*$'}
+  - {code: NON_PROCUREMENT, field: desc_raw, regex: '(?i)^\s*(state\s*&\s*local\s+taxes?|sales\s+tax(\s+expense)?|gst\s+input\s+tax|accrued\s+sales\s*&\s*use\s+tax)\b'}
+vendor_propagation: {enabled: true, min_share: 0.9, min_rows: 3, codes: [NON_PROCUREMENT]}
+learned_rules: {enabled: true, min_support: 5, min_purity: 0.95}
+
+labels:
+  file: "{kit_dir}/seed_labels.csv"
+  join_on: line_id
+  columns: {l1: category_l1, l2: category_l2, l3: category_l3, include: include, exclusion_reason: exclusion_reason}
+
+entities:
+  use_labels: false           # B seeds carry no supplier/item keys
+  suppliers: {mode: vendor_only}     # no supplier names in B: supplier_key = V:<vendor_id> (D-26)
+  items: {generic_min_texts: 8, generic_min_ratio: 0.2, fuzzy: true, fuzzy_ratio: 93, fuzzy_min_len: 10, block_cap: 300, link_share: 0.6}
+
+# Blank-description tier (classify/blank.py): key voting then a context-only model, learned from the run itself
+classification:
+  llm: {budget: {share: 1.0, reserve: 10, max_requests: 60}}     # D-50: B2 knee ~25-60 requests, A2 flat (curves in EVAL_LOG); C takes the rest
+  blank: {enabled: true, mode: vote_first, vote_min_share: 0.6, cap: 0.6, min_known: 30}

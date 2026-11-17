@@ -1,0 +1,17 @@
+# Pinned to the versions the pipeline was developed and tested with (Python 3.13).
+# Wheels exist for CPython 3.11-3.13. On 3.14 the scientific stack (pandas/numpy/scipy/scikit-learn/pyarrow)
+# may need newer cp314 wheels; if pip starts building from source, use Python 3.13.
+pandas==3.1.1
+numpy==2.5.5
+scipy==1.18.1
+scikit-learn==1.9.1
+rapidfuzz==3.14.6
+pyyaml==6.0.3
+pydantic==2.14.3
+httpx==0.28.1
+openpyxl==3.1.5
+pyarrow==26.0.1
+python-dotenv==1.2.4
+google-genai==3.4.0
+groq==1.7.0
+pytest==9.2.0
