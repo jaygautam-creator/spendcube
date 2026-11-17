@@ -57,3 +57,18 @@ def test_data_guard_blocks_data_files():
     assert "Cantill_DataML_Task_Kit/x.txt" in flagged
     assert "outputs/jaygautam__A.csv" not in flagged and "tests/fixtures/s.csv" not in flagged
     assert "spendcube/x.py" not in flagged
+
+
+def test_mock_safety_rejects_blind_variables(monkeypatch, capsys):
+    from spendcube.llm.safety import reject_mock_in_blind
+    monkeypatch.setenv("SPENDCUBE_MOCK_LATENCY", "")
+    assert reject_mock_in_blind("blind") is True
+    assert "SPENDCUBE_MOCK_LATENCY" in capsys.readouterr().err
+    monkeypatch.delenv("SPENDCUBE_MOCK_LATENCY")
+    assert reject_mock_in_blind("dev") is False
+
+
+def test_mock_detection_includes_configured_mock():
+    from spendcube.llm.safety import mock_active
+    assert mock_active({"chain": [{"provider": "mock"}]})
+    assert not mock_active({"chain": [{"provider": "gemini"}]})

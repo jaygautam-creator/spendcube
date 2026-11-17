@@ -60,7 +60,8 @@ class LLMClassifier:
                            self.max_chars, u.get("cand")) for i, u in local.items()]
         out = self.router.call(role, self.system, prefix + build_user(lines), RESPONSE_SCHEMA,
                                self._validator(set(local)), thinking=self.thinking.get(role),
-                               max_tokens=min(8192, 200 + 24 * len(units)), exclude_entries=exclude)
+                               max_tokens=min(8192, 200 + 24 * len(units)), exclude_entries=exclude,
+                               n_units=len(units))
         if out is None:
             if len(units) == 1 or depth >= 3:
                 return {}

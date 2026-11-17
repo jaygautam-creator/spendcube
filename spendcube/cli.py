@@ -15,12 +15,20 @@ def _load_env() -> None:
 
 
 def cmd_run(a) -> int:
+    import os
     from .config.loader import load_config
+    from .llm.safety import mock_active, reject_mock_in_blind
     from .pipeline import run_pipeline
     _load_env()
+    mode = a.llm_mode or os.environ.get("SPENDCUBE_LLM_MODE", "dev")
+    if reject_mock_in_blind(mode):
+        return 2
     cfg = load_config(a.config, input_dir=a.input_dir, kit_dir=a.kit_dir, suffix=a.suffix)
+    active = mock_active(cfg.classification.get("llm", {}))
+    if active:
+        print("SPENDCUBE MOCK ACTIVE: mock_active: true", file=sys.stderr)
     path, errors = run_pipeline(cfg, out_dir=Path(a.out), no_llm=a.no_llm, limit=a.limit,
-                                llm_mode=a.llm_mode, verbose=a.verbose, cfg_path=a.config)
+                                llm_mode=mode, verbose=a.verbose, cfg_path=a.config, mock_active=active)
     print(f"{path}  validation={'OK' if not errors else 'FAILED'}")
     for e in errors:
         print("  -", e)
@@ -46,6 +54,9 @@ def cmd_validate(a) -> int:
 def cmd_doctor(a) -> int:
     from .llm.doctor import run_doctor
     _load_env()
+    from .llm.safety import reject_mock_in_blind
+    if reject_mock_in_blind("blind" if a.blind else "dev", doctor=True):
+        return 2
     return run_doctor(a.config, "blind" if a.blind else "dev", generate=not getattr(a, "list_only", False))
 
 

@@ -39,12 +39,17 @@ def _stages() -> list[tuple[str, Callable]]:
 
 def run_pipeline(cfg: Config, out_dir: Path = Path("outputs"), no_llm: bool = False,
                  limit: Optional[int] = None, llm_mode: str = "dev",
-                 verbose: bool = False, cfg_path: Optional[str] = None) -> tuple[Path, list[str]]:
+                 verbose: bool = False, cfg_path: Optional[str] = None,
+                 mock_active: Optional[bool] = None) -> tuple[Path, list[str]]:
     global LAST_RUN_DIR
     run_dir = make_run_dir(cfg.company)
     LAST_RUN_DIR = run_dir
     setup_logging(run_dir, verbose)
+    if mock_active is None:
+        from .llm.safety import mock_active as is_mock_active
+        mock_active = is_mock_active(cfg.classification.get("llm", {}))
     ctx = RunContext(cfg=cfg, run_dir=run_dir, no_llm=no_llm, limit=limit, out_dir=Path(out_dir), llm_mode=llm_mode, cfg_path=cfg_path)
+    ctx.note("run", "mock_active", bool(mock_active))
     log.info("run %s -> %s", cfg.company, ctx.run_dir)
 
     with ctx.timer("taxonomy"):
@@ -80,6 +85,13 @@ def run_pipeline(cfg: Config, out_dir: Path = Path("outputs"), no_llm: bool = Fa
     inc = df["excl_code"] == ""
     ctx.state["excluded_spend"] = df.loc[(~inc) & df["source_role"].isin(("primary", "secondary"))] \
         .groupby("excl_code")["spend_rc"].sum().to_dict()
+    llm_note = ctx.notes.get("llm", {})
+    call_metrics = llm_note.pop("call_metrics", [])
+    if call_metrics:
+        pd.DataFrame(call_metrics, columns=["model", "entry", "wall_ms", "n_units", "tokens_in", "tokens_out"]) \
+            .to_csv(run_dir / "llm_call_metrics.csv", index=False)
+        llm_note["call_metrics_file"] = "llm_call_metrics.csv"
+        llm_note["call_metrics_count"] = len(call_metrics)
     write_report(ctx, out, run_dir / "report.md", errors)
     if "labels_heldout" in ctx.state:
         ho = ctx.state["labels_heldout"]

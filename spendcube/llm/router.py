@@ -213,7 +213,7 @@ class Router:
     # ---- main call ---------------------------------------------------------
     def call(self, role: str, system: str, user: str, schema: dict, validate: Validator, *,
              thinking: Optional[str] = None, max_tokens: int = 4096, exclude_entries: tuple = (),
-             max_wait: float = 120.0) -> Optional[CallOutcome]:
+             max_wait: float = 120.0, n_units: int = 0) -> Optional[CallOutcome]:
         est = (len(system) + len(user)) // 3 + max_tokens // 4
         for e in self.chain(role):
             if e.id in exclude_entries:
@@ -228,13 +228,14 @@ class Router:
                         with self._lock:
                             self.spent += 1
                     return CallOutcome(hit["parsed"], e.id, e.model, hit.get("usage", {}), cached=True)
-            out = self._try_entry(e, role, system, user, schema, validate, thinking, max_tokens, est, max_wait, ck)
+            out = self._try_entry(e, role, system, user, schema, validate, thinking, max_tokens, est,
+                                  max_wait, ck, n_units)
             if out is not None:
                 return out
         self.stats["failures"] += 1
         return None
 
-    def _try_entry(self, e, role, system, user, schema, validate, thinking, max_tokens, est, max_wait, ck):
+    def _try_entry(self, e, role, system, user, schema, validate, thinking, max_tokens, est, max_wait, ck, n_units):
         prov = self._provider(e)
         if prov is None:
             self._mark_dead(e, "provider unavailable")
@@ -251,7 +252,9 @@ class Router:
             if not e.limiter.acquire(est, max_wait):
                 log.info("limiter wait too long for %s; trying next entry", e.id)
                 return None
+            call_started = time.perf_counter()
             r = prov.complete_json(system, cur_user, schema, e.model, max_tokens, thinking, self.timeout)
+            elapsed_ms = round((time.perf_counter() - call_started) * 1000, 2)
             ok_call = r.parsed is not None and r.error is None
             self.ledger.record(e.profile, e.id, r.usage.get("in", 0), r.usage.get("out", 0) + r.usage.get("thinking", 0),
                                ok_call, r.error_kind)
@@ -265,6 +268,11 @@ class Router:
                 be["calls"] += 1
                 be["tok_in"] += r.usage.get("in", 0)
                 be["tok_out"] += r.usage.get("out", 0) + r.usage.get("thinking", 0)
+                self.stats.setdefault("call_metrics", []).append({
+                    "model": e.model, "entry": e.id, "wall_ms": elapsed_ms, "n_units": int(n_units),
+                    "tokens_in": int(r.usage.get("in", 0)),
+                    "tokens_out": int(r.usage.get("out", 0) + r.usage.get("thinking", 0)),
+                })
                 if not ok_call:
                     be["errors"] += 1
             if ok_call:

@@ -27,6 +27,11 @@ def test_router_classifies_and_caches():
                  {"uid": 11, "supplier": "A", "gl": "", "ctx": "", "text": "HAMMER CLAW"}]
         a = clf.classify(units, "bulk")
         assert len(a) == 2
+        assert r.stats["call_metrics"]
+        assert r.stats["call_metrics"][0]["n_units"] == 2
+        assert r.stats["call_metrics"][0]["model"] == "mock"
+        assert r.stats["call_metrics"][0]["wall_ms"] >= 0
+        assert "tokens_in" in r.stats["call_metrics"][0] and "tokens_out" in r.stats["call_metrics"][0]
         calls = r.stats["calls"]
         b = clf.classify(units, "bulk")
         assert r.stats["calls"] == calls and r.stats["cache_hits"] >= 1   # served from cache

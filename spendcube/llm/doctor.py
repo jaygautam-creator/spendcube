@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import os
+import sys
 
 from ..config.loader import load_config
 from .keys import key_present, resolve_key_env
@@ -14,6 +15,9 @@ def run_doctor(config_path: str, mode: str, list_models: bool = True, generate: 
     Thursday 09:00 blind check) and records each in the quota ledger."""
     cfg = load_config(config_path)
     llm = cfg.classification.get("llm", {})
+    from .safety import mock_active
+    if mock_active(llm):
+        print("SPENDCUBE MOCK ACTIVE: mock_active: true", file=sys.stderr)
     chain = llm.get("chain", [])
     print(f"== spendcube doctor (mode={mode}) ==")
     for env in ("GEMINI_API_KEY_DEV", "GEMINI_API_KEY", "GROQ_API_KEY", "GEMINI_API_KEY_PAID"):
