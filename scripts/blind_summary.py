@@ -2,12 +2,14 @@
 """Summarize blind outputs and run reports without printing input data."""
 import csv
 import re
+import os
 from pathlib import Path
 
 wanted = ("A2", "B2", "C")
+out_dir = Path(os.environ.get("OUT", "submission"))
 problems = []
 for suffix in wanted:
-    path = Path("submission") / f"jaygautam__{suffix}.csv"
+    path = out_dir / f"jaygautam__{suffix}.csv"
     if not path.exists():
         continue
     with path.open(newline="", encoding="utf-8-sig") as stream:
@@ -15,9 +17,10 @@ for suffix in wanted:
     total = len(rows)
     excluded = [r for r in rows if r.get("include") != "1"]
     output_spend = sum(float(r.get("spend") or 0) for r in rows)
-    runs = sorted(Path("runs").glob(f"*_{suffix}"))
-    report = runs[-1] / "report.md" if runs else None
-    text = report.read_text(encoding="utf-8") if report and report.exists() else ""
+    reports = sorted(Path("runs").glob("*/report.md"))
+    matching = [p for p in reports if f"({path.name})" in p.read_text(encoding="utf-8")[:160]]
+    report = matching[-1] if matching else None
+    text = report.read_text(encoding="utf-8") if report else ""
     validation = "OK" if "- validation: OK" in text else "FAILED" if "- validation: FAILED" in text else "MISSING"
     def note(name):
         for line in text.splitlines():
@@ -38,6 +41,6 @@ for suffix in wanted:
           f"tier_spend_share={note('method_spend_share')}, requests={calls}, deadline_hit={note('deadline_hit')}")
     if validation != "OK":
         problems.append(f"{suffix} validation {validation}")
-if not any((Path("submission") / f"jaygautam__{s}.csv").exists() for s in wanted):
+if not any((out_dir / f"jaygautam__{s}.csv").exists() for s in wanted):
     problems.append("no output files")
 print("GO" if not problems else "NO-GO: " + "; ".join(problems))

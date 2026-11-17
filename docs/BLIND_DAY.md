@@ -46,3 +46,7 @@ Push before 12:00 IST. If the hook blocks, fix the cause (a data string, key pat
 ## 5. Outage behaviour
 If every Gemini entry fails or quota is 0 the run switches by itself to the local model (D-51; top-spend units within 20 minutes, offline
 fallback for the rest) and writes `outage_switch` and a loud warning in the report. No flag is needed. Groq is never used for classification.
+
+### Mock rehearsal (local only)
+The checked-in script supports `OUT=...` to keep outputs away from `submission/`, plus `MODE=dev` and `PY=...` overrides.
+The 2026-11-18 rehearsal used 25% A/B slices and the synthetic C fixture; all three files validated and the summary returned GO.
