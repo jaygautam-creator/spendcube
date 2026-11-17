@@ -112,3 +112,12 @@ Map now output = band value + 0.05 x (raw - band mid), clipped [0.05, 0.95], mon
 
 ## 2026-11-17 outage path measurement (A zero-label top-300 sample, spend-weighted)
 Offline fallback alone (n=300): L1 75.9, L2 31.0, L3 25.4. Local qwen3:4b (first 60 units): L1 94.1, L2 45.3, L3 41.7 vs offline on the same 60: 81.4 / 34.4 / 28.1. Ollama 1.24 s/unit (74.5 s for 60), so about 970 units fit in the 20-minute cap. Policy shipped (D-51): Ollama for top-spend units within the cap, offline for the rest.
+
+## 2026-11-18 blind-day timing dress run (mock LLM sleeping 8 s per call at real RPM limits, budgets C 640 / B2 60 / A2 0; synthetic C 50,000 lines, real-size B 41,028 and A 65,549 rows; sequential C -> B2 -> A2)
+| job | rows | wall-clock 1x | wall-clock 3x slowed mock | validation |
+|---|---|---|---|---|
+| C | 50,000 | 23.8 min | 35.0 min | OK |
+| B2 | 41,028 | 3.0 min | 4.7 min | OK |
+| A2 | 65,549 | 0.3 min | 0.3 min | OK |
+| total | | 27.1 min | 40.1 min | all OK |
+Target (all validated within 60 min of starting C) met at 1x and at 3x. Deadline guard: with `deadline_minutes` forced to 6 and the mock slowed 3x, C stopped the LLM after 2,880 units, filled the tail with lower tiers and wrote a valid 50,000-row file in 6.1 min. C is the long pole (rate-limited LLM calls); B2 and A2 are compute-bound.

@@ -1,7 +1,9 @@
 """Deterministic mock provider (tests, --no-llm development). Chooses the leaf with max token overlap."""
 from __future__ import annotations
 
+import os
 import re
+import time
 
 from .base import ProviderResult
 
@@ -15,6 +17,9 @@ class MockProvider:
 
     def complete_json(self, system, user, schema, model, max_tokens=4096, thinking=None, timeout=120.0):
         self.calls += 1
+        lat = float(os.environ.get("SPENDCUBE_MOCK_LATENCY", "0") or 0) * float(os.environ.get("SPENDCUBE_MOCK_SLOW", "1") or 1)
+        if lat > 0:      # timing dress runs: sleep at the real per-call latency (rate limits are enforced by the router)
+            time.sleep(lat)
         res = ProviderResult(usage={"in": len(system + user) // 4, "out": 10, "thinking": 0})
         if self.fail_every and self.calls % self.fail_every == 0:
             res.error, res.error_kind = "mock failure", "server"

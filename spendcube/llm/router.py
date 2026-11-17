@@ -55,8 +55,9 @@ class Router:
         self.cfg = llm_cfg or {}
         self.mode = mode
         self.enabled = enabled and bool(self.cfg.get("enabled", True))
-        self.cache = cache or Cache(self.cfg.get("cache_file", ".cache/llm_cache.sqlite"))
-        self.ledger = ledger or Ledger(self.cfg.get("ledger_file", ".cache/llm_ledger.sqlite"))
+        md = os.environ.get("SPENDCUBE_FORCE_MOCK_DIR")
+        self.cache = cache or Cache(f"{md}/cache.sqlite" if md else self.cfg.get("cache_file", ".cache/llm_cache.sqlite"))
+        self.ledger = ledger or Ledger(f"{md}/ledger.sqlite" if md else self.cfg.get("ledger_file", ".cache/llm_ledger.sqlite"))
         self.timeout = float(self.cfg.get("timeout_s", 120))
         self.entries: dict[str, Entry] = {}
         self.roles: dict[str, list[str]] = self.cfg.get("roles", {})
@@ -65,7 +66,10 @@ class Router:
         self._lock = threading.Lock()
         self.stats: dict[str, Any] = {"calls": 0, "cache_hits": 0, "tok_in": 0, "tok_out": 0,
                                       "repairs": 0, "failures": 0, "by_entry": {}}
+        force_mock = bool(os.environ.get("SPENDCUBE_FORCE_MOCK"))     # timing dress runs only: every entry becomes the mock
         for e in self.cfg.get("chain", []):
+            if force_mock:
+                e = {**e, "provider": "mock", "key_env": None}
             ent = Entry(id=e["id"], provider=e["provider"], model=e["model"], key_env=e.get("key_env"),
                         rpm=e.get("rpm"), tpm=e.get("tpm"), rpd=e.get("rpd"), optional=bool(e.get("optional")),
                         base_url=e.get("base_url", ""))

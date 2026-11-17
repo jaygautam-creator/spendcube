@@ -25,7 +25,7 @@ Sanity before the full run: validation line OK, excluded share plausible, no `FX
 python -m spendcube run --config configs/B.yaml --input-dir blind/B2 --suffix B2 --llm-mode blind --out submission
 python -m spendcube run --config configs/A.yaml --input-dir blind/A2 --suffix A2 --llm-mode blind --out submission
 ```
-B2 is capped at 60 requests and A2 at 10 (`max_requests` in the configs; the curves show B's knee at 25-60 and A flat). Recurring units are
+B2 is capped at 60 requests and A2 at 0 (`max_requests` in the configs; the curves show B's knee at 25-60 and A flat: the LLM hurts A2). Recurring units are
 answered from `.cache/unit_memory.sqlite` (built by the A/B build runs; same taxonomy only) before any request.
 
 ## 3. After each run
@@ -34,3 +34,17 @@ for: budget spent, LLM requests, methods share, flags. Never edit code after 10:
 
 ## One-shot alternative
 `scripts/blind_day.sh blind` runs the three jobs above in order (C, B2, A2); a failure in one is logged and the next still runs.
+
+## 4. Commit and push (public repo, branch `main`)
+Only `submission/` files are committed after the freeze (the last code commit is before Thu 10:00 IST). Never merge or cherry-pick from
+`local-history` or any `worktree-*` branch.
+```sh
+git add submission/jaygautam__C.csv submission/jaygautam__B2.csv submission/jaygautam__A2.csv submission/C.yaml
+git commit -m "blind-day submission outputs"
+git push                       # .githooks/pre-push must pass; never --no-verify
+```
+Push before 12:00 IST. If the hook blocks, fix the cause (a data string, key pattern, or extra tracked file) and push again.
+
+## 5. Outage behaviour
+If every Gemini entry fails or quota is 0 the run switches by itself to the local model (D-51; top-spend units within 20 minutes, offline
+fallback for the rest) and writes `outage_switch` and a loud warning in the report. No flag is needed. Groq is never used for classification.
