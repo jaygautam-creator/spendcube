@@ -1,82 +1,48 @@
 # spendcube
 
-A config-driven spend-analytics pipeline. It ingests a company's raw purchase files and category tree, cleans
-amounts, dates and tax, decides what counts as spend (with reason codes), reconciles two source systems so each
-purchase counts once, de-duplicates suppliers and items, and classifies every line to the deepest level of the tree
-with a confidence. **A new company needs a new config file, not new code.**
+Config-driven spend cube pipeline: ingest and normalize purchase data, exclude non-spend with reason codes, reconcile and deduplicate records, resolve suppliers/items, classify into a run-time taxonomy, and validate one output row per input record.
 
 ## Setup
 
-```bash
-python3 -m venv .venv && source .venv/bin/activate     # Python 3.11+ (developed on 3.13)
+```sh
+python3 -m venv .venv
+. .venv/bin/activate
 pip install -r requirements.txt
-cp .env.example .env                                    # then fill in keys (all optional, see below)
+cp .env.example .env   # optional; leave keys blank for offline/local operation
 ```
 
-No task data is in this repository. Put the company files wherever you like and point the config at them.
+No task data is committed. Point each config at local files or pass `--input-dir`.
 
-## The one command
+## Run
 
-```bash
-python -m spendcube run --config configs/A.yaml            # -> outputs/jaygautam__A.csv
-python -m spendcube run --config configs/B.yaml            # -> outputs/jaygautam__B.csv
+```sh
+python -m spendcube run --config configs/A.yaml
+python -m spendcube run --config configs/B.yaml
 ```
 
-Useful flags: `--input-dir DIR` (where the raw files are; A2/B2 re-use the unchanged A/B configs), `--suffix A2`,
-`--out DIR`, `--no-llm` (fully offline), `--limit N` (smoke test), `--llm-mode dev|blind`.
+The default output paths are `outputs/jaygautam__A.csv` and `outputs/jaygautam__B.csv`. Useful options include `--input-dir DIR`, `--suffix A2`, `--out DIR`, `--limit N`, `--no-llm`, and `--llm-mode dev|blind`. Without API keys or an available Ollama model, classification falls back to the offline tier.
 
-Other commands: `validate` (re-check an output file), `doctor` (keys/models/quota), `profile` (profile a raw file and
-draft a config), `eval zero-label|e2e|a2-sim|b-seeds|entities|matching-synth|blank|coherence`.
+## Keys and providers
 
-**Blind-day quota (D-42).** Jobs run one after another (C, then B2, then A2). Each job has a request budget taken from the
-remaining free quota of the two Flash-Lite models (C takes all but 70 requests; B2 is capped at 60 and A2 at 10); when it is spent the
-run finishes on the supervised/propagation/offline tiers. `python -m spendcube doctor --blind` prints the remaining
-requests per model and the three budgets. Recurring units are answered from `.cache/unit_memory.sqlite` (same taxonomy only).
+Keys are optional and read from `.env` or the environment. `GEMINI_API_KEY_DEV` is for development; blind runs select `GEMINI_API_KEY` with `--llm-mode blind`. See `.env.example`. `python -m spendcube doctor --list-only` checks key presence/model metadata without generation calls; ordinary `doctor` makes small provider checks. No paid key is required.
 
-Output: one row per input record, in input order, columns
-`record_id,include,exclusion_reason,supplier_key,item_key,spend,l1,l2,l3,l4,confidence`. Every run ends with a
-validated file (a stage that fails is logged and skipped, never fatal). Run artefacts (log, `report.md`, top
-spend units) go to `runs/<timestamp>_<company>/` (git-ignored).
+## Evaluation and validation
 
-## A new company (the blind-test recipe)
-
-```bash
-python -m spendcube profile --file data/C/lines.csv --taxonomy data/C/tree.csv --draft-config submission/C.yaml
-$EDITOR submission/C.yaml        # fix the TODOs: amount basis, static FX, status map, industry_hint; uncomment the
-                                 # `# SUGGESTED` exclusion rules that apply (each shows row count and spend)
-python -m spendcube run --config submission/C.yaml --no-llm --limit 2000   # smoke test (<1 min)
-python -m spendcube run --config submission/C.yaml --out submission/        # full run
+```sh
+python -m spendcube validate --config configs/A.yaml --output outputs/jaygautam__A.csv
+python -m spendcube eval a2-sim --config configs/A.yaml
+python -m spendcube eval b-seeds --config configs/B.yaml
+python -m pytest -q
 ```
 
-`configs/C.example.yaml` documents every key.
+## Blind-day runbook
 
-## LLM providers (all free)
-
-Classification of an unseen tree uses an LLM; everything else is deterministic or supervised. Providers sit behind one
-interface and are tried in a configured order (`configs/_llm.yaml`):
-
-1. **Gemini free tier** (primary). `GEMINI_API_KEY_DEV` for development, `GEMINI_API_KEY` for the blind-day project
-   (`--llm-mode blind`). Flash-Lite 3.5 is the workhorse, 3.1 the second opinion, 3.8 Flash compiles the taxonomy and
-   arbitrates disagreements. **Disclosure:** the free tier lets Google use prompts for product improvement (data terms
-   accepted by the author, D-35). Only description, supplier name, GL text and context columns are sent, never whole rows.
-2. **Groq free** (`GROQ_API_KEY`), a different vendor, used if Gemini is unavailable.
-3. **Ollama** (local, private, no key): `ollama pull qwen3:4b`; used automatically when its daemon is up.
-4. **Offline fallback** (no key, no Ollama): TF-IDF similarity to the category paths plus supplier/GL propagation,
-   clearly logged, confidence capped at 0.4.
-
-`python -m spendcube doctor` prints key presence (set/missing, never values), checks the model ids and does one tiny
-call per entry. Responses are cached (`.cache/`, git-ignored) so re-runs cost no quota.
-
-## Tests
-
-```bash
-python -m pytest            # unit + synthetic end-to-end (mock LLM) + failure injection
-```
-
-Test fixtures are synthetic. A pre-commit hook (`.githooks/pre-commit`, `scripts/data_guard.py`) refuses data files
-outside `outputs/`, `submission/` and `tests/fixtures/`; install with `git config core.hooksPath .githooks`.
+See [docs/BLIND_DAY.md](docs/BLIND_DAY.md). On the blind day, run `scripts/blind_day.sh ab <blind_dir>` first, prepare and review `submission/C.yaml`, then run `scripts/blind_day.sh c <blind_dir> [deadline]`. Run these commands in a normal terminal with network access. `scripts/freeze_check.sh` is the pre-tag check.
 
 ## Layout
 
-`spendcube/` ingest → normalize → exclusions → reconcile → entities → classify (cascade) → output; `llm/` providers,
-router, limiter, quota ledger, cache; `configs/` per company; see `APPROACH.md` and `DECISIONS.md`.
+- `spendcube/`: CLI, ingestion, normalization, matching, entity resolution, classification and validation.
+- `configs/`: company configs and shared model/calibration settings.
+- `tests/`: unit and synthetic end-to-end tests; fixtures contain synthetic data only.
+- `scripts/`: blind-day, data-safety, freeze and evaluation helpers.
+- `docs/`: architecture, decisions and operating runbooks.

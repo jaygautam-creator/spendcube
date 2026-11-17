@@ -197,3 +197,5 @@ Paid-project traffic falls under Google's paid data terms (no training use). xAI
 **D-55 Freeze check (2026-11-18).** `scripts/freeze_check.sh` is the single pre-tag gate for public history/data/secrets, tests, output validation/row counts, configs, required docs, prompt/pool state, and list-only doctor. It skips the doctor check with a warning if the blind key is present. *Decided.*
 
 **D-56 Blind-day rehearsal and output isolation (2026-11-18).** Rehearsed B2/A2 then profiler-configured synthetic C through the human-facing script in mock dev mode. All three outputs validated (10,257 / 16,387 / 3,000 rows), the go/no-go summary returned GO, and C completed in 122.2s before its 10-minute-ahead absolute deadline. `OUT` now directs outputs outside `submission/` for rehearsal. *Decided.*
+
+**D-57 Approach and README (2026-11-18).** Added a one-page method/measurement summary with explicit T4 update markers and refreshed setup, offline behavior, one-command runs, eval commands, providers, and blind-day instructions. *Decided.*
