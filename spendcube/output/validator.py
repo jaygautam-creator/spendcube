@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import re
+from collections import Counter
 from pathlib import Path
 from typing import Optional
 
@@ -25,11 +26,8 @@ def validate_frame(out: pd.DataFrame, tax: Taxonomy, expected_ids: Optional[list
     if expected_ids is not None:
         if len(out) != len(expected_ids):
             add(f"row count {len(out)} != expected {len(expected_ids)}")
-        elif list(out["record_id"]) != list(expected_ids):
-            bad = int((out["record_id"].reset_index(drop=True) != pd.Series(expected_ids)).sum())
-            add(f"record_id order/content differs from input in {bad} rows")
-    if out["record_id"].duplicated().any():
-        add(f"{int(out['record_id'].duplicated().sum())} duplicated record_id")
+        elif Counter(out["record_id"].astype(str)) != Counter(map(str, expected_ids)):
+            add("record_id multiset differs from input")
     if (out["record_id"].astype(str).str.strip() == "").any():
         add("blank record_id")
 

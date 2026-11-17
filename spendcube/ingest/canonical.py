@@ -63,7 +63,8 @@ def ingest_source(cfg: Config, src: SourceCfg, limit: int | None = None,
     blank = ids == ""
     if blank.any():
         ids = ids.where(~blank, pd.Series((df.index + 1).astype(str), index=df.index))
-    out["record_id"] = src.record_id.prefix + ids
+    out["record_id_original"] = src.record_id.prefix + ids
+    out["record_id"] = out["record_id_original"]
     out["source"] = src.name
     out["source_role"] = src.role
     out["row_order"] = range(row_offset, row_offset + len(df))
@@ -74,7 +75,7 @@ def ingest_source(cfg: Config, src: SourceCfg, limit: int | None = None,
         n = out.groupby("record_id").cumcount()
         out.loc[dup, "record_id"] = out.loc[dup, "record_id"] + "#" + n[dup].astype(str)
         flags[dup] = "DUP_RECORD_ID"
-        log.warning("%s: %d rows had duplicated ids; suffixed with #n", where, int(dup.sum()))
+        log.warning("%s: %d rows had duplicated ids; internal ids suffixed with #n", where, int(dup.sum()))
 
     cols = src.columns
     for key, canon in MAPPED_FIELDS.items():

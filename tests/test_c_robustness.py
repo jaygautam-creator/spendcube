@@ -122,8 +122,7 @@ def test_excel_serial_dates_and_negative_credit_notes(tmp_path):
 def test_empty_descriptions_and_duplicate_line_ids(tmp_path):
     rows = [(f"id{i}", "" if i % 10 < 3 else "generic item", "1.00") for i in range(10)]
     got = _run(tmp_path, rows, duplicate_ids=True)
-    assert got["record_id"].nunique() == len(got)
-    assert got["record_id"].str.startswith("id0#").sum() == 2
+    assert got["record_id"].tolist() == [*(f"id{i}" for i in range(9)), "id0"]
 
 
 @pytest.mark.parametrize("value,fmt,expected", [

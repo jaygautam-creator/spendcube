@@ -60,7 +60,12 @@ def run_pipeline(cfg: Config, out_dir: Path = Path("outputs"), no_llm: bool = Fa
     ctx.note("taxonomy", "summary", ctx.taxonomy.summary())
     with ctx.timer("ingest"):
         df = ingest_all(cfg, limit=limit)                    # hard failure
-    expected_ids = df.loc[df["source_role"].isin(("primary", "secondary")), "record_id"].tolist()
+    emitted = df["source_role"].isin(("primary", "secondary"))
+    expected_ids = df.loc[emitted, "record_id_original"].tolist()
+    dup_rows = int(df.loc[emitted, "flags"].astype(str).str.contains(r"(?:^|\|)DUP_RECORD_ID(?:\||$)").sum())
+    if dup_rows:
+        ctx.note("ingest", "duplicate_id_rows", dup_rows)
+        ctx.warn(f"{dup_rows} input rows have repeated record ids; original ids are preserved in output")
     log.info("ingested %d rows (%d emitted)", len(df), len(expected_ids))
 
     for name, fn in _stages():

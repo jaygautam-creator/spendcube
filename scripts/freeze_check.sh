@@ -30,7 +30,7 @@ for comp, n in (("A",65549),("B",41028)):
     with path.open(newline="", encoding="utf-8-sig") as f: rows=list(csv.DictReader(f))
     if len(rows)!=n: raise SystemExit(f"{comp}: expected {n} rows, got {len(rows)}")
     cfg=load_config(f"configs/{comp}.yaml")
-    ids=ingest_all(cfg)["record_id"].tolist()
+    ids=ingest_all(cfg)["record_id_original"].tolist()
     errors=validate_file(path,Taxonomy.load(cfg.taxonomy),ids,expected_name=None)
     if errors: raise SystemExit(f"{comp}: validation failed: {errors[:3]}")
 PY

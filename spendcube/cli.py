@@ -47,7 +47,7 @@ def cmd_validate(a) -> int:
     cfg = load_config(a.config, input_dir=a.input_dir, kit_dir=a.kit_dir, suffix=a.suffix)
     tax = Taxonomy.load(cfg.taxonomy)
     df = ingest_all(cfg, limit=a.limit)
-    ids = df.loc[df["source_role"].isin(("primary", "secondary")), "record_id"].tolist()
+    ids = df.loc[df["source_role"].isin(("primary", "secondary")), "record_id_original"].tolist()
     errs = validate_file(Path(a.output), tax, ids, expected_name=None)
     print("OK" if not errs else "FAILED")
     for e in errs:

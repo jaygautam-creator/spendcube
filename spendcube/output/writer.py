@@ -54,7 +54,7 @@ def assemble(ctx, df: pd.DataFrame) -> pd.DataFrame:
     spend = np.where(inc, emit["spend_rc"].round(dec), 0.0)
     conf = np.where(inc, emit["cat_conf"], emit["excl_conf"])
     out = pd.DataFrame({
-        "record_id": emit["record_id"].to_numpy(),
+        "record_id": emit.get("record_id_original", emit["record_id"]).to_numpy(),
         "include": np.where(inc, "1", "0"),
         "exclusion_reason": "",
         "supplier_key": emit["supplier_key"].to_numpy(),

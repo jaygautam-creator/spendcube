@@ -47,7 +47,7 @@ COLUMN_OPTION_KEYS = {
 }
 
 INGEST_COLUMNS = [
-    "record_id", "source", "source_role", "row_order",
+    "record_id", "record_id_original", "source", "source_role", "row_order",
     *MAPPED_FIELDS.values(), "context", "llm_context",
 ]
 
