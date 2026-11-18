@@ -34,6 +34,16 @@ python -m spendcube run --config submission/C.yaml --no-llm --limit 2000 --out /
    other than `enabled` (the include is deep-merged).
 9. Smoke: `--no-llm --limit 2000`, then the full `blind_day.sh c` run.
 
+From the 18 Nov read-only audit (synthetic C variants; no crashes, these need a config edit):
+10. `record_id`: if the line key has an unusual name (e.g. `invoice_line_key`) the draft may fall back to row numbers.
+    Map the real line-id column: output ids must equal the file's line ids.
+11. Dates: if the profiler reports ambiguous day/month, look at the raw values; set `dayfirst: false` for US
+    month-first files (it defaults to day-first).
+12. A tax **amount** column (money, not %) maps to `tax_amount`, never `tax_rate`; set `amount_basis: gross`.
+13. Currency codes in lower case are not detected by the profiler; map the `currency` column by hand (the run
+    upper-cases codes). Non-USD lines with no rate and no FX file get `FX_MISSING` and 0 spend: add `fx.static_rates`.
+14. Excel with title rows above the header is handled (the header row is found automatically; a warning says so).
+
 ## 2. At 10:00: run B2/A2 and C as separate commands
 The `ab` command runs B2 (max 60 LLM requests) then A2 (0 requests). The `c` command validates the completed config,
 computes its LLM budget from the remaining ledger, and defaults to an absolute `2026-11-19T11:20` IST cutoff.

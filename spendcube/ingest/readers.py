@@ -57,12 +57,31 @@ def read_csv_text(path: Path, delimiter: str = "auto", encoding: str = "auto") -
     return df
 
 
+def _excel_header_fix(path: Path, sheet, df: pd.DataFrame) -> pd.DataFrame:
+    """Title/banner rows above the real header (e.g. a report title in A1) make pandas name most columns
+    'Unnamed: n'. Then use the first of the top 20 rows that fills >= 60% of the columns as the header."""
+    cols = [str(c) for c in df.columns]
+    if not cols or sum(c.startswith("Unnamed:") for c in cols) <= len(cols) / 2:
+        return df
+    raw = pd.read_excel(path, sheet_name=sheet if sheet is not None else 0, dtype=str, header=None,
+                        keep_default_na=False, na_filter=False)
+    need = max(2, int(0.6 * raw.shape[1] + 0.999))
+    for i in range(min(20, len(raw))):
+        if (raw.iloc[i].astype(str).str.strip() != "").sum() >= need:
+            out = raw.iloc[i + 1:].reset_index(drop=True)
+            out.columns = [str(c).strip() or f"col_{j}" for j, c in enumerate(raw.iloc[i])]
+            log.warning("%s: header found on sheet row %d (title rows above it skipped)", path.name, i + 1)
+            return out
+    return df
+
+
 def read_table(path: Path, delimiter: str = "auto", encoding: str = "auto",
                sheet: Optional[str | int] = None) -> pd.DataFrame:
     suf = path.suffix.lower()
     if suf in (".xlsx", ".xlsm", ".xls"):
         df = pd.read_excel(path, sheet_name=sheet if sheet is not None else 0, dtype=str,
                            keep_default_na=False, na_filter=False)
+        df = _excel_header_fix(path, sheet, df)
         df.columns = [str(c).strip() for c in df.columns]
         df = df.astype(str)
         log.info("read %s (excel): %d rows", path.name, len(df))
