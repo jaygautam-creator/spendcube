@@ -133,7 +133,7 @@ def draft_config(profile: dict, file_path: str | Path, taxonomy_path: Optional[s
             A(f"      # TODO unrecognised values (they fall to `default`): {_lst(st['unknown'])}")
         A("      default: INCLUDE            # INCLUDE | NOT_APPROVED for unknown values (logged)")
     dup = profile.get("duplicates", {})
-    A("    intra_source_dedup: {enabled: false}      # " + (dup.get("hint") or "no exact duplicates found"))
+    A("    intra_source_dedup: {enabled: false}      # " + (dup.get("hint") or "0 exact invoice/supplier/amount/description/date repeats (spend 0.00). Leave dedup OFF unless the brief says this file was exported twice"))
     A("")
     # ---- fx
     cur = profile.get("currency", {})

@@ -356,6 +356,51 @@ def _make_router(ctx, budget: bool = True):
     return Router(lcfg, mode=ctx.llm_mode, job_budget=budget)
 
 
+def _prompt_budget(lcfg, router, taxonomy, industry_hint: str, units, cand) -> tuple[dict, dict]:
+    """Apply a conservative prompt-size guard using the router's chars/3 estimate."""
+    from ..llm.prompts import build_system, build_user, unit_line
+    cfg = lcfg.get("prompt_budget") or {}
+    effective = {**lcfg, "batch": dict(lcfg.get("batch", {}))}
+    if not cfg.get("enabled", True):
+        return effective, {"enabled": False}
+    ids = list(dict.fromkeys(router.roles.get("top_spend", []) + router.roles.get("bulk", [])))
+    entries = [router.entries[i] for i in ids if i in router.entries and router.entries[i].tpm and router.entries[i].rpm]
+    limits = [{"model": e.id, "rpm": e.rpm, "tpm": e.tpm} for e in entries]
+    max_rpm = max((e.rpm for e in entries), default=0)
+    tpm = min((e.tpm for e in entries), default=0)
+    fraction = float(cfg.get("tpm_fraction", .8))
+    batch_max = int(effective["batch"].get("max", 60))
+    sample = int(cand[0]) if len(cand) else 0
+    u = units.iloc[sample]
+
+    def estimate(definitions: bool, batch: int) -> int:
+        sys = build_system(taxonomy, industry_hint)
+        if definitions:
+            # Conservative synthetic definition allowance, configurable for measured tree profiles.
+            sys += "\n" + "x" * (len(taxonomy) * int(cfg.get("definition_chars_per_leaf", 100)))
+        line = unit_line(1, u.get("supplier", ""), u.get("gl", ""), u.get("ctx", ""), u.get("text", ""))
+        user = build_user([line] * batch)
+        return len(sys + user) // 3 + (200 + 24 * batch) // 4
+
+    with_defs, without_defs = estimate(True, batch_max), estimate(False, batch_max)
+    pressure = lambda n: n * max_rpm / max(tpm, 1) if max_rpm else 0
+    skipped = pressure(with_defs) > fraction
+    chosen = batch_max
+    if skipped:
+        while chosen > int(cfg.get("min_batch", 15)) and pressure(estimate(False, chosen)) > fraction:
+            chosen = max(int(cfg.get("min_batch", 15)), chosen // 2)
+    effective["batch"]["max"] = chosen
+    return effective, {"enabled": True, "models": limits, "rpm_used_for_estimate": max_rpm,
+                       "tpm_limit": tpm, "threshold_fraction": fraction,
+                       "tokens_per_request_with_definitions": with_defs,
+                       "tokens_per_request_without_definitions": without_defs,
+                       "pressure_with_definitions": round(pressure(with_defs), 4),
+                       "definitions_skipped": skipped, "batch_max": batch_max,
+                       "batch_chosen": chosen,
+                       "chosen_tokens_per_request": estimate(False, chosen) if skipped else with_defs,
+                       "residual_over_threshold": bool(skipped and pressure(estimate(False, chosen)) > fraction)}
+
+
 def _run_llm(ctx, units, leaf, conf, meth, spcls, selfc, llm_labelled, described, router, lcfg, stats):
     from ..taxonomy.compile import compile_taxonomy
     from .llm import LLMClassifier
@@ -372,7 +417,9 @@ def _run_llm(ctx, units, leaf, conf, meth, spcls, selfc, llm_labelled, described
         stats["llm_units_done"] = 0
         ctx.warn(f"LLM absolute deadline {ctx.deadline_at.isoformat()} already passed; using lower tiers")
         return definitions, None
-    if lcfg.get("compile", True):
+    effective_lcfg, budget_report = _prompt_budget(lcfg, router, tax, ctx.cfg.industry_hint, units, cand)
+    stats["prompt_budget"] = budget_report
+    if lcfg.get("compile", True) and not budget_report.get("definitions_skipped", False):
         spend_order = units.iloc[cand]
         texts = list(dict.fromkeys(spend_order["text"].head(150).tolist() +
                                    units.iloc[cand].sort_values("rows", ascending=False)["text"].head(100).tolist()))
@@ -381,7 +428,7 @@ def _run_llm(ctx, units, leaf, conf, meth, spcls, selfc, llm_labelled, described
         except Exception as e:
             ctx.warn(f"taxonomy compile failed: {e}")
     stats["definitions_compiled"] = len(definitions)
-    clf = LLMClassifier(router, tax, ctx.cfg.industry_hint, definitions, lcfg)
+    clf = LLMClassifier(router, tax, ctx.cfg.industry_hint, definitions, effective_lcfg)
     idx1 = {l.id: i for i, l in enumerate(tax.leaves, 1)}
     top_n = int(lcfg.get("top_n", 1000))
     sc_n = int(lcfg.get("self_consistency_top_n", 300))

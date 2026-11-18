@@ -27,3 +27,27 @@ def test_suggests_template_lines_and_skips_services():
     for x in s:
         assert "consult" not in x["regex"].lower() and "service" not in x["regex"].lower()
     assert all(x["rows"] >= 1 for x in s)
+
+
+def test_suggests_partner_royalty_and_financing_templates_but_vetoes_services():
+    phrases = ["Partner Billing", "Joint Interest Billing", "JIB Billing", "Cash Call", "Joint Venture",
+               "JV Billing", "Royalty", "Finance Charge", "Lease Interest", "Revenue Share"]
+    rows = [{"gl": "", "desc": f"{p} - 2025-Q1", "sup": "", "amt": 100.0} for p in phrases for _ in range(3)]
+    rows += [{"gl": "", "desc": "Royalty advisory services", "sup": "", "amt": 500.0} for _ in range(5)]
+    df = pd.DataFrame(rows)
+    suggestions = suggest_exclusions(df, {"description": "desc"}, df["amt"])
+    matched = {x["phrase"] for x in suggestions}
+    assert {p.lower() for p in phrases} <= matched
+    assert all("service" not in x["regex"].lower() for x in suggestions)
+
+
+def test_jib_equipment_is_not_suggested_as_intercompany():
+    rows = ([{"desc": "JIB billing - Q3", "amt": 10.0}] * 3 +
+            [{"desc": "Jib crane hire - Q3", "amt": 20.0}] * 3 +
+            [{"desc": "Jib crane", "amt": 30.0}] * 3)
+    df = pd.DataFrame(rows)
+    suggestions = suggest_exclusions(df, {"description": "desc"}, df["amt"])
+    matched = {x["phrase"] for x in suggestions}
+    assert "jib billing" in matched
+    assert "jib crane" not in matched and "jib crane hire" not in matched
+    assert not any(__import__("re").search(x["regex"], "Jib crane hire") for x in suggestions)

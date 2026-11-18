@@ -101,6 +101,46 @@ def test_blank_amount_and_flags(tmp_path):
     assert "AMOUNT_UNPARSEABLE" in r.loc["b", "flags"]
 
 
+def test_intra_source_dedup_marks_only_exact_later_copy(tmp_path):
+    rows = [dict(ROWS[0], id="a", txt="exact", amt="10", d="2024-01-01"),
+            dict(ROWS[0], id="b", txt="exact", amt="10", d="2024-01-01"),
+            dict(ROWS[0], id="c", txt="exact", amt="10", d="2024-01-02")]
+    p, t = tmp_path / "lines.csv", tmp_path / "tax.csv"
+    pd.DataFrame([dict(r, inv="I-1") for r in rows]).to_csv(p, index=False)
+    pd.DataFrame({"category_l1": ["Goods"], "category_l2": ["Stuff"]}).to_csv(t, index=False)
+    cfg = Config.model_validate({"company": "T", "taxonomy": {"file": str(t)}, "sources": [{"name": "lines",
+        "role": "primary", "file": str(p), "record_id": {"column": "id"}, "columns": {"supplier_name": "sup",
+        "vendor_id": "vid", "description": "txt", "amount": "amt", "amount_basis": "gross", "currency": "cur",
+        "status": "status", "invoice_number": "inv", "invoice_date": {"column": "d"}},
+        "status_map": {"default": "INCLUDE"}, "intra_source_dedup": {"enabled": True}}]})
+    ctx = RunContext(cfg=cfg, run_dir=tmp_path)
+    ctx.taxonomy = Taxonomy.load(cfg.taxonomy)
+    from spendcube.ingest.canonical import ingest_source
+    df = ingest_source(cfg, cfg.sources[0])
+    df = normalize_stage(ctx, df)
+    df = exclusions_stage(ctx, df)
+    assert list(df["excl_code"]) == ["", "DUPLICATE", ""]
+
+
+def test_intra_source_dedup_vendor_id_fallback_when_supplier_unmapped(tmp_path):
+    rows = [dict(ROWS[0], id="a", inv="I1", vid="V1", txt="same", amt="10", d="2024-01-01"),
+            dict(ROWS[0], id="b", inv="I1", vid="V1", txt="same", amt="10", d="2024-01-01"),
+            dict(ROWS[0], id="c", inv="I1", vid="V2", txt="same", amt="10", d="2024-01-01")]
+    p, t = tmp_path / "lines.csv", tmp_path / "tax.csv"
+    pd.DataFrame(rows).to_csv(p, index=False)
+    pd.DataFrame({"category_l1": ["Goods"], "category_l2": ["Stuff"]}).to_csv(t, index=False)
+    cfg = Config.model_validate({"company": "T", "taxonomy": {"file": str(t)}, "sources": [{"name": "lines",
+        "role": "primary", "file": str(p), "record_id": {"column": "id"}, "columns": {"vendor_id": "vid",
+        "description": "txt", "amount": "amt", "amount_basis": "gross", "currency": "cur", "status": "status",
+        "invoice_number": "inv", "invoice_date": {"column": "d"}}, "status_map": {"default": "INCLUDE"},
+        "intra_source_dedup": {"enabled": True}}]})
+    ctx = RunContext(cfg=cfg, run_dir=tmp_path)
+    ctx.taxonomy = Taxonomy.load(cfg.taxonomy)
+    df = ingest_source(cfg, cfg.sources[0])
+    df = exclusions_stage(ctx, normalize_stage(ctx, df))
+    assert list(df["excl_code"]) == ["", "DUPLICATE", ""]
+
+
 def test_classify_status_unknowns_counted():
     from spendcube.config.schema import StatusMapCfg
     sm = StatusMapCfg(INCLUDE=["paid"], CANCELLED=["void"], default="INCLUDE")

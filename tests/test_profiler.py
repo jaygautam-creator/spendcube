@@ -160,8 +160,20 @@ def test_duplicate_stats_hint(tmp_path):
                          "description": [f"item number {i // 2}" for i in range(40)],
                          "amount": [str(10 + i // 2) for i in range(40)]})
     p = profile_file(_write(tmp_path, base))
-    assert p["duplicates"]["exact_dup_extra_copies"] == 20
-    assert "consecutive" in p["duplicates"]["hint"]
+    assert p["duplicates"]["exact_group_count"] == 0
+    assert "leave dedup OFF" in p["duplicates"]["hint"]
+
+
+def test_duplicate_stats_uses_exact_invoice_signature(tmp_path):
+    base = pd.DataFrame({"invoice_number": ["I1", "I1", "I2"], "supplier_name": ["Foo"] * 3,
+                         "description": ["same", "same", "same"], "amount": ["10", "10", "10"],
+                         "invoice_date": ["2024-01-01", "2024-01-01", "2024-01-02"],
+                         "line_id": ["x", "y", "z"]})
+    p = profile_file(_write(tmp_path, base))
+    assert p["duplicates"]["exact_group_count"] == 1
+    assert p["duplicates"]["exact_extra_rows"] == 1
+    assert p["duplicates"]["exact_extra_spend"] == 10
+    assert "leave intra_source_dedup OFF" in p["duplicates"]["hint"]
 
 
 def test_silent_taxonomy_misparses_are_flagged(tmp_path):

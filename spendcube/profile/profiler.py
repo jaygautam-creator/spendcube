@@ -333,11 +333,11 @@ def _np_candidates(df, roles, amount: Optional[pd.Series]) -> list[dict]:
 # Heuristic: non-procurement postings are TEMPLATE lines ("<Tax Type> Expense - <period>"), i.e. a short leading phrase
 # repeated many times, whereas a professional-services line that merely mentions tax is unique and carries service words.
 SUGGEST_CATEGORIES = {
-    "intercompany": r"inter-?\s?company|intra-?\s?group|i\s?/\s?c|ic|konzern|verrechnung",
+    "intercompany": r"inter-?\s?company|intra-?\s?group|i\s?/\s?c|ic|konzern|verrechnung|partner\s+billings?|joint\s+interest\s+billings?|jib\s+(billings?|invoices?|charges?|statements?)|cash\s+calls?|joint\s+venture|jv\s+billings?",
     "tax": r"(sales|use|state|local|property|income|withholding|payroll|excise|accrued)?(\s*&\s*(use|local))?\s*tax(es)?|vat|gst|iva|tva|mwst|umsatzsteuer|steuer|impuesto|imp[oô]t",
     "payroll": r"payroll|salary|salaries|wages?|gehalt|lohn|n[oó]mina|salaire|sueldo",
-    "bank_interest": r"bank\s*(charges?|fees?)|bankgeb[uü]hr\w*|interest|zins\w*|int[eé]r[eê]ts?|loan|darlehen",
-    "other_non_spend": r"dividends?|depreciation|abschreibung|amortization|penalt(y|ies)|donations?|customs\s+dut(y|ies)|zoll",
+    "bank_interest": r"bank\s*(charges?|fees?)|bankgeb[uü]hr\w*|interest|zins\w*|int[eé]r[eê]ts?|loan|darlehen|finance\s+charge|lease\s+interest",
+    "other_non_spend": r"dividends?|depreciation|abschreibung|amortization|penalt(y|ies)|donations?|customs\s+dut(y|ies)|zoll|royalt(y|ies)|revenue\s+share",
 }
 # words that mark a genuine purchased service/good: veto (keeps "Acme Tax Consultant", "Tax Services ...")
 SUGGEST_VETO = re.compile(r"(consult|advis|audit|service|software|licen[sc]e|prepar|training|assist|legal|law\b|work\b|"
@@ -363,7 +363,7 @@ def suggest_exclusions(df, roles, amount: Optional[pd.Series], min_rows_free_tex
         accepted: dict[str, list[str]] = {}
         for cat, rx in SUGGEST_CATEGORIES.items():
             if cat == "intercompany" and not allow_ic_token:
-                rx = r"inter-?\s?company|intra-?\s?group|konzern|verrechnung"
+                rx = r"inter-?\s?company|intra-?\s?group|konzern|verrechnung|partner\s+billings?|joint\s+interest\s+billings?|jib\s+(billings?|invoices?|charges?|statements?)|cash\s+calls?|joint\s+venture|jv\s+billings?"
             crx = re.compile(r"^(" + rx + r")(?![a-z])", re.I) if cat != "tax" else re.compile(r"^(" + rx + r")(?![a-z0-9])", re.I)
             for phrase, n in cnt.items():
                 if not phrase or len(phrase.split()) > 5 or SUGGEST_VETO.search(phrase):
@@ -393,30 +393,24 @@ def suggest_exclusions(df, roles, amount: Optional[pd.Series], min_rows_free_tex
 
 
 def _dup_stats(df, roles) -> dict:
-    idc = roles.get("line_id")
-    cols = [c for c in df.columns if c != idc]
-    d = df.duplicated(subset=cols, keep=False)
-    out: dict[str, Any] = {"exact_dup_rows_excl_id": int(d.sum()), "exact_dup_extra_copies": int(df.duplicated(subset=cols).sum())}
-    if idc and d.any():
-        nums = pd.to_numeric(df.loc[d, idc].astype(str).str.extract(r"(\d+)\s*$")[0], errors="coerce")
-        grp = df.loc[d, cols].astype(str).agg("\x1f".join, axis=1)
-        cons = 0
-        tot = 0
-        for _, idx in grp.groupby(grp).groups.items():
-            v = sorted(nums.loc[idx].dropna().tolist())
-            if len(v) > 1:
-                tot += 1
-                cons += int(all(b - a <= 3 for a, b in zip(v, v[1:])))
-        out["dup_groups"] = tot
-        out["dup_groups_consecutive_ids"] = cons
-        out["hint"] = ("consecutive ids: looks like re-exports, consider intra_source_dedup"
-                       if tot and cons / tot > 0.7 else
-                       "non-consecutive ids: probably genuine repeat purchases, leave dedup OFF (D-14)")
-    inv, amt, sup = roles.get("invoice_number"), roles.get("amount"), roles.get("supplier_name")
-    if inv and amt:
-        keys = [c for c in (inv, amt, sup) if c]
-        out["same_invoice_amount_supplier_rows"] = int(df.duplicated(subset=keys, keep=False).sum())
-    return out
+    supplier = roles.get("supplier_name") or roles.get("vendor_id")
+    cols = [roles.get("invoice_number"), supplier, roles.get("amount"), roles.get("description"), roles.get("invoice_date")]
+    if any(c is None for c in cols):
+        return {"exact_group_count": 0, "exact_extra_rows": 0, "exact_extra_spend": 0.0,
+                "hint": "exact duplicate signature unavailable; leave dedup OFF"}
+    keys = df[cols].fillna("").astype(str).apply(lambda s: s.str.strip().str.casefold())
+    dup = keys.duplicated(keep=False)
+    extra = keys.duplicated(keep="first")
+    amount_col = roles.get("amount")
+    spend = _amount_series(df, roles, {amount_col: column_features(amount_col, df[amount_col])}) if amount_col else None
+    groups = int(keys[dup].drop_duplicates().shape[0])
+    extras = int(extra.sum())
+    repeat_spend = round(float(spend.abs()[extra].sum()), 2) if spend is not None else 0.0
+    return {"exact_group_count": groups,
+            "exact_extra_rows": int(extra.sum()),
+            "exact_extra_spend": repeat_spend,
+            "hint": (f"{extras:,} exact invoice/supplier/amount/description/date repeats (spend {repeat_spend:,.2f}). "
+                     "On B the labels keep such repeats as real spend; leave intra_source_dedup OFF unless the brief says this file was exported twice")}
 
 
 def _concentration(df, roles, amount) -> dict:

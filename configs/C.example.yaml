@@ -86,7 +86,7 @@ sources:
       CANCELLED: [cancelled, canceled, void, reversed]
       NOT_APPROVED: [rejected, "on hold", submitted, disputed, draft, pending]
       default: INCLUDE                   # for values in none of the lists: INCLUDE | NOT_APPROVED (counted in the report)
-    intra_source_dedup: {enabled: false} # true only if the profile shows consecutive-id exact re-exports (D-14)
+    intra_source_dedup: {enabled: false} # leave OFF unless the brief says this file was exported twice
     # limit: 2000                        # read only the first N rows (the CLI --limit does the same for smoke runs)
 
 # one-system company: no `reconciliation:` block. (Two systems? add a `secondary` source and see configs/A.yaml.)

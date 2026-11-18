@@ -116,6 +116,36 @@ def exclusions_stage(ctx, df: pd.DataFrame) -> pd.DataFrame:
     df["excl_detail"] = detail_out
     df["excl_conf"] = conf_out
     df["rule_include"] = protect
+    # Exact intra-file re-exports only: keep first occurrence, mark later copies.
+    dedup_rows = 0
+    canonical = {"invoice_number": "invoice_no_raw", "supplier": "supplier_raw", "amount": "amount_raw",
+                 "description": "desc_raw", "date": "invoice_date_raw"}
+    for src in cfg.sources:
+        dc = src.intra_source_dedup
+        if not dc.enabled:
+            continue
+        keys = [canonical.get(k, k) for k in (dc.keys or ["invoice_number", "supplier", "amount", "description", "date"])]
+        missing = [k for k in keys if k not in df.columns and not (k == "supplier_raw" and "vendor_id" in df.columns)]
+        if missing:
+            ctx.warn(f"intra_source_dedup for {src.name} skipped; missing fields: {', '.join(missing)}")
+            continue
+        idx = df.index[df["source"].eq(src.name)]
+        present_keys = [k for k in keys if k in df.columns]
+        sig = df.loc[idx, present_keys].fillna("").astype(str).apply(lambda col: col.str.strip().str.casefold())
+        if "supplier_raw" in keys and "supplier_raw" not in df.columns:
+            sig["supplier_raw"] = df.loc[idx, "vendor_id"].fillna("").astype(str).str.strip().str.casefold()
+        elif "supplier_raw" in keys and "vendor_id" in df.columns:
+            supplier = df.loc[idx, "supplier_raw"].fillna("").astype(str).str.strip()
+            sig["supplier_raw"] = supplier.where(supplier.ne(""), df.loc[idx, "vendor_id"].fillna("").astype(str).str.strip()).str.casefold()
+        duplicate = sig.duplicated(keep="first")
+        hit_idx = idx[duplicate.to_numpy()]
+        hit_idx = hit_idx[df.loc[hit_idx, "excl_code"].eq("").to_numpy()]
+        df.loc[hit_idx, "excl_code"] = "DUPLICATE"
+        df.loc[hit_idx, "excl_detail"] = "intra_source_exact_reexport"
+        df.loc[hit_idx, "excl_conf"] = 0.99
+        dedup_rows += len(hit_idx)
+    if dedup_rows:
+        ctx.note("exclusions", "intra_source_exact_duplicate_rows", dedup_rows)
     summ = pd.Series(code_out[code_out != ""]).value_counts().to_dict()
     ctx.note("exclusions", "counts_after_stage3", summ)
     return df

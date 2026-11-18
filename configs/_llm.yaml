@@ -8,7 +8,7 @@ classification:
     parallel_pool: {enabled: true, entries: [gemini_flash_lite_35, gemini_flash_lite_31]}
     # T4b: coherence slightly lowered L3; retain the 3.8 arbiter only for top-100 disagreements.
     top_n: 1000
-    self_consistency_top_n: 100
+    self_consistency_top_n: 300
     # D-42/D-50: per-job request budget (enforced in the router). Pool = the two Flash-Lites, capped at util_cap x RPD.
     # job budget = min(max_requests, share x (remaining pool quota - reserve)). Blind-day order C -> B2 -> A2:
     # C (this default) takes everything except the reserve kept for B2 and A2; B and A override in their configs.
@@ -43,6 +43,7 @@ classification:
     outage: {enabled: true, chain: [ollama_local], max_minutes: 20}
     thinking: {compile: low, top_spend: minimal, bulk: minimal, second_opinion: minimal, arbiter: low}
     batch: {min: 15, max: 60, arbiter: 40}
+    prompt_budget: {enabled: true, tpm_fraction: 0.8, definition_chars_per_leaf: 100, min_batch: 15}
     timeout_s: 120
     cache_file: .cache/llm_cache.sqlite
     ledger_file: .cache/llm_ledger.sqlite
