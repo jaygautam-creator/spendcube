@@ -5,7 +5,10 @@
 classification:
   llm:
     enabled: true
-    parallel_pool: {enabled: false, entries: [gemini_flash_lite_35, gemini_flash_lite_31]}
+    parallel_pool: {enabled: true, entries: [gemini_flash_lite_35, gemini_flash_lite_31]}
+    # T4b: coherence slightly lowered L3; retain the 3.8 arbiter only for top-100 disagreements.
+    top_n: 1000
+    self_consistency_top_n: 100
     # D-42/D-50: per-job request budget (enforced in the router). Pool = the two Flash-Lites, capped at util_cap x RPD.
     # job budget = min(max_requests, share x (remaining pool quota - reserve)). Blind-day order C -> B2 -> A2:
     # C (this default) takes everything except the reserve kept for B2 and A2; B and A override in their configs.
@@ -52,3 +55,4 @@ classification:
       - {id: gemma4_31b,           provider: gemini, model: gemma-4-31b-it,         rpm: 30, tpm: 16000,  rpd: 14400, key_env: GEMINI_API_KEY}
       - {id: groq_gptoss120b,      provider: groq,   model: openai/gpt-oss-120b,    optional: true, key_env: GROQ_API_KEY}
       - {id: ollama_local,         provider: ollama, model: "qwen3:4b", base_url: "http://localhost:11434", optional: true}
+  coherence: {enabled: false}

@@ -148,6 +148,17 @@ def run_zero_label(config_path: str, top: int = 150, strat: int = 150, out_dir: 
             "top_only_primary": _acc(sample[sample.is_top], p1, tax),
             "disagree_n": len(dis), "arbiter_resolved": len(r3),
         }
+        # Preserve the spend-rank bands used for T4 model decisions. The standard
+        # zero-label run usually samples a 150-unit head plus a random tail; when
+        # top=900 is used, these slices make the head/tail quality visible.
+        results[var]["by_rank"] = {
+            label: {
+                "primary_3.5lite": _acc(sample.iloc[start:stop], p1, tax),
+                "second_3.1lite": _acc(sample.iloc[start:stop], p2, tax),
+            }
+            for label, start, stop in (("top150", 0, 150), ("150-300", 150, 300), ("300-900", 300, 900))
+            if start < len(sample)
+        }
         # per-unit records for confidence calibration (same confidence formula as the cascade)
         recs = []
         tmap = dict(zip(sample.uid, sample.truth))
