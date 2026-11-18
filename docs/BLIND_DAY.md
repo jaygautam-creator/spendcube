@@ -9,7 +9,7 @@ need network access. Update the default C deadline only if the blind-day calenda
 ```sh
 python -m spendcube doctor --blind          # one tiny call per model; prints remaining RPD per model and the 3 job budgets
 ```
-Expect (empty ledger): C 630, B2 60, A2 10 requests (C takes everything except the 70 kept for B2 and A2). A model marked FAIL is skipped automatically by the router.
+Expect (empty ledger): C 640, B2 50, A2 0 requests (pool = both Flash-Lites under the 70% cap = 700; C keeps a 60 reserve). A model marked FAIL is skipped automatically by the router.
 If `doctor` shows < 2 healthy Flash-Lite entries, leave `classification.llm.budget.share` alone: the router already
 finishes on the supervised/propagation/offline tiers when a budget or a model runs out.
 
@@ -18,11 +18,27 @@ finishes on the supervised/propagation/offline tiers when a budget or a model ru
 python -m spendcube profile --file blind/C/<lines> --taxonomy blind/C/<tree> --draft-config submission/C.yaml
 $EDITOR submission/C.yaml        # fix TODOs; uncomment the `# SUGGESTED` exclusion rules that apply
 python -m spendcube run --config submission/C.yaml --no-llm --limit 2000 --out /tmp/smoke      # < 1 min sanity
+```
+
+### C config checklist (found in the 18 Nov live rehearsal; ~3 min of edits)
+1. `industry_hint`: one line from the tree's L1/L2 names and the top suppliers/descriptions.
+2. `po_reference`: the profiler can pick a *type* column (e.g. `po_type`); map the PO **number** column.
+3. `context` / `llm_context`: the profiler may suggest none. Give the LLM 2-4 low-cardinality business columns
+   (document type, PO type, supplier type, GL description is already used). Never ids or amounts.
+4. `amount_basis`: net unless a tax column or gross wording exists; if gross set the tax rate column.
+5. `status`: map it if any status/approval column exists (CANCELLED / NOT_APPROVED); else leave it out.
+6. `reporting_currency: USD` (brief); FX file glob if a rate table ships with C.
+7. SUGGESTED exclusion rules: read each one. They are start-anchored template phrases (tax, intercompany, ...);
+   delete any that hits real supplier spend.
+8. Keep `include: ["../configs/_llm.yaml"]` (path is relative to `submission/`); do not set `classification.llm` keys
+   other than `enabled` (the include is deep-merged).
+9. Smoke: `--no-llm --limit 2000`, then the full `blind_day.sh c` run.
+
 ## 2. At 10:00: run B2/A2 and C as separate commands
 The `ab` command runs B2 (max 60 LLM requests) then A2 (0 requests). The `c` command validates the completed config,
 computes its LLM budget from the remaining ledger, and defaults to an absolute `2026-11-19T11:20` IST cutoff.
 At the cutoff, the pipeline finishes lower tiers, writes output, and validates it; `deadline_minutes` remains a secondary guard.
-```
+
 Sanity before the full run: validation line OK, excluded share plausible, no `FX_MISSING`, taxonomy sample paths look real.
 
 ## 3. B2/A2 budgets
@@ -43,7 +59,7 @@ git push                       # .githooks/pre-push must pass; never --no-verify
 ```
 Push before 12:00 IST. If the hook blocks, fix the cause (a data string, key pattern, or extra tracked file) and push again.
 
-## 5. Outage behaviour
+## 6. Outage behaviour
 If every Gemini entry fails or quota is 0 the run switches by itself to the local model (D-51; top-spend units within 20 minutes, offline
 fallback for the rest) and writes `outage_switch` and a loud warning in the report. No flag is needed. Groq is never used for classification.
 

@@ -178,3 +178,16 @@ Live dev-key experiment used the same top-150 labeled-unit sample per company in
 | 3.5 minimal, batch 15 | 85.33% / 91.62% | 79.33% / 87.49% | 71.33% / 78.73% | 10 | 2,002 | 5.16 | 150/150 |
 
 The Hydrogen arm stalled on DNS and was interrupted after the dev ledger recorded 5 failed request attempts (daily total 14/20, 6 remaining). 3.6 was not attempted. No requests used the blind key. These A-only results are insufficient to choose a head routing tier or to enable X3; no config default changed. The A small-batch spend-weighted L3 gain over baseline is +2.04 points, but the required B non-regression check is missing.
+
+## X2 completed + X4 live rehearsal (2026-11-18, run by the architect session; Codex sandbox had no network)
+X2 B top-150 zero-label (spend-weighted L3): 3.5-lite batch 60 minimal **95.75%** (current), batch 60 thinking low 88.74%,
+batch 15 minimal 74.40% (batch 15 low: rate-limited, discarded). A's +2.0 batch-15 gain does not hold on B: keep batch 60 / minimal.
+Strong models, top-150: gemini-3.6-flash A L3_sw 78.87% vs lite 76.69% (+2.2, one sample); on B only 80/150 answered within
+its 5 RPM. Hydrogen: repeated server failures (0/150). Decision D-64: no head tier (gain within sample noise, 20 RPD / 5 RPM
+capacity, late risk); 3.8 arbitration on top-100 disagreements stays.
+
+X4 live rehearsal, B treated as an unseen company (lines + tree only; fresh LLM cache and unit memory; dev key; pool ON):
+profile 3 s; config edits ~3 min (industry hint, PO number column, llm_context, cache paths); `blind_day.sh c` 613 s wall
+(classify 612 s), 229 requests, 41,028 rows, validator OK, deadline not hit, GO. Exclusions 2,490 rows / 19.87M USD vs
+hand-tuned 2,485 / 19.86M. Scored afterwards against the 2,550 included seed rows: L1/L2/L3 spend-weighted
+**98.55 / 93.34 / 92.48%**, count-weighted 94.59 / 93.96 / 88.51%; include agreement 99.97%.
