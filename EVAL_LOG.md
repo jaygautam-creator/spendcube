@@ -127,7 +127,32 @@ Target (all validated within 60 min of starting C) met at 1x and at 3x. Deadline
 Effective end-to-end throughput = 260 / 18.9 = **13.76 requests/min** (0.229 requests/s; 4.36 wall minutes per 60 requests). Applying this measured rate to C's 640-request budget gives **46.5 min** for C's LLM work, above the 40-minute threshold; this replaces the 23.8-min 1x mock dress-run estimate. Adding dress-run B2 (3.0 min) and A2 (0.3 min) gives about **49.8 min sequential**, within the 60-minute target with ~10 min margin. This is an effective batch throughput, not isolated model latency. Live per-call latency and batch size are now collected to run-local `llm_call_metrics.csv`.
 
 ## 2026-11-18 D-54 two-model timing projection (mock, no API)
-The classifier already submits batches concurrently with four workers. Router test load with the mock confirmed both pool members can serve simultaneously, each under its own RPM limiter, for at least 1.7x single-member throughput. Applying the measured one-model effective rate (13.76 requests/min) to 640 requests: **pool OFF 46.5 min; pool ON 23.3 min** for C's LLM budget (two equal-capacity 15-RPM models). Pipeline compute and request mix are unchanged, so the prior 3.3 min B2/A2 estimate implies **49.8 min OFF vs 26.6 min ON** total. This is a rate-based mock projection; not a full 50k-row end-to-end dress run. Config default remains OFF pending T4a accuracy.
+The classifier already submits batches concurrently with four workers. Router test load with the mock confirmed both pool members can serve simultaneously, each under its own RPM limiter, for at least 1.7x single-member throughput. Applying the measured one-model effective rate (13.76 requests/min) to 640 requests: **pool OFF 46.5 min; pool ON 23.3 min** for C's LLM budget (two equal-capacity 15-RPM models). Pipeline compute and request mix are unchanged, so the prior 3.3 min B2/A2 estimate implies **49.8 min OFF vs 26.6 min ON** total. This is a rate-based mock projection; not a full 50k-row end-to-end dress run. T4a supports enabling the pool by default.
 
 ## 2026-11-18 D-56 blind-day mock rehearsal
 Ran the human sequence using the generated profiler config, temporary 25% A/B slices, and the synthetic C fixture: `blind_day.sh ab runs/rehearsal`, then `blind_day.sh c runs/rehearsal 2026-11-18T02:20`, then summary; `OUT=runs/rehearsal/out MODE=dev SPENDCUBE_FORCE_MOCK=1`. B2 (10,257 rows), A2 (16,387 rows), and C (3,000 rows) all validated; summary = **GO**. C classification took 122.2 s; full B2/A2/C sequence was about 2m50s. Deadline remained unhit because C finished before 02:20. The rehearsal found and fixed summary report matching for suffixed A2/B2 outputs and added the `OUT` override so rehearsal outputs stay outside `submission/`.
+
+## 2026-11-18 T4a — same 900 A units, prompt v2, no definitions
+The top-900 described, labelled A units were scored independently by 3.5-lite and 3.1-lite; spend rank is from the same sample. Values are L1/L2/L3 (spend-weighted; count-weighted):
+
+| Spend rank | 3.5-lite SW | 3.1-lite SW | 3.5-lite count | 3.1-lite count |
+|---|---:|---:|---:|---:|
+| 1–900 | 86.18 / 75.37 / 66.32 | 86.88 / 78.04 / 66.44 | 74.11 / 55.89 / 45.56 | 72.89 / 57.00 / 42.78 |
+| 1–150 | 92.40 / 84.72 / 76.68 | 93.49 / 87.90 / 77.43 | 86.67 / 74.67 / 68.00 | 88.00 / 79.33 / 68.67 |
+| 151–300 | 74.25 / 58.99 / 49.46 | 75.15 / 59.89 / 49.68 | 74.00 / 58.00 / 48.67 | 75.33 / 59.33 / 48.67 |
+| 301–900 | 70.15 / 50.14 / 37.38 | 69.14 / 52.09 / 34.93 | 71.00 / 50.67 / 39.17 | 68.50 / 50.83 / 34.83 |
+
+3.1 is 0.12 points above 3.5 on overall spend-weighted L3 and 0.75 points above it on the top 150, meeting the within-3-point rule in both required comparisons. D-59 enables the pool by default. Ledger delta for this T4a attempt sequence (including interrupted/retried attempts): 3.5-lite 28 requests (14 successful, 14 errors incl. one 429); 3.1-lite 30 (22 successful, 8 errors). The evaluator's default arbiter leg initially called 3.8; repeated 503 disabled it. Those arbitration answers are excluded from the model-only comparison. Other attempted entries: 3.8 11 (6 successful, 5 errors), 3.6 5 errors, Hydrogen 5 errors. No model exceeded its daily guardrail (3.5 <400, 3.1 <500).
+
+## 2026-11-18 T4b — supplier-rich A sample
+Selected all 4,692 units across the 50 highest-spend suppliers (93.7% of described-unit spend). 3.5-lite and 3.1-lite each answered 3,720; repeated 503s left 972 unanswered, scored as misses. Lite disagreement set: 1,705 units. The 3.8 arbiter answered 280 before its daily cap; 3.8 calls were capped by the ledger after T4a had used 11 of 20 requests. Single Lite L3 SW/count was 64.23/24.96%; after available 3.8 arbitration it was 65.82/25.45% (+1.59/+0.49 points), with L1 SW 85.93%→87.27%. On top-100 spend units (20 Lite disagreements), L3 SW/count moved 78.82/72.00%→79.66/73.00% (+0.84/+1.00), and L1 SW did not fall (93.86%→94.56%): retain arbitration for the top 100 in C. Supplier coherence found 98 candidates and re-asked all 98 on 3.1-lite; 96 changed. It moved L3 SW/count 65.82/25.45%→65.49/26.98% (-0.33/+1.53), while L1 SW rose 87.27%→87.51%; keep coherence OFF because spend-weighted L3 fell.
+
+The 3.8 ledger reached 21 requests (one over its configured 20 RPD; concurrent requests raced the non-atomic local RPD check). T4b therefore has limited 3.8 coverage and is not a full-sample arbitration estimate. T4a+T4b ledger totals: 3.5-lite 100, 3.1-lite 93, 3.8 21, 3.6 5, Hydrogen 5. No Lite threshold was crossed (3.5 <400, 3.1 <500). `Router` now reserves per-entry RPD atomically across worker threads; `tests/test_parallel_pool.py` covers the concurrent cap.
+
+## 2026-11-18 T4c — prompt freeze
+T4b changed no prompt wording. `PROMPT_VERSION` remains **v2** for the final A/B outputs (D-61).
+
+## 2026-11-18 T4d — final A/B outputs, PROMPT_VERSION v2
+Both outputs validated with original row counts: A 65,549, B 41,028. A reused cached LLM answers for its 850 candidate units; B ran with its 60-request budget and the enabled pool. The previously tracked files were the P0 placeholder outputs (every row included, one leaf, confidence 0.01) and had never been regenerated, so nearly every row differs; this is the first real tracked output. Check against measured totals: B included spend 329.25M USD equals the P1 total minus exclusions (349.1M - 19.86M), with 2,485 NON_PROCUREMENT rows as hand-tuned; A excludes 21,798 DUPLICATE, 315 NOT_APPROVED, 188 CANCELLED rows (included spend 3.00B ZAR).
+
+Ledger after T4d (Pacific 2026-11-18): 3.5-lite 110 requests, 3.1-lite 110, 3.8-flash 21, 3.6-flash 8, Hydrogen 9. Lite caps remain below stop levels (400/500). Blind key was not used.
