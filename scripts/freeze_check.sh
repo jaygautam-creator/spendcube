@@ -33,6 +33,12 @@ for comp, n in (("A",65549),("B",41028)):
     ids=ingest_all(cfg)["record_id_original"].tolist()
     errors=validate_file(path,Taxonomy.load(cfg.taxonomy),ids,expected_name=None)
     if errors: raise SystemExit(f"{comp}: validation failed: {errors[:3]}")
+    # content sanity: placeholder outputs (one leaf, conf 0.01, no exclusions) must never pass
+    inc=[r for r in rows if r["include"]=="1"]
+    n_l3=len({r["l3"] for r in inc}); conf=sum(float(r["confidence"]) for r in inc)/max(len(inc),1)
+    n_exc=len(rows)-len(inc)
+    if n_l3<10 or conf<0.3 or n_exc==0:
+        raise SystemExit(f"{comp}: output looks like a placeholder (distinct l3={n_l3}, mean conf={conf:.2f}, excluded={n_exc})")
 PY
 }
 configs() { "$PY" - <<'PY'
