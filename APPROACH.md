@@ -22,7 +22,7 @@ Matching and de-duplication on A: about 15.7k tool lines matched to ERP receipts
 
 B seed holdout (487 included rows) reached L1/L3 99.15/98.83% spend-weighted and 95.9/93.4% count-weighted. A2-sim supervised-only holdout (6,856 rows) scored 99.87/99.71/99.71% count-weighted L1/L2/L3 and 99.51% spend-weighted L3.
 
-A full B run processed 41,028 lines in 18.9 minutes with 260 LLM requests. That is about 6.2 requests per 1,000 lines. At 640 C requests, measured single-model throughput implies 46.5 minutes of LLM work; the two-model pool projection is 23.3 minutes. A live rehearsal treating B as unseen (no labels, cold cache) scored 98.6/92.5% spend-weighted L1/L3 in 10.2 minutes.
+A full B run processed 41,028 lines in 18.9 minutes with 260 LLM requests. At 640 C requests, measured single-model throughput implies 46.5 minutes of LLM work; the two-model pool projection is 23.3 minutes. A live rehearsal treating B as unseen (no labels, cold cache) scored 98.6/92.5% spend-weighted L1/L3 in 10.2 minutes.
 
 ## Tools and cost
 
