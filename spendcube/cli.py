@@ -90,7 +90,8 @@ def cmd_eval(a) -> int:
                          indent=2, default=str)); return 0
     if a.what == "coherence":
         from .eval.coherence_eval import run_coherence_eval
-        print(json.dumps(run_coherence_eval(a.config, out_file=a.sample_file or None), indent=2, default=str)); return 0
+        print(json.dumps(run_coherence_eval(a.config, max_units=a.top or 1200,
+                                           out_file=a.sample_file or None), indent=2, default=str)); return 0
     if a.what == "matching-synth":
         from .eval.synth import matching_synth
         print(json.dumps(matching_synth(), indent=2, default=str)); return 0

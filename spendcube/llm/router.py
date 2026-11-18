@@ -64,6 +64,7 @@ class Router:
         self.dead: dict[str, str] = {}
         self._providers: dict[tuple, Any] = {}
         self._lock = threading.Lock()
+        self._rpd_reserved: dict[str, int] = {}
         self.stats: dict[str, Any] = {"calls": 0, "cache_hits": 0, "tok_in": 0, "tok_out": 0,
                                       "repairs": 0, "failures": 0, "by_entry": {}}
         force_mock = bool(os.environ.get("SPENDCUBE_FORCE_MOCK"))     # timing dress runs only: every entry becomes the mock
@@ -225,6 +226,28 @@ class Router:
                 self.dead[e.id] = why
                 log.warning("LLM entry %s disabled for this run: %s", e.id, why)
 
+    def _reserve_request(self, e: Entry, role: str) -> bool:
+        """Atomically reserve this provider attempt against per-entry RPD and job budget."""
+        with self._lock:
+            if e.rpd is not None:
+                used = self.ledger.requests_today(e.profile, e.id)
+                if used + self._rpd_reserved.get(e.id, 0) >= e.rpd:
+                    return False
+            if role not in self.exempt_roles and e.id in self.pool_ids and self.budget is not None:
+                if self.spent >= self.budget:
+                    return False
+                self.spent += 1
+            self._rpd_reserved[e.id] = self._rpd_reserved.get(e.id, 0) + 1
+            return True
+
+    def _release_request(self, e: Entry) -> None:
+        with self._lock:
+            reserved = self._rpd_reserved.get(e.id, 0)
+            if reserved <= 1:
+                self._rpd_reserved.pop(e.id, None)
+            else:
+                self._rpd_reserved[e.id] = reserved - 1
+
     # ---- main call ---------------------------------------------------------
     def call(self, role: str, system: str, user: str, schema: dict, validate: Validator, *,
              thinking: Optional[str] = None, max_tokens: int = 4096, exclude_entries: tuple = (),
@@ -283,23 +306,24 @@ class Router:
         for attempt in range(4):
             if e.id in self.dead:
                 return None
-            if e.rpd is not None and self.ledger.requests_today(e.profile, e.id) >= e.rpd:
-                self._mark_dead(e, f"daily request cap {e.rpd} reached")
-                return None
             if not e.limiter.acquire(est, max_wait):
                 log.info("limiter wait too long for %s; trying next entry", e.id)
                 return None
-            if role not in self.exempt_roles and e.id in self.pool_ids:
-                with self._lock:
-                    if self.budget is not None and self.spent >= self.budget:
-                        return None
-                    self.spent += 1       # atomic shared reservation; every ensuing provider request is billable
+            if not self._reserve_request(e, role):
+                if e.rpd is not None and self.ledger.requests_today(e.profile, e.id) >= e.rpd:
+                    self._mark_dead(e, f"daily request cap {e.rpd} reached")
+                return None
             call_started = time.perf_counter()
-            r = prov.complete_json(system, cur_user, schema, e.model, max_tokens, thinking, self.timeout)
+            try:
+                r = prov.complete_json(system, cur_user, schema, e.model, max_tokens, thinking, self.timeout)
+            except Exception:
+                self._release_request(e)
+                raise
             elapsed_ms = round((time.perf_counter() - call_started) * 1000, 2)
             ok_call = r.parsed is not None and r.error is None
             self.ledger.record(e.profile, e.id, r.usage.get("in", 0), r.usage.get("out", 0) + r.usage.get("thinking", 0),
                                ok_call, r.error_kind)
+            self._release_request(e)
             with self._lock:
                 self.stats["calls"] += 1
                 self.stats["tok_in"] += r.usage.get("in", 0)

@@ -102,6 +102,15 @@ def run_coherence_eval(config_path: str, top_suppliers: int = 50, max_units: int
     res["coherence"] = _sw(tax, tr, leaf_h, w)
     res["coherence_stats"] = stats
     res["coherence_cfg"] = cc
+    n_surplus = min(100, U)
+    res["surplus_top100"] = {
+        "units": n_surplus,
+        "before_lite_arbitration": _sw(tax, tr[:n_surplus], leaf[:n_surplus], w[:n_surplus]),
+        "after_3.8_arbitration": _sw(tax, tr[:n_surplus], leaf_c[:n_surplus], w[:n_surplus]),
+        "after_coherence": _sw(tax, tr[:n_surplus], leaf_h[:n_surplus], w[:n_surplus]),
+        "disagreements": int(sum(1 for d in dis if d["uid"] < n_surplus)),
+        "arbitrated": int(sum(1 for u in r3 if u < n_surplus)),
+    }
     res["router"] = router.report()
     res["seconds"] = round(time.time() - t0, 1)
     if out_file:

@@ -8,10 +8,10 @@ from spendcube.llm.router import Router
 from spendcube.llm.providers.base import ProviderResult
 
 
-def _router(tmp, *, enabled=True, fixed=None, rpm=15):
+def _router(tmp, *, enabled=True, fixed=None, rpm=15, rpd=100):
     chain = [
-        {"id": "x", "provider": "mock", "model": "x", "rpm": rpm, "rpd": 100},
-        {"id": "y", "provider": "mock", "model": "y", "rpm": rpm, "rpd": 100},
+        {"id": "x", "provider": "mock", "model": "x", "rpm": rpm, "rpd": rpd},
+        {"id": "y", "provider": "mock", "model": "y", "rpm": rpm, "rpd": rpd},
     ]
     cfg = {"enabled": True, "chain": chain, "roles": {"bulk": ["x"], "top_spend": ["x"]},
            "parallel_pool": {"enabled": enabled, "entries": ["x", "y"]},
@@ -85,6 +85,15 @@ def test_pool_budget_shared_across_members(tmp_path):
         outcomes = list(ex.map(lambda i: _call(r, i), range(20)))
     assert sum(x is not None for x in outcomes) == 10
     assert r.stats["calls"] == 10 and r.spent == 10
+
+
+def test_rpd_cap_is_reserved_atomically_across_workers(tmp_path):
+    r = _router(tmp_path, enabled=True, rpd=3)
+    with ThreadPoolExecutor(max_workers=12) as ex:
+        outcomes = list(ex.map(lambda i: _call(r, 300 + i), range(24)))
+    assert sum(x is not None for x in outcomes) == 6
+    assert r.ledger.requests_today("mock", "x") == 3
+    assert r.ledger.requests_today("mock", "y") == 3
 
 
 def test_pool_disabled_preserves_first_chain_entry(tmp_path):
