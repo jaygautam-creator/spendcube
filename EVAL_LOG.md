@@ -156,3 +156,25 @@ T4b changed no prompt wording. `PROMPT_VERSION` remains **v2** for the final A/B
 Both outputs validated with original row counts: A 65,549, B 41,028. A reused cached LLM answers for its 850 candidate units; B ran with its 60-request budget and the enabled pool. The previously tracked files were the P0 placeholder outputs (every row included, one leaf, confidence 0.01) and had never been regenerated, so nearly every row differs; this is the first real tracked output. Check against measured totals: B included spend 329.25M USD equals the P1 total minus exclusions (349.1M - 19.86M), with 2,485 NON_PROCUREMENT rows as hand-tuned; A excludes 21,798 DUPLICATE, 315 NOT_APPROVED, 188 CANCELLED rows (included spend 3.00B ZAR).
 
 Ledger after T4d (Pacific 2026-11-18): 3.5-lite 110 requests, 3.1-lite 110, 3.8-flash 21, 3.6-flash 8, Hydrogen 9. Lite caps remain below stop levels (400/500). Blind key was not used.
+# X1 spend concentration (2026-11-18)
+
+Computed offline from normalized, described, non-excluded zero-label units with positive absolute included spend. The supplier key is `supplier_core`, falling back to `vendor_id` when absent (B has no `supplier_core`). A: 16,256 units, $4,659,829,135.96 included spend, 199 suppliers, median 17 units/supplier. B: 12,899 units, $214,870,878.47 included spend, 2,134 suppliers, median 1 unit/supplier.
+
+| Company | Top 50 | Top 100 | Top 200 | Top 500 | Top 1,000 | Top 2,000 |
+|---|---:|---:|---:|---:|---:|---:|
+| A | 30.56% | 40.74% | 51.52% | 65.78% | 76.16% | 85.87% |
+| B | 40.41% | 51.67% | 63.46% | 78.43% | 88.23% | 95.59% |
+
+Prior 3.8-flash bakeoff reference: T4b's 50-supplier sample had lite-only spend-weighted L3 64.23%, rising to 65.82% (+1.59 points) after available 3.8 arbitration; L1 rose 85.93% to 87.27%. On the top-100 disagreement subset, spend-weighted L3 rose 78.82% to 79.66% (+0.84), with L1 rising 93.86% to 94.56%. Coverage was limited: 280 of 1,705 disagreements arbitrated after 3.8 had already spent 11 of 20 daily requests during T4a; this is not a full-sample estimate. Supplier coherence lowered spend-weighted L3 0.33 points and remains off.
+
+## X2 head-accuracy grid (partial; 2026-11-18)
+
+Live dev-key experiment used the same top-150 labeled-unit sample per company in zero-label mode; labels were used only after inference for scoring. Network DNS resolution failed during the Hydrogen arm, so no B arms or complete strong-model comparisons could be obtained. A's completed 3.5-lite arms:
+
+| Arm | L1 count / spend | L2 count / spend | L3 count / spend | Requests | Tokens/request | Seconds/request | Coverage |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| 3.5 minimal, batch 60 | 86.00% / 92.18% | 74.67% / 84.70% | 68.00% / 76.69% | 1 (2 cache hits) | 3,091 | 6.73 | 150/150 |
+| 3.5 low, batch 60 | 86.00% / 92.00% | 78.67% / 87.53% | 68.67% / 77.95% | 3 | 4,355 | 5.87 | 150/150 |
+| 3.5 minimal, batch 15 | 85.33% / 91.62% | 79.33% / 87.49% | 71.33% / 78.73% | 10 | 2,002 | 5.16 | 150/150 |
+
+The Hydrogen arm stalled on DNS and was interrupted after the dev ledger recorded 5 failed request attempts (daily total 14/20, 6 remaining). 3.6 was not attempted. No requests used the blind key. These A-only results are insufficient to choose a head routing tier or to enable X3; no config default changed. The A small-batch spend-weighted L3 gain over baseline is +2.04 points, but the required B non-regression check is missing.
