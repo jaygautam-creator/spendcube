@@ -14,7 +14,7 @@ from pathlib import Path
 from typing import Any, Callable, Optional
 
 from .cache import Cache, make_key
-from .keys import key_present, resolve_key_env
+from .keys import key_present, resolve_key_env, resolve_key_envs
 from .ledger import Ledger
 from .limiter import Limiter
 from .prompts import PROMPT_VERSION
@@ -37,6 +37,7 @@ class Entry:
     base_url: str = ""
     limiter: Limiter = field(default_factory=Limiter)
     profile: str = ""
+    profiles: list[str] = field(default_factory=list)
 
 
 @dataclass
@@ -76,6 +77,8 @@ class Router:
                         base_url=e.get("base_url", ""))
             ent.limiter = Limiter(ent.rpm, ent.tpm)
             ent.profile = resolve_key_env(ent.key_env, mode) or ent.provider
+            ent.profiles = resolve_key_envs(ent.key_env, mode) if ent.key_env else [ent.provider]
+            ent.profile = ent.profiles[0]
             self.entries[ent.id] = ent
         pool_cfg = self.cfg.get("parallel_pool", {})
         self.parallel_pool = bool(pool_cfg.get("enabled", False)) if isinstance(pool_cfg, dict) else False
@@ -190,9 +193,15 @@ class Router:
     def _pool_candidates(self, role: str, exclude_entries: tuple, est_tokens: int) -> list[Entry]:
         if not self.parallel_pool or role not in {"bulk", "top_spend"}:
             return []
-        candidates = [self.entries[i] for i in self.parallel_ids if i in self.entries and i not in exclude_entries
-                      and self._usable(self.entries[i]) and
-                      (self.entries[i].rpd is None or self.ledger.requests_today(self.entries[i].profile, i) < self.entries[i].rpd)]
+        candidates = []
+        for i in self.parallel_ids:
+            if i not in self.entries or i in exclude_entries:
+                continue
+            e = self.entries[i]
+            if e.rpd is not None and self.ledger.requests_today(e.profile, i) >= e.rpd:
+                self._advance_profile(e, f"daily request cap {e.rpd} reached")
+            if self._usable(e) and (e.rpd is None or self.ledger.requests_today(e.profile, i) < e.rpd):
+                candidates.append(e)
         candidates.sort(key=lambda e: (e.limiter.available_in(est_tokens),
                                        self.ledger.requests_today(e.profile, e.id)))
         return candidates
@@ -206,10 +215,10 @@ class Router:
             if k not in self._providers:
                 if e.provider == "gemini":
                     from .providers.gemini import make_gemini
-                    self._providers[k] = make_gemini(resolve_key_env(e.key_env, self.mode))
+                    self._providers[k] = make_gemini(e.profile)
                 elif e.provider == "groq":
                     from .providers.groq import GroqProvider
-                    self._providers[k] = GroqProvider(os.environ.get(e.key_env or "GROQ_API_KEY", ""))
+                    self._providers[k] = GroqProvider(os.environ.get(e.profile or e.key_env or "GROQ_API_KEY", ""))
                 elif e.provider == "ollama":
                     from .providers.ollama import OllamaProvider
                     self._providers[k] = OllamaProvider(e.base_url or "http://localhost:11434")
@@ -220,11 +229,35 @@ class Router:
                     self._providers[k] = None
             return self._providers[k]
 
-    def _mark_dead(self, e: Entry, why: str) -> None:
+    def _mark_dead(self, e: Entry, why: str) -> bool:
+        if self._advance_profile(e, why):
+            return True
         with self._lock:
             if e.id not in self.dead:
                 self.dead[e.id] = why
                 log.warning("LLM entry %s disabled for this run: %s", e.id, why)
+        return False
+
+    def _advance_profile(self, e: Entry, why: str) -> bool:
+        with self._lock:
+            try:
+                start = e.profiles.index(e.profile) + 1
+            except ValueError:
+                start = len(e.profiles)
+            for profile in e.profiles[start:]:
+                if e.provider != "mock" and not os.environ.get(profile, "").strip():
+                    continue
+                if e.rpd is not None and self.ledger.requests_today(profile, e.id) >= e.rpd:
+                    continue
+                old = e.profile
+                e.profile = profile
+                e.limiter = Limiter(e.rpm, e.tpm)
+                if self.budget is not None and e.id in self.pool_ids:
+                    self.budget = max(self.budget, self.spent + (self.cfg.get("budget", {}).get("max_requests") or self.budget))
+                log.warning("LLM entry %s switching key profile %s -> %s (%s)", e.id, old, profile, why)
+                self.stats.setdefault("key_failovers", []).append({"entry": e.id, "from": old, "to": profile, "why": why})
+                return True
+        return False
 
     def _reserve_request(self, e: Entry, role: str) -> bool:
         """Atomically reserve this provider attempt against per-entry RPD and job budget."""
@@ -298,20 +331,22 @@ class Router:
         return None
 
     def _try_entry(self, e, role, system, user, schema, validate, thinking, max_tokens, est, max_wait, ck, n_units):
-        prov = self._provider(e)
-        if prov is None:
-            self._mark_dead(e, "provider unavailable")
-            return None
         cur_user, repaired = user, False
         for attempt in range(4):
             if e.id in self.dead:
+                return None
+            prov = self._provider(e)
+            if prov is None:
+                if self._mark_dead(e, "provider unavailable"):
+                    continue
                 return None
             if not e.limiter.acquire(est, max_wait):
                 log.info("limiter wait too long for %s; trying next entry", e.id)
                 return None
             if not self._reserve_request(e, role):
                 if e.rpd is not None and self.ledger.requests_today(e.profile, e.id) >= e.rpd:
-                    self._mark_dead(e, f"daily request cap {e.rpd} reached")
+                    if self._mark_dead(e, f"daily request cap {e.rpd} reached"):
+                        continue
                 return None
             call_started = time.perf_counter()
             try:
@@ -358,19 +393,24 @@ class Router:
                     e.limiter.penalise(wait)
                     time.sleep(min(wait + 1, 21))
                     continue
-                self._mark_dead(e, f"rate limited (retry in {wait}s)")
+                if self._mark_dead(e, f"rate limited (retry in {wait}s)"):
+                    continue
                 return None
             if kind == "quota":
-                self._mark_dead(e, "quota exhausted")
+                if self._mark_dead(e, "quota exhausted"):
+                    continue
                 return None
             if kind == "auth":
-                self._mark_dead(e, f"auth error: {(r.error or '')[:80]}")
+                if self._mark_dead(e, f"auth error: {(r.error or '')[:80]}"):
+                    continue
                 return None
             if kind in ("server", "timeout") and attempt < 1:   # back off once (jittered), then fail over (D-28c)
+                # Retry once on the same profile; second failure advances profile below.
                 time.sleep(random.uniform(2.0, 8.0))
                 continue
             if kind in ("server", "timeout"):
-                self._mark_dead(e, f"repeated {kind} failure")
+                if self._mark_dead(e, f"repeated {kind} failure"):
+                    continue
                 return None
             if kind == "parse" and not repaired:
                 repaired = True

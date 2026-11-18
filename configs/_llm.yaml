@@ -40,7 +40,7 @@ classification:
     # D-51 automatic outage path (no manual flag): when no Gemini entry is usable (all 5xx/dead/quota 0/no key) the run switches to
     # the local model for top-spend units, for at most max_minutes (measured 1.24 s/unit), the rest falls to the offline fallback.
     # Measured on A's top-300 zero-label sample: offline L3_sw 25.4; Ollama qwen3:4b L3_sw 41.7 on 60 units vs offline 28.1 on the same 60.
-    outage: {enabled: true, chain: [ollama_local], max_minutes: 20}
+    outage: {enabled: true, chain: [ollama_local, groq_gptoss120b], max_minutes: 20}
     thinking: {compile: low, top_spend: minimal, bulk: minimal, second_opinion: minimal, arbiter: low}
     batch: {min: 15, max: 60, arbiter: 40}
     prompt_budget: {enabled: true, tpm_fraction: 0.8, definition_chars_per_leaf: 100, min_batch: 15}
